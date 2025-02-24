@@ -90,7 +90,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <div className="bg-gray-50 p-4 md:p-8 rounded-2xl">
             <img
-              src="./images/1.png"
+              src="./images/7.png"
               alt="Property Insurance"
               className="w-full rounded-xl mb-4"
             />
