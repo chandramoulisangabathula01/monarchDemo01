@@ -20,35 +20,35 @@ export default function Features() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="relative aspect-square">
               <img
-                src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?q=80&w=600"
+                src="./images/1.png"
                 alt="Office painting"
                 className="w-full h-full object-cover rounded-2xl"
               />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <p className="text-sm font-medium">Commercial Painting</p>
-                <p className="text-xs opacity-80">Boosting productivity & brand image</p>
+              <div className="absolute bottom-4 left-4 right-4  bg-black/50 backdrop-blur-sm p-4 rounded-full">
+                <p className="text-sm font-medium text-white">Commercial Painting</p>
+                <p className="text-xs text-white/90">Boosting productivity & brand image</p>
               </div>
             </div>
             <div className="relative aspect-square">
               <img
-                src="https://images.unsplash.com/photo-1613977257365-6d0409f843ca?q=80&w=600"
+                src="./images/11.2.png"
                 alt="Residential painting"
                 className="w-full h-full object-cover rounded-2xl"
               />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <p className="text-sm font-medium">Residential Decorating</p>
-                <p className="text-xs opacity-80">Bringing your vision to life</p>
+              <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm p-4 rounded-full">
+                <p className="text-sm font-medium text-white">Residential Decorating</p>
+                <p className="text-xs text-white/90">Bringing your vision to life</p>
               </div>
             </div>
             <div className="relative aspect-square">
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600"
+                src="./images/17.png"
                 alt="Exterior painting"
                 className="w-full h-full object-cover rounded-2xl"
               />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <p className="text-sm font-medium">Exterior Solutions</p>
-                <p className="text-xs opacity-80">Durable & weather-resistant finishes</p>
+              <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm p-4 rounded-full">
+                <p className="text-sm font-medium text-white">Exterior Solutions</p>
+                <p className="text-xs text-white/90">Durable & weather-resistant finishes</p>
               </div>
             </div>
           </div>
