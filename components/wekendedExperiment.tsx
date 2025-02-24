@@ -3,7 +3,7 @@ export default function WeekendExperience() {
       <section className="relative h-screen">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1533591380348-14193f1de18f?q=80&w=1200"
+            src="./images/14.png"
             alt="Weekend experience"
             className="w-full h-full object-cover"
           />
@@ -14,10 +14,13 @@ export default function WeekendExperience() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
               <h2 className="text-4xl sm:text-5xl font-medium text-white mb-6">
-                Experience the Noovo life<br />for a weekend.
+                Professional Services You Can Trust
               </h2>
+              <p className="text-white mb-6">
+                We take pride in our top-tier craftsmanship and attention to detail, ensuring every project reflects your unique style and vision. From cosy spaces to expansive properties, we approach every job with professionalism and dedication.
+              </p>
               <button className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-white/90 transition-colors">
-                Reserve Now
+                Explore Our Work
               </button>
             </div>
           </div>

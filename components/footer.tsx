@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-2xl font-bold">noovo</div>
+          <div className="text-2xl font-bold">Monarch Painters Limited</div>
           <div className="flex gap-4">
             <a href="#" className="text-gray-600 hover:text-black">Twitter</a>
             <a href="#" className="text-gray-600 hover:text-black">Instagram</a>

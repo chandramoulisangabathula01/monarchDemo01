@@ -4,10 +4,10 @@ export default function Testimonials() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-medium mb-4">
-              Stories from the road
+              What Our Customers Say
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Hear from our community of adventurers who have made the leap into van life.
+              Hear from our satisfied clients who have transformed their spaces with Monarch Painters.
             </p>
           </div>
   
@@ -21,11 +21,11 @@ export default function Testimonials() {
                 />
                 <div>
                   <h3 className="font-medium">Sarah Johnson</h3>
-                  <p className="text-sm text-gray-600">3 months on the road</p>
+                  <p className="text-sm text-gray-600">Rugeley Homeowner</p>
                 </div>
               </div>
               <p className="text-gray-600">
-                "The attention to detail in our Noovo van is incredible. Every inch of space is thoughtfully designed, making our transition to van life seamless."
+                "The attention to detail from Monarch Painters was incredible. They transformed our living space with their professional approach and high-quality finishes."
               </p>
             </div>
   
@@ -38,11 +38,11 @@ export default function Testimonials() {
                 />
                 <div>
                   <h3 className="font-medium">Mike Chen</h3>
-                  <p className="text-sm text-gray-600">1 year of adventures</p>
+                  <p className="text-sm text-gray-600">Birmingham Business Owner</p>
                 </div>
               </div>
               <p className="text-gray-600">
-                "As digital nomads, having a reliable workspace was crucial. Noovo nailed it with their ergonomic design and power solutions."
+                "Our office transformation was completed on time and on budget. The team's use of dustless extraction systems made the process clean and efficient."
               </p>
             </div>
   
@@ -55,11 +55,11 @@ export default function Testimonials() {
                 />
                 <div>
                   <h3 className="font-medium">Emily Parker</h3>
-                  <p className="text-sm text-gray-600">6 months exploring</p>
+                  <p className="text-sm text-gray-600">Lichfield Resident</p>
                 </div>
               </div>
               <p className="text-gray-600">
-                "The 24/7 support has been a game-changer. Knowing we have backup whenever we need it gives us the confidence to explore further."
+                "From the initial consultation to the final touches, Monarch Painters exceeded our expectations. Their use of premium materials ensures our walls look stunning."
               </p>
             </div>
           </div>

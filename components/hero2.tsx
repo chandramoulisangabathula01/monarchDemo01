@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Button } from './ui/button'; // Adjust import based on your button component location
+import { Button } from './ui/button';
+// import { Button } from '@/components/ui/button';
+// import './globals.css';
+// import "./globals.css";
 
 export default function Hero2() {
   return (
@@ -18,8 +21,13 @@ export default function Hero2() {
             <li>✅ Superior quality finishes for projects of any size</li>
             <li>✅ Fair pricing with no corners cut on any job</li>
           </ul>
-          <Button size="lg" className="text-lg">
-            Get Started
+          <Button 
+            size="lg" 
+            className="text-lg bg-gradient-to-r from-[#4F46E5] via-[#6366F1] to-[#818CF8] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden group"
+          >
+            <span className="relative z-10">Get Started</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-[#FFFFFF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+            <span className="absolute -inset-2 bg-[#FFFFFF]/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
           </Button>
         </div>
         <div className="relative">

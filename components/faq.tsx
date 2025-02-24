@@ -10,20 +10,28 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "Why should I choose a Noovo camper van?",
-      answer: "Noovo camper vans offer unparalleled comfort and flexibility for your adventures.",
+      question: "Why choose Monarch Painters Limited?",
+      answer: "We take pride in our top-tier craftsmanship and attention to detail, ensuring every project reflects your unique style and vision. With over 35 years of combined experience, we deliver superior paint jobs for every project, regardless of size.",
     },
     {
-      question: "What are the financing options available?",
-      answer: "We provide various financing options to suit your needs, including flexible payment plans.",
+      question: "What areas do you serve?",
+      answer: "We serve Rugeley, Lichfield, Tamworth, Sutton Coldfield, Birmingham, Cannock, Stafford, Penkridge, Derby, Wolverhampton and many more areas in Staffordshire.",
     },
     {
-      question: "What can I expect life to be like?",
-      answer: "Life in a Noovo camper van is about freedom, adventure, and creating unforgettable memories.",
+      question: "What types of projects do you handle?",
+      answer: "We specialize in both residential and commercial projects, including interior/exterior painting, industrial painting, and high-end developments. We use top-quality materials and the latest techniques for durable, beautiful results.",
     },
     {
-      question: "Do you offer financing?",
-      answer: "Yes, we offer financing options to help you get on the road with ease.",
+      question: "What makes your service different?",
+      answer: "We're a family business with a 5-star Google rating, committed to sustainability and professionalism. We use advanced equipment like the Mirka 1230M dustless extraction system and TriTech T5 airless spray system for flawless finishes.",
+    },
+    {
+      question: "What materials do you use?",
+      answer: "We use premium products like Emperor Masonry Paint, Isomat Premium Colour, Benjamin Moore Scuff-X, and Zinsser AllCoat for exterior woodwork, ensuring long-lasting, high-quality results.",
+    },
+    {
+      question: "How do you ensure quality?",
+      answer: "We never cut corners, maintain clear communication, and deliver on every promise. Our team is fully equipped with top-tier tools and follows strict health and safety guidelines for every project.",
     },
   ];
 
