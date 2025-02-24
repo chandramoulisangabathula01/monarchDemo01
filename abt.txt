@@ -1,0 +1,106 @@
+Monarch Painters Website – Detailed Documentation
+1. Company Overview
+
+Name: Monarch Painters
+Location: Staffordshire (serving Rugeley, Lichfield, Tamworth, Sutton Coldfield, Birmingham, Cannock, Stafford, Penkridge, Derby, Wolverhampton, and more)
+Background:
+
+    A family-run business with extensive experience in residential and commercial painting and decorating.
+    Over 35 years of combined expertise in delivering superior paint jobs for projects of all sizes.
+    Known for using high-quality tools like the Mirka 1230M dustless extraction system, Q-Tech 5 stage HVLP spray system, and TriTech T5 airless spray system.
+    Rated 5-stars on Google for excellence, professionalism, and high-quality finishes.
+
+Core Message:
+Monarch Painters is the first choice for those seeking a trustworthy, high-quality painting and decorating service. Their mission is to provide exceptional results without cutting corners, ensuring every project—be it residential, commercial, or industrial—is executed to the highest standard.
+2. Website Objectives
+
+    Brand Positioning: Establish Monarch Painters as a premium, trustworthy, and expert provider in the painting and decorating industry.
+    User Engagement: Create a modern, elegant, and Apple-like user interface that guides visitors smoothly to key actions (e.g., “Get a Free Quote”).
+    Information Delivery: Clearly display the range of services offered (Interior Painting & Decorating, Industrial Painting, Home Decorating) and provide details about the company’s expertise.
+    Conversion: Encourage potential clients to engage, request a quote, or contact the company.
+
+3. Website Structure & Pages
+3.1 Global Components
+
+    Header:
+        Sticky navigation with logo ("Monarch Painters") and menu items: Home, Our Painting & Decorating Services, Testimonials, Projects, Contact.
+        Prominent CTA button ("Get a Free Quote") with hover animations.
+    Footer:
+        Contact details, social media links, quick navigation links, and copyright.
+
+3.2 Landing (Home) Page – Sections Breakdown
+
+    Hero Section:
+        Full-screen parallax background image (high-end painted interior/exterior).
+        Bold headline: “Welcome to Monarch Painters.”
+        Subtext: Brief tagline highlighting trust and quality.
+        Animated CTA button for “Get a Free Quote.”
+    Welcome to Monarch Painters:
+        Introduction text about the company, emphasizing their 5-star reputation and experience.
+    What We Do:
+        Overview of services with a grid or card layout (residential, commercial, industrial painting, and decorating).
+    Interior Painting & Decorating:
+        Detailed section with images and text about interior services.
+    Industrial Painters:
+        Showcase industrial projects with before/after images and descriptive content.
+    Home Decorators:
+        Highlight home decorating projects with a slider/gallery.
+    Get in Touch:
+        Contact form, phone number, email, and Google Maps integration for location.
+
+3.3 Additional Pages
+
+    Our Painting & Decorating Services:
+        Detailed service breakdown, techniques used, and equipment information.
+    Testimonials:
+        Carousel slider featuring client reviews and ratings.
+    Projects:
+        Portfolio page with a masonry grid or lightbox gallery of completed projects.
+    Contact:
+        Comprehensive contact page with form validation and embedded Google Maps.
+
+4. Technical & Design Specifications
+4.1 Frontend Technology
+
+    Framework: Next.js (v14) with TypeScript
+    Styling: Tailwind CSS for rapid and responsive UI development
+    Animations:
+        GSAP for scroll-triggered effects and background animations.
+        Framer Motion for element transitions, hover effects, and page animations.
+
+4.2 Design Aesthetics
+
+    Color Palette:
+        Primary: Royal Blue, Deep Burgundy, Gold (luxurious, premium)
+        Secondary: Off-White, Light Gray (clean and modern)
+        Accents: Golden highlights
+    Typography:
+        Headings: Playfair Display or Merriweather (serif for elegance)
+        Body: Inter or Roboto (sans-serif for clarity)
+    Imagery:
+        High-resolution photos showcasing painted interiors, industrial projects, and decorative work.
+        Consistent use of professional images that evoke a sense of luxury and trust.
+
+4.3 Performance & SEO
+
+    SEO Optimized: Meta tags, Open Graph tags, structured data, and alt text on images.
+    Performance: Lazy loading, optimized images, and pre-fetching for enhanced speed.
+    Responsiveness: Mobile-first design ensuring the site works seamlessly on all devices.
+
+5. Additional Features & Considerations
+
+    Sticky Header with Scroll Effects: The header should minimize or change background upon scrolling.
+    Interactive Elements:
+        Hover effects on buttons and cards.
+        Animated text reveals on scroll.
+    Contact Form Validation: Use React Hook Form and Zod for client-side validation.
+    Optional Enhancements:
+        Dark/Light Mode toggle.
+        Custom animated cursor for an extra modern touch.
+
+6. Final Deliverables
+
+    Complete Next.js Project: Including all pages and components as specified.
+    Figma Design File: To visually represent the design before development.
+    Documentation & Code Comments: Clear guidelines and in-code documentation for future updates.
+    Deployment Ready: Optimized for deployment on platforms like Vercel or Netlify.
