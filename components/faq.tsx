@@ -38,6 +38,15 @@ export default function FAQ() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="md:text-5xl font-bold mb-4 text-[#711f50] sm:text-4xl text-4xl ">Frequently Asked Questions</h2>
+          <p className="text-lg text-gray-600">Your trusted partner for exceptional painting services - where quality meets craftsmanship</p>
+        </motion.div>
         <div className="space-y-8">
           {faqs.map((faq, index) => (
             <div key={index} className="border-b border-gray-200 pb-6">
@@ -45,7 +54,7 @@ export default function FAQ() {
                 className="w-full flex justify-between items-center text-left"
                 onClick={() => toggleFAQ(index)}
               >
-                <span className="text-lg font-medium">{faq.question}</span>
+                <span className="text-2xl text-[#711f50] font-medium">{faq.question}</span>
                 <span className="text-2xl">{openIndex === index ? "-" : "+"}</span>
               </button>
               <motion.div
@@ -66,7 +75,7 @@ export default function FAQ() {
         </div>
 
         <button className="mt-12 mx-auto block bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-black/90 transition-colors">
-          Read more FAQs
+          Get a Quote
         </button>
       </div>
     </section>

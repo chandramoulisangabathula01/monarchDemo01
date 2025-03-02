@@ -11,12 +11,12 @@ export default function WeekendExperience() {
         </div>
         
         <div className="relative h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl">
-              <h2 className="text-4xl sm:text-5xl font-medium text-white mb-6">
-                Professional Services You Can Trust
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl">
+              <h2 className="md:text-8xl font-bold mb-4 text-[#d7923c] sm:text-4xl text-7xl ">
+                Professional Services You Can <span>Trust</span>
               </h2>
-              <p className="text-white mb-6">
+              <p className="text-white md:text-xl mb-6">
                 We take pride in our top-tier craftsmanship and attention to detail, ensuring every project reflects your unique style and vision. From cosy spaces to expansive properties, we approach every job with professionalism and dedication.
               </p>
               <button className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-white/90 transition-colors">

@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../fonts/LTMuseum-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style:normal;
+}
+
 :root {
   --color-royal-blue: #003366;
   --color-deep-burgundy: #800020;

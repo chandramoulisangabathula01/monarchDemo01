@@ -2,14 +2,14 @@ export default function Features() {
     return (
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <img
+          {/* <img
             src="./images/16.png"
             alt="Professional painting"
             className="w-full h-[600px] object-cover rounded-2xl mb-16"
-          />
+          /> */}
           
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-medium mb-4">
+            <h2 className=" md:text-5xl font-bold mb-4 text-[#711f50] sm:text-4xl ">
               Transforming Spaces Across Staffordshire
             </h2>
             <p className="text-lg text-gray-600">
@@ -53,19 +53,63 @@ export default function Features() {
             </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-8 rounded-2xl">
-              <h3 className="text-xl font-medium mb-4">Our Materials</h3>
-              <p className="text-gray-600 mb-4">
-                We use only premium quality paints including Emperor Masonry Paint, 
-                Wethertex AP77, and Dulux Weathershield for exterior surfaces.
-              </p>
-              <p className="text-gray-600">
-                For interiors, we recommend Isomat Premium Colour and Crown Trade Clean Extreme.
-              </p>
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold mb-8 text-[#711f50] text-center">Premium Paint Products</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-48 mb-4 rounded-xl overflow-hidden">
+                  <img
+                    src="/images/tech1.jpg"
+                    alt="Emperor Masonry Paint"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-[#711f50]">Exterior Masonry</h3>
+                <p className="text-gray-600 mb-2">Premium choices:</p>
+                <ul className="text-gray-600 space-y-1">
+                  <li>• Emperor Masonry Paint</li>
+                  <li>• Wethertex AP77</li>
+                  <li>• Dulux Weathershield</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-48 mb-4 rounded-xl overflow-hidden">
+                  <img
+                    src="/images/tech2.webp"
+                    alt="Interior Paint"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-[#711f50]">Interior Walls</h3>
+                <p className="text-gray-600 mb-2">Recommended products:</p>
+                <ul className="text-gray-600 space-y-1">
+                  <li>• Isomat Premium Colour</li>
+                  <li>• Crown Trade Clean Extreme</li>
+                  <li>• Benjamin Moore Scuff-X</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-48 mb-4 rounded-xl overflow-hidden">
+                  <img
+                    src="/images/tech3.webp"
+                    alt="Woodwork Paint"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-[#711f50]">Woodwork</h3>
+                <p className="text-gray-600 mb-2">Professional finishes:</p>
+                <ul className="text-gray-600 space-y-1">
+                  <li>• Zinsser AllCoat</li>
+                  <li>• Caparol PU System</li>
+                  <li>• Sikkens HLS Plus</li>
+                </ul>
+              </div>
             </div>
-            <div className="bg-gray-50 p-8 rounded-2xl">
-              <h3 className="text-xl font-medium mb-4">Our Approach</h3>
+
+            <div className="mt-12 bg-gray-50 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold mb-4 text-[#711f50]">Our Approach</h3>
               <p className="text-gray-600">
                 With over 30 years of experience, we deliver precise execution, 
                 on-time delivery, and strict adherence to health and safety guidelines.

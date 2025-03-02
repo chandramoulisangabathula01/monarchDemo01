@@ -150,10 +150,13 @@ export const Compare = ({
   return (
     <div
       ref={sliderRef}
-      className={cn("w-[400px] h-[400px] overflow-hidden", className)}
+      className={cn("w-full  overflow-hidden", className)}
       style={{
         position: "relative",
         cursor: slideMode === "drag" ? "grab" : "col-resize",
+        touchAction: "none",
+        borderRadius: "16px",
+        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)"
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={mouseLeaveHandler}
