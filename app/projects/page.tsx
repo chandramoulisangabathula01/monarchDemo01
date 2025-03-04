@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+import Footer from '@/components/footer';
 
 type Project = {
   id: number;
@@ -182,6 +183,8 @@ export default function Projects() {
           )}
         </DialogContent>
       </Dialog>
+
+      <Footer/>
     </main>
   );
 }
