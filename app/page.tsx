@@ -1,5 +1,8 @@
 "use client";
-
+// bg-[#f5e6da]
+// bg-[#d9c2d4]
+// bg-[#ede2db]
+// bg-[#f7d5c5]
 import {
   // Search,
   // Compass,
@@ -26,7 +29,7 @@ import Features2 from "@/components/Features2";
 // import { Preview } from "@/components/demo2";
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white pt-[28px]">
+    <main className="min-h-screen  bg-[#ede2db] pt-[28px] overflow-hidden">
       {/* Hero Section */}
       <Hero />
       <Hero2 />

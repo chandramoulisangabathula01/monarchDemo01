@@ -74,7 +74,7 @@ export default function Hero2() {
         <div>
           <h1 className="text-5xl font-bold mb-4 text-[#711f50] ">What We Do</h1>
           <h2 className="text-4xl font-bold mb-8 handwritten text-primary">Monarch Painters Limited</h2>
-          <ul className="text-xl space-y-4 mb-8 text-gray-600">
+          <ul className="md:text-xl  space-y-4 mb-8 text-gray-600">
             <li>✅ 35+ years combined experience in professional painting</li>
             <li>✅ Superior quality finishes for projects of any size</li>
             <li>✅ Fair pricing with no corners cut on any job</li>

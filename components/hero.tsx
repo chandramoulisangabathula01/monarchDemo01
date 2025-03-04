@@ -3,11 +3,13 @@ import { CompareDemo } from "./demo";
 import { ColourfulText } from "./ui/colourful-text";
 import { useState, useEffect, useRef } from 'react';
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function Hero() {
   const [currentTag, setCurrentTag] = useState(0);
   const [isInView, setIsInView] = useState(false);
   const containerRef = useRef(null);
+  const isMobile = useIsMobile();
 
   const tags = [
     "Home Decorators",
@@ -85,7 +87,7 @@ export function Hero() {
       initial="initial"
       animate="animate"
       variants={staggerContainer.variants}
-      className="flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8 py-6 mt-9 sm:py-8 lg:py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 relative overflow-hidden"
+      className="flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8 py-6 mt-9 sm:py-8 lg:py-16 bg-[#ede2db] dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 relative overflow-hidden"
     >
       {/* Background Effects */}
       {/* <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
@@ -97,7 +99,7 @@ export function Hero() {
       {/* Text Section */}
       <motion.div 
         variants={staggerContainer.variants}
-        className="flex-1 flex flex-col justify-center pl-10 items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-6 lg:space-y-8 order-2 lg:order-1 mt-8 lg:mt-0 z-10"
+        className="flex-1 flex flex-col justify-center  items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-6 lg:space-y-8 order-2 lg:order-1 mt-8 lg:mt-0 z-10"
       >
         <div className="space-y-2 sm:space-y-3 lg:space-y-4 max-w-3xl mx-auto lg:mx-0">
           <motion.h1 
@@ -108,7 +110,7 @@ export function Hero() {
           </motion.h1>
           <motion.h2 
             variants={fadeInUp}
-            className="font-['CustomFont'] leading-tight text-4xl sm:text-5xl lg:text-6xl text-[#711f50] dark:text-gray-100"
+            className="font-['CustomFont'] leading-tight text-4xl sm:text-6xl lg:text-6xl text-[#711f50] dark:text-gray-100"
           >
             
           </motion.h2>
@@ -119,7 +121,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="min-h-[60px] sm:min-h-[800px] lg:min-h-[100px] flex items-center font-['CustomFont'] leading-tight text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent "
+              className="min-h-[70px] sm:min-h-[80px] lg:min-h-[100px] flex items-center justify-center font-['CustomFont'] leading-tight text-5xl sm:text-6xl lg:text-6xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent"
             >
               {tags[currentTag]}
             </motion.div>
@@ -202,9 +204,21 @@ export function Hero() {
       </motion.div>
 
       {/* Image/Compare Section */}
-      <div className="flex-1 order-1 mt-6 lg:order-2 h-[300px] sm:h-[400px] md:h-[500px] ">
-        <div className="relative  rounded-3xl h-full">
-          <CompareDemo />
+      <div className="flex-1 order-1 mt-6 lg:order-2 h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center">
+        <div className="relative rounded-3xl h-full w-full overflow-hidden flex justify-center items-center  ">
+          {isMobile ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover rounded-3xl"
+            >
+              <source src="/bgvideo.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <CompareDemo />
+          )}
         </div>
       </div>
     </motion.div>

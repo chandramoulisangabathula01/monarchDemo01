@@ -7,111 +7,80 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white pt-10">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
-1        <div className="text-center mb-12">
-          <h1 className="text-6xl font-bold mb-6 text-[#711f50]">Monarch Painters</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We are a family business with extensive experience in the residential and commercial decoration industry. Our team of excellent interior and exterior painters brings over 35 years of combined expertise to every project. Rated 5-stars on Google, we continue to strive for excellence in everything that we do!
-          </p>
-          <button className="mt-8 px-6 py-3 bg-purple-50 text-[#711f50] rounded-full hover:bg-[#d1e9e4] transition-colors">
-            Get a Free Quote
-          </button>
-        </div>
-
-        {/* Mission, Vision, Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="bg-purple-50 p-8 rounded-2xl text-center"
-          >
-            <div className="mb-4 flex justify-center items-center">
-              <Image src="/images/flag.svg" alt="Mission icon" width={40} height={40} />
-            </div>
-            <h3 className="text-2xl font-bold mb-2 text-[#711f50]">Mission</h3>
-            <p className="text-gray-600">To provide the highest quality finish at fair prices, never cutting corners on any job.</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="bg-purple-50 p-8 rounded-2xl text-center"
-          >
-            <div className="mb-4 flex justify-center items-center">
-              <Image src="/images/eye.svg" alt="Vision icon" width={40} height={40} />
-            </div>
-            <h3 className="text-2xl font-bold mb-2 text-[#711f50]">Vision</h3>
-            <p className="text-gray-600">To be the most trusted choice for painting and decorating services across Staffordshire.</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="bg-purple-50 p-8 rounded-2xl text-center"
-          >
-            <div className="mb-4 flex justify-center items-center">
-              <Image src="/images/target.svg" alt="Values icon" width={40} height={40} />
-            </div>
-            <h3 className="text-2xl font-bold mb-2 text-[#711f50]">Values</h3>
-            <p className="text-gray-600">Excellence, professionalism, and attention to detail in every project we undertake.</p>
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* Team Section */}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-[#711f50]">More Than Just Painters.<br />We're Your Decoration Partners.</h2>
+          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-[#711f50] to-[#e6ab65] bg-clip-text text-transparent">More Than Just Painters.<br />We're Your Decoration Partners.</h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative h-[400px] rounded-2xl overflow-hidden">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="relative h-[500px] rounded-3xl overflow-hidden group transform hover:scale-[1.02] transition-all duration-500 shadow-2xl">
             <Image
               src="./images/14.png"
               alt="Our team"
               fill
               style={{ objectFit: 'cover' }}
-              className="rounded-2xl"
+              className="rounded-3xl transform group-hover:scale-110 transition-transform duration-700"
             />
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold mb-4 text-[#711f50]">Who We Are</h3>
-            <p className="text-gray-600 mb-6">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 p-8 bg-white/5 backdrop-blur-lg rounded-3xl border border-white/10 hover:border-[#711f50]/20 transition-all duration-300">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-[#711f50] to-[#e6ab65] bg-clip-text text-transparent">Who We Are</h3>
+            <p className="text-gray-600 text-lg leading-relaxed">
               At Monarch Painters, our team of exceptional painters and decorators brings a distinctive touch to every project. We pour our passion, intellect, and extensive experience into crafting spaces that not only mirror your unique preferences but also elevate your property's aesthetics to new heights.
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-700 text-lg leading-relaxed">
               With over three decades of experience in all facets of commercial and residential painting and decorating, we excel in high-end development projects. We pledge to complete our work to an exceptionally high standard, on budget, and within the stipulated time frame.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* What We Do Section */}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl font-bold mb-4 text-[#711f50]">What We Do</h3>
-            <p className="text-gray-600 mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 p-8 bg-white/5 backdrop-blur-lg rounded-3xl border border-white/10 hover:border-[#711f50]/20 transition-all duration-300 order-2 lg:order-1">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-[#711f50] to-[#e6ab65] bg-clip-text text-transparent">What We Do</h3>
+            <p className="text-gray-600 text-lg leading-relaxed">
               We provide top-quality painting solutions tailored to meet your specific needs, regardless of the project's scope or scale. Our services cater to both residential and commercial clients, offering fresh painting for new constructions or repainting for renovations, covering both interior and exterior applications.
             </p>
-            <button className="px-6 py-3 bg-[#e6f3f0] text-[#711f50] rounded-full hover:bg-[#d1e9e4] transition-colors">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-[#711f50] text-white rounded-xl hover:bg-[#8b2762] transform transition-all duration-300 shadow-lg hover:shadow-[#711f50]/30">
               View Our Services
-            </button>
-          </div>
-          <div className="relative h-[400px] rounded-2xl overflow-hidden">
+            </motion.button>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="relative h-[500px] rounded-3xl overflow-hidden group transform hover:scale-[1.02] transition-all duration-500 shadow-2xl order-1 lg:order-2">
             <Image
               src="/images/15.png"
               alt="Team working"
               fill
               style={{ objectFit: 'cover' }}
-              className="rounded-2xl"
+              className="rounded-3xl transform group-hover:scale-110 transition-transform duration-700"
             />
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </motion.div>
         </div>
       </section>
 
@@ -170,22 +139,45 @@ export default function About() {
       <Testimonials/>
 
       {/* Final CTA Section */}
-      <section className="relative h-[600px] mt-16">
-        <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent z-10" />
-        <Image
-          src="/images/15.png"
-          alt="Professional painting work"
-          fill
-          style={{ objectFit: 'cover' }}
-        />
-        <div className="relative z-20 max-w-7xl mx-auto px-4 py-16 flex flex-col items-center justify-center h-full">
-          <h2 className="text-5xl font-bold mb-6 text-[#711f50] text-center">Transform Your Space<br />with Monarch Painters</h2>
-          <p className="text-2xl text-gray-600 mb-10 text-center max-w-3xl">Serving Rugeley, Lichfield, Tamworth, Sutton Coldfield, Birmingham, and beyond.</p>
-          <button className="px-8 py-4 bg-[#e6f3f0] text-[#711f50] rounded-full hover:bg-[#d1e9e4] transition-colors text-xl">
-            Get a Free Quote
-          </button>
+      <section className="relative h-[80vh] mt-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-black/70 z-10" />
+        <motion.div
+          initial={{ scale: 1.1 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/images/15.png"
+            alt="Professional painting work"
+            fill
+            style={{ objectFit: 'cover' }}
+            className="transform scale-105"
+          />
+        </motion.div>
+        <div className="relative z-20 max-w-7xl mx-auto px-4 h-full flex flex-col items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center space-y-8 max-w-4xl mx-auto backdrop-blur-sm bg-white/5 p-12 rounded-3xl border border-white/10"
+          >
+            <h2 className="text-6xl font-bold bg-gradient-to-r from-white to-[#e6ab65] bg-clip-text text-transparent">
+              Transform Your Space with Monarch Painters
+            </h2>
+            <p className="text-2xl text-white/90">
+              Serving Rugeley, Lichfield, Tamworth, Sutton Coldfield, Birmingham, and beyond.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-5 bg-[#711f50] text-white rounded-xl hover:bg-[#8b2762] transform transition-all duration-300 shadow-lg hover:shadow-[#711f50]/30 text-xl font-semibold group relative overflow-hidden"
+            >
+              <span className="relative z-10">Get a Free Quote</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#e6ab65] to-[#711f50] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </motion.button>
+          </motion.div>
         </div>
-        
       </section>
       
       <Footer/>
