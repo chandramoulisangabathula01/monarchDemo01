@@ -1,9 +1,12 @@
 // "use client"
-// import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect, useRef } from 'react';
 // import { MessageSquare, User, Phone, Facebook, Twitter, Linkedin, Youtube, Globe, Zap, Clock, Award, Users, CheckCircle, MapPin, Mail, ArrowRight } from 'lucide-react';
 // import { motion, AnimatePresence } from 'framer-motion';
+// import Footer from '@/components/footer';
+// import emailjs from '@emailjs/browser';
 
 // function App() {
+//   const form = useRef<HTMLFormElement>(null);
 //   const [formData, setFormData] = useState({
 //     name: '',
 //     email: '',
@@ -21,6 +24,7 @@
 //   const [isLoaded, setIsLoaded] = useState(false);
 //   const [activeField, setActiveField] = useState<string | null>(null);
 //   const [activeTab, setActiveTab] = useState('about');
+//   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
 //   useEffect(() => {
 //     setIsLoaded(true);
@@ -28,10 +32,13 @@
 
 //   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 //     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: value
-//     });
+//     if (name === 'user_name') {
+//       setFormData(prev => ({ ...prev, name: value }));
+//     } else if (name === 'user_email') {
+//       setFormData(prev => ({ ...prev, email: value }));
+//     } else if (name === 'message') {
+//       setFormData(prev => ({ ...prev, project: value }));
+//     }
 //   };
 
 //   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,10 +52,50 @@
 //     });
 //   };
 
-//   const handleSubmit = (e: React.FormEvent) => {
+//   const handleSubmit = async (e: React.FormEvent) => {
 //     e.preventDefault();
-//     console.log('Form submitted:', formData);
-//     // Handle form submission logic here
+//     setSubmitStatus('loading');
+
+//     if (!form.current) return;
+
+//     try {
+//       await emailjs.sendForm(
+//         'service_o6is7uj',
+//         'template_g4wyoks',
+//         form.current,
+//         'mmRjUSitj7ijVe0N8'
+//       );
+
+//       console.log('SUCCESS!');
+//       setSubmitStatus('success');
+      
+//       // Reset form
+//       setFormData({
+//         name: '',
+//         email: '',
+//         project: '',
+//         services: {
+//           websiteDesign: false,
+//           uxDesign: false,
+//           userResearch: false,
+//           contentCreation: false,
+//           strategyConsulting: false,
+//           other: false
+//         }
+//       });
+
+//       // Clear form fields
+//       if (form.current) {
+//         form.current.reset();
+//       }
+
+//       // Show success message
+//       alert('Message sent successfully!');
+//     } catch (error) {
+//       console.error('FAILED...', error);
+//       setSubmitStatus('error');
+//       alert('Failed to send message. Please try again.');
+//     }
 //   };
 
 //   const handleFocus = (fieldName: string) => {
@@ -110,55 +157,55 @@
 //   }, []);
 
 //   // Team members data
-//   // const teamMembers = [
-//   //   {
-//   //     name: "Sarah Johnson",
-//   //     role: "Creative Director",
-//   //     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
-//   //   },
-//   //   {
-//   //     name: "Michael Chen",
-//   //     role: "Lead Designer",
-//   //     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
-//   //   },
-//   //   {
-//   //     name: "Aisha Patel",
-//   //     role: "UX Specialist",
-//   //     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
-//   //   },
-//   //   {
-//   //     name: "David Rodriguez",
-//   //     role: "Project Manager",
-//   //     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
-//   //   }
-//   // ];
+//   const teamMembers = [
+//     {
+//       name: "Sarah Johnson",
+//       role: "Creative Director",
+//       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+//     },
+//     {
+//       name: "Michael Chen",
+//       role: "Lead Designer",
+//       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+//     },
+//     {
+//       name: "Aisha Patel",
+//       role: "UX Specialist",
+//       image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+//     },
+//     {
+//       name: "David Rodriguez",
+//       role: "Project Manager",
+//       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+//     }
+//   ];
 
 //   // FAQ data
-//   // const faqs = [
-//   //   {
-//   //     question: "What services do you offer?",
-//   //     answer: "We offer a comprehensive range of design services including website design, UX/UI design, user research, content creation, and strategic consulting. Our team works closely with clients to deliver tailored solutions that meet their specific needs and objectives."
-//   //   },
-//   //   {
-//   //     question: "How long does a typical project take?",
-//   //     answer: "Project timelines vary depending on scope and complexity. A simple website redesign might take 4-6 weeks, while a comprehensive UX overhaul could take 2-3 months. During our initial consultation, we'll provide a detailed timeline based on your specific requirements."
-//   //   },
-//   //   {
-//   //     question: "What is your design process?",
-//   //     answer: "Our design process includes discovery (understanding your needs), research (analyzing your audience and competitors), conceptualization (creating initial designs), iteration (refining based on feedback), and implementation (delivering the final product). We maintain open communication throughout to ensure your vision is realized."
-//   //   },
-//   //   {
-//   //     question: "Do you offer ongoing support after project completion?",
-//   //     answer: "Yes, we offer various support packages to ensure your digital products continue to perform optimally. These include maintenance, updates, performance monitoring, and continuous improvement based on user feedback and analytics."
-//   //   }
-//   // ];
+//   const faqs = [
+//     {
+//       question: "What services do you offer?",
+//       answer: "We offer a comprehensive range of design services including website design, UX/UI design, user research, content creation, and strategic consulting. Our team works closely with clients to deliver tailored solutions that meet their specific needs and objectives."
+//     },
+//     {
+//       question: "How long does a typical project take?",
+//       answer: "Project timelines vary depending on scope and complexity. A simple website redesign might take 4-6 weeks, while a comprehensive UX overhaul could take 2-3 months. During our initial consultation, we'll provide a detailed timeline based on your specific requirements."
+//     },
+//     {
+//       question: "What is your design process?",
+//       answer: "Our design process includes discovery (understanding your needs), research (analyzing your audience and competitors), conceptualization (creating initial designs), iteration (refining based on feedback), and implementation (delivering the final product). We maintain open communication throughout to ensure your vision is realized."
+//     },
+//     {
+//       question: "Do you offer ongoing support after project completion?",
+//       answer: "Yes, we offer various support packages to ensure your digital products continue to perform optimally. These include maintenance, updates, performance monitoring, and continuous improvement based on user feedback and analytics."
+//     }
+//   ];
 
 //   return (
-//     <div className="min-h-screen bg-[#ede2db] flex flex-col items-center justify-center overflow-hidden relative">
+//     <div className="min-h-screen bg-[#d9c2d4] flex flex-col items-center justify-center overflow-hidden relative">
 //       {/* Animated background elements */}
 //       <div className="absolute inset-0 overflow-hidden">
 //         <motion.div 
-//           className="absolute w-[40rem] h-[40rem] rounded-full bg-gradient-to-r from-[#e6ab65]/20 to-[#ede2db]/30 blur-3xl"
+//           className="absolute w-[40rem] h-[40rem] rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl"
 //           animate={{
 //             x: mousePosition.x * 0.05,
 //             y: mousePosition.y * 0.05,
@@ -167,7 +214,7 @@
 //           style={{ top: '10%', left: '10%' }}
 //         />
 //         <motion.div 
-//           className="absolute w-[40rem] h-[40rem] rounded-full bg-gradient-to-r from-[#711f50]/20 to-[#e6ab65]/20 blur-3xl"
+//           className="absolute w-[40rem] h-[40rem] rounded-full bg-gradient-to-r from-[#711f50]/20 to-[#711f50]/20 blur-3xl"
 //           animate={{
 //             x: mousePosition.x * -0.05,
 //             y: mousePosition.y * -0.05,
@@ -177,6 +224,52 @@
 //         />
 //       </div>
 
+//       {/* Header Section */}
+//       {/* <motion.header 
+//         className="w-full bg-slate-900/50 backdrop-blur-md border-b border-white/10 py-6 px-8 fixed top-0 z-50"
+//         initial={{ y: -100 }}
+//         animate={{ y: 0 }}
+//         transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+//       >
+//         <div className="max-w-7xl mx-auto flex justify-between items-center">
+//           <motion.div 
+//             className="flex items-center space-x-2"
+//             whileHover={{ scale: 1.05 }}
+//             transition={{ type: "spring", stiffness: 400 }}
+//           >
+//             <Zap className="w-8 h-8 text-[#e6ab65]" />
+//             <span className="text-2xl font-bold text-white">Monarch Painters</span>
+//           </motion.div>
+          
+//           <motion.nav className="hidden md:flex space-x-8">
+//             {[
+//               { name: "About", href: "#about" },
+//               { name: "Services", href: "#services" },
+//               { name: "Team", href: "#team" },
+//               { name: "FAQ", href: "#faq" },
+//               { name: "Contact", href: "#contact" }
+//             ].map((item) => (
+//               <motion.a
+//                 key={item.name}
+//                 href={item.href}
+//                 className="text-blue-100/80 hover:text-[#e6ab65] transition-colors"
+//                 whileHover={{ scale: 1.1 }}
+//                 whileTap={{ scale: 0.95 }}
+//               >
+//                 {item.name}
+//               </motion.a>
+//             ))}
+//           </motion.nav>
+          
+//           <motion.button
+//             className="bg-gradient-to-r from-[#711f50] to-[#e6ab65] text-white px-6 py-2 rounded-lg hover:opacity-90 transition-all"
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//           >
+//             Get a Quote
+//           </motion.button>
+//         </div>
+//       </motion.header> */}
 
 //       {/* Main Contact Section */}
 //       <section id="contact" className="w-full max-w-7xl pt-32 pb-16 px-4">
@@ -265,7 +358,7 @@
 
 //           {/* Right Column - Contact Form */}
 //           <motion.div 
-//             className="w-full md:w-3/5 p-12 lg:p-16 relative overflow-hidden"
+//             className="w-full md:w-3/5 p-12  lg:p-16 relative overflow-hidden"
 //             initial={{ x: 100, opacity: 0 }}
 //             animate={{ x: 0, opacity: 1 }}
 //             transition={{ duration: 0.5, delay: 0.2 }}
@@ -296,6 +389,7 @@
 //               </motion.div>
 
 //               <motion.form 
+//                 ref={form}
 //                 onSubmit={handleSubmit}
 //                 variants={containerVariants}
 //                 initial="hidden"
@@ -306,7 +400,7 @@
 //                   <div className="relative group">
 //                     <motion.input
 //                       type="text"
-//                       name="name"
+//                       name="user_name"
 //                       value={formData.name}
 //                       onChange={handleInputChange}
 //                       onFocus={() => handleFocus('name')}
@@ -323,7 +417,7 @@
 //                   <div className="relative group">
 //                     <motion.input
 //                       type="email"
-//                       name="email"
+//                       name="user_email"
 //                       value={formData.email}
 //                       onChange={handleInputChange}
 //                       onFocus={() => handleFocus('email')}
@@ -339,7 +433,7 @@
 //                 <motion.div variants={formItemVariants}>
 //                   <div className="relative group">
 //                     <motion.textarea
-//                       name="project"
+//                       name="message"
 //                       value={formData.project}
 //                       onChange={handleInputChange}
 //                       onFocus={() => handleFocus('project')}
@@ -348,39 +442,6 @@
 //                       className="w-full bg-[#ede2db]/30 border-2 border-[#711f50]/20 rounded-xl px-6 py-4 text-[#711f50] placeholder:text-[#711f50]/50 focus:outline-none focus:border-[#e6ab65]/70 transition-all duration-300 min-h-[120px] resize-none"
 //                       animate={activeField === 'project' ? { scale: 1.02 } : { scale: 1 }}
 //                     />
-//                   </div>
-//                 </motion.div>
-
-//                 <motion.div variants={formItemVariants} className="space-y-4">
-//                   <p className="text-[#711f50] font-medium">How can we help?</p>
-//                   <div className="grid grid-cols-2 gap-4">
-//                     {[
-//                       { id: 'websiteDesign', label: 'Website design' },
-//                       { id: 'uxDesign', label: 'UX design' },
-//                       { id: 'userResearch', label: 'User research' },
-//                       { id: 'contentCreation', label: 'Content creation' },
-//                       { id: 'strategyConsulting', label: 'Strategy & consulting' },
-//                       { id: 'other', label: 'Other' }
-//                     ].map((service) => (
-//                       <div key={service.id} className="flex items-center space-x-3">
-//                         <motion.div
-//                           animate={formData.services[service.id as keyof typeof formData.services] ? "checked" : "unchecked"}
-//                           variants={checkboxVariants}
-//                           className="relative"
-//                         >
-//                           <input
-//                             type="checkbox"
-//                             id={service.id}
-//                             name={service.id}
-//                             checked={formData.services[service.id as keyof typeof formData.services]}
-//                             onChange={handleCheckboxChange}
-//                             className="appearance-none w-5 h-5 border-2 border-[#711f50]/30 rounded checked:bg-[#e6ab65] checked:border-[#e6ab65] transition-all duration-200 cursor-pointer"
-//                           />
-//                           <CheckCircle className={`w-5 h-5 text-white absolute top-0 left-0 pointer-events-none transition-opacity duration-200 ${formData.services[service.id as keyof typeof formData.services] ? 'opacity-100' : 'opacity-0'}`} />
-//                         </motion.div>
-//                         <label htmlFor={service.id} className="text-[#711f50] cursor-pointer">{service.label}</label>
-//                       </div>
-//                     ))}
 //                   </div>
 //                 </motion.div>
 
@@ -415,7 +476,7 @@
 //           className="mb-12 text-center"
 //         >
 //           <h2 className="text-4xl font-bold text-[#711f50] mb-4">Find Us</h2>
-//           <p className="text-[#711f50]/80 text-xl max-w-3xl mx-auto">
+//           <p className="text-blue-100/80 text-xl max-w-3xl mx-auto">
 //             Visit our studio to see our work in person and discuss your project with our team.
 //           </p>
 //         </motion.div>
@@ -425,7 +486,7 @@
 //           whileInView={{ opacity: 1, y: 0 }}
 //           transition={{ duration: 0.5, delay: 0.2 }}
 //           viewport={{ once: true }}
-//           className="rounded-2xl overflow-hidden shadow-2xl border border-[#711f50]/10 h-[500px] relative"
+//           className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 h-[500px] relative"
 //         >
 //           {/* Map iframe */}
 //           <iframe 
@@ -442,40 +503,40 @@
 
 //           {/* Map overlay with location details */}
 //           <motion.div 
-//             className="absolute top-8 left-8 bg-white/90 backdrop-blur-md p-8 rounded-xl border border-[#711f50]/10 max-w-md shadow-lg"
+//             className="absolute top-8 left-8 bg-slate-900/90 backdrop-blur-md p-8 rounded-xl border border-white/10 max-w-md"
 //             initial={{ x: -50, opacity: 0 }}
 //             whileInView={{ x: 0, opacity: 1 }}
 //             transition={{ delay: 0.5, duration: 0.5 }}
 //             viewport={{ once: true }}
 //           >
-//             <h3 className="text-2xl font-bold text-[#711f50] mb-4">Our Studio</h3>
+//             <h3 className="text-2xl font-bold text-white mb-4">Our Studio</h3>
 //             <div className="space-y-4">
 //               <div className="flex items-start space-x-4">
 //                 <MapPin className="w-6 h-6 text-[#e6ab65] mt-1" />
 //                 <div>
-//                   <p className="text-[#711f50]">123 Creative Avenue</p>
-//                   <p className="text-[#711f50]">Design District, NY 10001</p>
+//                   <p className="text-white">123 Creative Avenue</p>
+//                   <p className="text-white">Design District, NY 10001</p>
 //                 </div>
 //               </div>
 //               <div className="flex items-start space-x-4">
 //                 <Phone className="w-6 h-6 text-[#e6ab65] mt-1" />
-//                 <p className="text-[#711f50]">+1 (234) 567-890</p>
+//                 <p className="text-white">+1 (234) 567-890</p>
 //               </div>
 //               <div className="flex items-start space-x-4">
 //                 <Mail className="w-6 h-6 text-[#e6ab65] mt-1" />
-//                 <p className="text-[#711f50]">contact@monarchpainters.com</p>
+//                 <p className="text-white">contact@monarchpainters.com</p>
 //               </div>
 //               <div className="flex items-start space-x-4">
 //                 <Clock className="w-6 h-6 text-[#e6ab65] mt-1" />
 //                 <div>
-//                   <p className="text-[#711f50]">Monday - Friday: 9am - 6pm</p>
-//                   <p className="text-[#711f50]">Saturday: 10am - 4pm</p>
-//                   <p className="text-[#711f50]">Sunday: Closed</p>
+//                   <p className="text-white">Monday - Friday: 9am - 6pm</p>
+//                   <p className="text-white">Saturday: 10am - 4pm</p>
+//                   <p className="text-white">Sunday: Closed</p>
 //                 </div>
 //               </div>
 //             </div>
 //             <motion.button
-//               className="mt-6 bg-gradient-to-r from-[#711f50] to-[#e6ab65] text-white px-6 py-3 rounded-lg flex items-center space-x-2 hover:opacity-90 transition-all w-full justify-center"
+//               className="mt-6 bg-gradient-to-r from-[#711f50] to-[#e6ab65] text-white px-6 py-3 rounded-full flex items-center space-x-2 hover:opacity-90 transition-all w-full justify-center"
 //               whileHover={{ scale: 1.05 }}
 //               whileTap={{ scale: 0.95 }}
 //             >
@@ -495,8 +556,8 @@
 //           viewport={{ once: true }}
 //           className="mb-12 text-center"
 //         >
-//           <h2 className="text-4xl font-bold text-[#711f50] mb-4">About Monarch Painters</h2>
-//           <p className="text-[#711f50]/80 text-xl max-w-3xl mx-auto">
+//           <h2 className="text-4xl font-bold text-white mb-4">About Monarch Painters</h2>
+//           <p className="text-blue-100/80 text-xl max-w-3xl mx-auto">
 //             We're a team of passionate designers and artists dedicated to transforming spaces with creativity and precision.
 //           </p>
 //         </motion.div>
@@ -523,33 +584,33 @@
 //             viewport={{ once: true }}
 //             className="space-y-6"
 //           >
-//             <h3 className="text-3xl font-bold text-[#711f50]">Our Story</h3>
-//             <p className="text-[#711f50]/80 text-lg">
+//             <h3 className="text-3xl font-bold text-white">Our Story</h3>
+//             <p className="text-blue-100/80 text-lg">
 //               Founded in 2010, Monarch Painters began with a simple mission: to create beautiful, functional spaces that inspire and delight. Over the years, we've grown from a small team of passionate artists to a full-service design studio with clients across the globe.
 //             </p>
-//             <p className="text-[#711f50]/80 text-lg">
+//             <p className="text-blue-100/80 text-lg">
 //               Our approach combines artistic vision with technical expertise, allowing us to deliver exceptional results that exceed expectations. We believe that great design should be accessible to everyone, which is why we work closely with each client to understand their unique needs and preferences.
 //             </p>
 
 //             <div className="grid grid-cols-2 gap-6 pt-4">
 //               <motion.div 
-//                 className="flex flex-col items-center text-center p-6 bg-white/50 rounded-xl border border-[#711f50]/10 shadow-sm"
+//                 className="flex flex-col items-center text-center p-6 bg-white/5 rounded-xl border border-white/10"
 //                 whileHover={{ y: -5, scale: 1.03 }}
 //                 transition={{ type: "spring", stiffness: 300 }}
 //               >
 //                 <Award className="w-10 h-10 text-[#e6ab65] mb-4" />
-//                 <h4 className="text-xl font-bold text-[#711f50] mb-2">Award Winning</h4>
-//                 <p className="text-[#711f50]/70">Recognized for excellence in design and innovation</p>
+//                 <h4 className="text-xl font-bold text-white mb-2">Award Winning</h4>
+//                 <p className="text-blue-100/80">Recognized for excellence in design and innovation</p>
 //               </motion.div>
 
 //               <motion.div 
-//                 className="flex flex-col items-center text-center p-6 bg-white/50 rounded-xl border border-[#711f50]/10 shadow-sm"
+//                 className="flex flex-col items-center text-center p-6 bg-white/5 rounded-xl border border-white/10"
 //                 whileHover={{ y: -5, scale: 1.03 }}
 //                 transition={{ type: "spring", stiffness: 300 }}
 //               >
 //                 <Users className="w-10 h-10 text-[#e6ab65] mb-4" />
-//                 <h4 className="text-xl font-bold text-[#711f50] mb-2">Expert Team</h4>
-//                 <p className="text-[#711f50]/70">Talented professionals with years of experience</p>
+//                 <h4 className="text-xl font-bold text-white mb-2">Expert Team</h4>
+//                 <p className="text-blue-100/80">Talented professionals with years of experience</p>
 //               </motion.div>
 //             </div>
 //           </motion.div>
@@ -565,8 +626,8 @@
 //           viewport={{ once: true }}
 //           className="mb-12 text-center"
 //         >
-//           <h2 className="text-4xl font-bold text-[#711f50] mb-4">Our Services</h2>
-//           <p className="text-[#711f50]/80 text-xl max-w-3xl mx-auto">
+//           <h2 className="text-4xl font-bold text-white mb-4">Our Services</h2>
+//           <p className="text-blue-100/80 text-xl max-w-3xl mx-auto">
 //             We offer a comprehensive range of design services to help bring your vision to life.
 //           </p>
 //         </motion.div>
@@ -611,11 +672,11 @@
 //               transition={{ duration: 0.5, delay: index * 0.1 }}
 //               viewport={{ once: true }}
 //               whileHover={{ y: -10, scale: 1.03 }}
-//               className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-[#711f50]/10 flex flex-col h-full shadow-sm"
+//               className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 flex flex-col h-full"
 //             >
 //               <div className="mb-6">{service.icon}</div>
-//               <h3 className="text-2xl font-bold text-[#711f50] mb-4">{service.title}</h3>
-//               <p className="text-[#711f50]/80 flex-grow">{service.description}</p>
+//               <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+//               <p className="text-blue-100/80 flex-grow">{service.description}</p>
 //               <motion.a
 //                 href="#contact"
 //                 className="mt-6 text-[#e6ab65] flex items-center space-x-2 group"
@@ -638,8 +699,8 @@
 //           viewport={{ once: true }}
 //           className="mb-12 text-center"
 //         >
-//           <h2 className="text-4xl font-bold text-[#711f50] mb-4">Meet Our Team</h2>
-//           <p className="text-[#711f50]/80 text-xl max-w-3xl mx-auto">
+//           <h2 className="text-4xl font-bold text-white mb-4">Meet Our Team</h2>
+//           <p className="text-blue-100/80 text-xl max-w-3xl mx-auto">
 //             The talented professionals behind our exceptional work.
 //           </p>
 //         </motion.div>
@@ -653,7 +714,7 @@
 //               transition={{ duration: 0.5, delay: index * 0.1 }}
 //               viewport={{ once: true }}
 //               whileHover={{ y: -10 }}
-//               className="bg-white/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#711f50]/10 shadow-sm"
+//               className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10"
 //             >
 //               <div className="h-64 overflow-hidden">
 //                 <img 
@@ -663,14 +724,14 @@
 //                 />
 //               </div>
 //               <div className="p-6 text-center">
-//                 <h3 className="text-xl font-bold text-[#711f50] mb-1">{member.name}</h3>
+//                 <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
 //                 <p className="text-[#e6ab65]">{member.role}</p>
 //                 <div className="flex justify-center space-x-4 mt-4">
 //                   {[Twitter, Linkedin, Mail].map((Icon, i) => (
 //                     <motion.a
 //                       key={i}
 //                       href="#"
-//                       className="text-[#711f50]/60 hover:text-[#e6ab65] transition-colors"
+//                       className="text-blue-100/60 hover:text-[#e6ab65] transition-colors"
 //                       whileHover={{ scale: 1.2, rotate: 5 }}
 //                       whileTap={{ scale: 0.9 }}
 //                     >
@@ -693,8 +754,8 @@
 //           viewport={{ once: true }}
 //           className="mb-12 text-center"
 //         >
-//           <h2 className="text-4xl font-bold text-[#711f50] mb-4">Frequently Asked Questions</h2>
-//           <p className="text-[#711f50]/80 text-xl max-w-3xl mx-auto">
+//           <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+//           <p className="text-blue-100/80 text-xl max-w-3xl mx-auto">
 //             Find answers to common questions about our services and process.
 //           </p>
 //         </motion.div>
@@ -707,13 +768,13 @@
 //               whileInView={{ opacity: 1, y: 0 }}
 //               transition={{ duration: 0.5, delay: index * 0.1 }}
 //               viewport={{ once: true }}
-//               className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-[#711f50]/10 shadow-sm"
+//               className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
 //             >
-//               <h3 className="text-xl font-bold text-[#711f50] mb-4 flex items-start">
+//               <h3 className="text-xl font-bold text-white mb-4 flex items-start">
 //                 <span className="text-[#e6ab65] mr-4 text-2xl">Q.</span>
 //                 {faq.question}
 //               </h3>
-//               <p className="text-[#711f50]/80 pl-8">{faq.answer}</p>
+//               <p className="text-blue-100/80 pl-8">{faq.answer}</p>
 //             </motion.div>
 //           ))}
 //         </div>
@@ -725,7 +786,7 @@
 //           viewport={{ once: true }}
 //           className="mt-12 text-center"
 //         >
-//           <p className="text-[#711f50]/80 text-lg mb-6">
+//           <p className="text-blue-100/80 text-lg mb-6">
 //             Still have questions? We're here to help!
 //           </p>
 //           <motion.a
@@ -749,8 +810,8 @@
 //           viewport={{ once: true }}
 //           className="mb-12 text-center"
 //         >
-//           <h2 className="text-4xl font-bold text-[#711f50] mb-4">What Our Clients Say </h2>
-//           <p className="text-[#711f50]/80 text-xl max-w-3xl mx-auto">
+//           <h2 className="text-4xl font-bold text-[#711f50] mb-4">What Our Clients Say</h2>
+//           <p className="text-black text-xl max-w-3xl mx-auto">
 //             Don't just take our word for it - hear from our satisfied clients.
 //           </p>
 //         </motion.div>
@@ -782,15 +843,15 @@
 //               whileInView={{ opacity: 1, y: 0 }}
 //               transition={{ duration: 0.5, delay: index * 0.1 }}
 //               viewport={{ once: true }}
-//               className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-[#711f50]/10 relative shadow-sm"
+//               className="bg-[#711f50]/60 backdrop-blur-sm rounded-2xl p-8 border border-white/10 relative"
 //             >
 //               <div className="absolute -top-6 left-8">
 //                 <svg className="w-12 h-12 text-[#e6ab65]" fill="currentColor" viewBox="0 0 24 24">
-//                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+//                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
 //                 </svg>
 //               </div>
 //               <div className="pt-6">
-//                 <p className="text-[#711f50]/80 mb-6 italic">{testimonial.quote}</p>
+//                 <p className="text-blue-100/80 mb-6 italic">{testimonial.quote}</p>
 //                 <div className="flex items-center">
 //                   <img 
 //                     src={testimonial.image} 
@@ -798,8 +859,8 @@
 //                     className="w-12 h-12 rounded-full object-cover mr-4"
 //                   />
 //                   <div>
-//                     <h4 className="text-[#711f50] font-bold">{testimonial.name}</h4>
-//                     <p className="text-[#711f50]/60 text-sm">{testimonial.role}</p>
+//                     <h4 className="text-white font-bold">{testimonial.name}</h4>
+//                     <p className="text-blue-100/60 text-sm">{testimonial.role}</p>
 //                   </div>
 //                 </div>
 //               </div>
@@ -815,7 +876,7 @@
 //           whileInView={{ opacity: 1, scale: 1 }}
 //           transition={{ duration: 0.5 }}
 //           viewport={{ once: true }}
-//           className="bg-gradient-to-r from-[#711f50] to-[#e6ab65] rounded-3xl p-12 relative overflow-hidden"
+//           className="bg-gradient-to-r from-[#711f50] to-[#e6ab65]/80 rounded-3xl p-12 relative overflow-hidden"
 //         >
 //           <div className="absolute inset-0 overflow-hidden">
 //             <svg className="absolute top-0 right-0 text-white/5 w-96 h-96" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -878,102 +939,8 @@
 //       </section> */}
 
 //       {/* Footer */}
-//       <footer className="w-full bg-[#711f50]/90 backdrop-blur-md border-t border-white/10 py-12 mt-16">
-//         <div className="max-w-7xl mx-auto px-4">
-//           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-//             <div className="space-y-6">
-//               <div className="flex items-center space-x-2">
-//                 <Zap className="w-8 h-8 text-[#e6ab65]" />
-//                 <span className="text-2xl font-bold text-white">Monarch Painters</span>
-//               </div>
-//               <p className="text-[#ede2db]/90">
-//                 Transforming spaces with creativity and precision since 2010.
-//               </p>
-//               <div className="flex space-x-4">
-//                 {[Facebook, Twitter, Linkedin, Youtube, Globe].map((Icon, index) => (
-//                   <motion.a 
-//                     key={index}
-//                     href="#" 
-//                     className="text-[#ede2db]/60 hover:text-[#e6ab65] transition-all duration-300"
-//                     whileHover={{ scale: 1.2, rotate: 5 }}
-//                     whileTap={{ scale: 0.9 }}
-//                   >
-//                     <Icon className="w-5 h-5" />
-//                   </motion.a>
-//                 ))}
-//               </div>
-//             </div>
-
-//             <div>
-//               <h3 className="text-xl font-bold text-white mb-6">Services</h3>
-//               <ul className="space-y-4">
-//                 {["Interior Painting", "Exterior Painting", "Commercial Painting", "Decorative Finishes", "Color Consultation", "Cabinet Refinishing"].map((service, index) => (
-//                   <li key={index}>
-//                     <a href="#services" className="text-[#ede2db]/90 hover:text-[#e6ab65] transition-colors">
-//                       {service}
-//                     </a>
-//                   </li>
-//                 ))}
-//               </ul>
-//             </div>
-
-//             <div>
-//               <h3 className="text-xl font-bold text-white mb-6">Company</h3>
-//               <ul className="space-y-4">
-//                 {["About Us", "Our Team", "Testimonials", "Portfolio", "Careers", "Blog"].map((item, index) => (
-//                   <li key={index}>
-//                     <a href="#" className="text-[#ede2db]/90 hover:text-[#e6ab65] transition-colors">
-//                       {item}
-//                     </a>
-//                   </li>
-//                 ))}
-//               </ul>
-//             </div>
-
-//             <div>
-//               <h3 className="text-xl font-bold text-white mb-6">Contact</h3>
-//               <ul className="space-y-4">
-//                 <li className="flex items-start space-x-3">
-//                   <MapPin className="w-5 h-5 text-[#e6ab65] mt-1" />
-//                   <span className="text-[#ede2db]/90">
-//                     123 Creative Avenue<br />
-//                     Design District, NY 10001
-//                   </span>
-//                 </li>
-//                 <li className="flex items-center space-x-3">
-//                   <Phone className="w-5 h-5 text-[#e6ab65]" />
-//                   <a href="tel:+1234567890" className="text-[#ede2db]/90 hover:text-[#e6ab65] transition-colors">
-//                     +1 (234) 567-890
-//                   </a>
-//                 </li>
-//                 <li className="flex items-center space-x-3">
-//                   <Mail className="w-5 h-5 text-[#e6ab65]" />
-//                   <a href="mailto:contact@monarchpainters.com" className="text-[#ede2db]/90 hover:text-[#e6ab65] transition-colors">
-//                     contact@monarchpainters.com
-//                   </a>
-//                 </li>
-//               </ul>
-//             </div>
-//           </div>
-
-//           <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-//             <p className="text-[#ede2db]/60 text-sm">
-//               © {new Date().getFullYear()} Monarch Painters. All rights reserved.
-//             </p>
-//             <div className="flex space-x-6 mt-4 md:mt-0">
-//               <a href="#" className="text-[#ede2db]/60 hover:text-[#e6ab65] transition-colors text-sm">
-//                 Privacy Policy
-//               </a>
-//               <a href="#" className="text-[#ede2db]/60 hover:text-[#e6ab65] transition-colors text-sm">
-//                 Terms of Service
-//               </a>
-//               <a href="#" className="text-[#ede2db]/60 hover:text-[#e6ab65] transition-colors text-sm">
-//                 Sitemap
-//               </a>
-//             </div>
-//           </div>
-//         </div>
-//       </footer>
+//       <Footer/>
+      
 //     </div>
 //   );
 // }

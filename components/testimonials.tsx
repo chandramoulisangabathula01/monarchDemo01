@@ -1,6 +1,6 @@
 export default function Testimonials() {
     return (
-      <section className="py-20  bg-gradient-to-t from-[#ede2db] to-[#f7d5c5]">
+      <section className="py-20 bg-gradient-to-t from-[#ede2db] to-[#f7d5c5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="md:text-5xl font-bold mb-4 text-[#711f50] sm:text-4xl text-3xl ">
@@ -11,8 +11,8 @@ export default function Testimonials() {
             </p>
           </div>
   
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+          <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto snap-x snap-mandatory pb-6 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 no-scrollbar">
+            <div className="bg-white p-6 rounded-lg shadow-sm flex-shrink-0 w-[85vw] md:w-auto snap-start">
               <div className="flex items-center gap-4 mb-4">
                 <img
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100"
@@ -29,7 +29,7 @@ export default function Testimonials() {
               </p>
             </div>
   
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-sm flex-shrink-0 w-[85vw] md:w-auto snap-start">
               <div className="flex items-center gap-4 mb-4">
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100"
@@ -46,7 +46,7 @@ export default function Testimonials() {
               </p>
             </div>
   
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-sm flex-shrink-0 w-[85vw] md:w-auto snap-start">
               <div className="flex items-center gap-4 mb-4">
                 <img
                   src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100"
@@ -64,6 +64,16 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
+
+        <style jsx>{`
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
       </section>
     );
   }

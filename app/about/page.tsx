@@ -7,14 +7,14 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-white pt-10">
+    <main className="min-h-screen bg-[#ede2db] pt-6 sm:pt-8 md:pt-10">
       {/* Hero Section */}
       
 
       {/* Team Section */}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-[#711f50] to-[#e6ab65] bg-clip-text text-transparent">More Than Just Painters.<br />We're Your Decoration Partners.</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#711f50] to-[#e6ab65] bg-clip-text text-transparent px-4 sm:px-6">More Than Just Painters.<br />We're Your Decoration Partners.</h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -22,7 +22,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="relative h-[500px] rounded-3xl overflow-hidden group transform hover:scale-[1.02] transition-all duration-500 shadow-2xl">
+            className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden group ">
             <Image
               src="./images/14.png"
               alt="Our team"
@@ -37,8 +37,8 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="space-y-6 p-8 bg-white/5 backdrop-blur-lg rounded-3xl border border-white/10 hover:border-[#711f50]/20 transition-all duration-300">
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-[#711f50] to-[#e6ab65] bg-clip-text text-transparent">Who We Are</h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[#711f50] to-[#e6ab65] bg-clip-text text-transparent">Who We Are</h3>
+            <p className="text-base sm:text-lg leading-relaxed text-gray-600">
               At Monarch Painters, our team of exceptional painters and decorators brings a distinctive touch to every project. We pour our passion, intellect, and extensive experience into crafting spaces that not only mirror your unique preferences but also elevate your property's aesthetics to new heights.
             </p>
             <p className="text-gray-700 text-lg leading-relaxed">
@@ -56,8 +56,8 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="space-y-6 p-8 bg-white/5 backdrop-blur-lg rounded-3xl border border-white/10 hover:border-[#711f50]/20 transition-all duration-300 order-2 lg:order-1">
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-[#711f50] to-[#e6ab65] bg-clip-text text-transparent">What We Do</h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[#711f50] to-[#e6ab65] bg-clip-text text-transparent">What We Do</h3>
+            <p className="text-base sm:text-lg leading-relaxed text-gray-600">
               We provide top-quality painting solutions tailored to meet your specific needs, regardless of the project's scope or scale. Our services cater to both residential and commercial clients, offering fresh painting for new constructions or repainting for renovations, covering both interior and exterior applications.
             </p>
             <motion.button 
@@ -71,7 +71,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="relative h-[500px] rounded-3xl overflow-hidden group transform hover:scale-[1.02] transition-all duration-500 shadow-2xl order-1 lg:order-2">
+            className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden group transform hover:scale-[1.02] transition-all duration-500 shadow-2xl order-1 lg:order-2">
             <Image
               src="/images/15.png"
               alt="Team working"
@@ -139,7 +139,7 @@ export default function About() {
       <Testimonials/>
 
       {/* Final CTA Section */}
-      <section className="relative h-[80vh] mt-16 overflow-hidden">
+      <section className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[80vh] mt-8 sm:mt-12 md:mt-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-black/70 z-10" />
         <motion.div
           initial={{ scale: 1.1 }}
@@ -162,16 +162,16 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center space-y-8 max-w-4xl mx-auto backdrop-blur-sm bg-white/5 p-12 rounded-3xl border border-white/10"
           >
-            <h2 className="text-6xl font-bold bg-gradient-to-r from-white to-[#e6ab65] bg-clip-text text-transparent">
+            <h2 className="text-6xl font-bold bg-gradient-to-r from-[#8b2762] to-[#e6ab65] bg-clip-text text-transparent">
               Transform Your Space with Monarch Painters
             </h2>
-            <p className="text-2xl text-white/90">
+            <p className="text-xl sm:text-2xl text-white/90">
               Serving Rugeley, Lichfield, Tamworth, Sutton Coldfield, Birmingham, and beyond.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-[#711f50] text-white rounded-xl hover:bg-[#8b2762] transform transition-all duration-300 shadow-lg hover:shadow-[#711f50]/30 text-xl font-semibold group relative overflow-hidden"
+              className="px-10 py-5 bg-[#711f50] text-white rounded-xl hover:bg-[#8b2762] transform transition-all duration-300 shadow-lg hover:shadow-[#711f50]/30 text-lg sm:text-xl font-semibold group relative overflow-hidden"
             >
               <span className="relative z-10">Get a Free Quote</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#e6ab65] to-[#711f50] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

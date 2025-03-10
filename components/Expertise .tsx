@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Expertise() {
   return (
-    <div className="bg-black text-white px-4 md:px-8 py-8 md:py-16 rounded-3xl mx-4 md:mx-8">
+    <div className="bg-[#711f50] text-white px-4 md:px-8 py-8 md:py-8 rounded-3xl mx-4 md:mx-8">
       <div className="flex justify-between items-center mb-4 md:mb-8">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export default function Expertise() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ scale: 1.03 }}
-            className="relative h-64 rounded-xl overflow-hidden group"
+            className="relative h-64 rounded-3xl border-4 border-[#e6ab65] overflow-hidden group"
           >
             <img
               src={item.image}

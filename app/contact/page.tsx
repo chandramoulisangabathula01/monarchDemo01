@@ -1,27 +1,29 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MessageSquare, User, Phone, Facebook, Twitter, Linkedin, Youtube, Globe, Zap, Clock, Award, Users, CheckCircle, MapPin, Mail, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Footer from '@/components/footer';
+import emailjs from '@emailjs/browser';
+
+// Add these constants after imports
+const EMAIL_SERVICE_ID = 'service_phr7fot';
+const EMAIL_TEMPLATE_ID = 'template_p1r00so';
+const EMAIL_PUBLIC_KEY = 'kxChz_wHnv-TGJ3gB';
 
 function App() {
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
+    phone: '',
     email: '',
     project: '',
-    services: {
-      websiteDesign: true,
-      uxDesign: true,
-      userResearch: false,
-      contentCreation: false,
-      strategyConsulting: false,
-      other: false
-    }
+    
   });
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeField, setActiveField] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState('about');
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     setIsLoaded(true);
@@ -29,27 +31,44 @@ function App() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    if (name === 'user_name') {
+      setFormData(prev => ({ ...prev, name: value }));
+    } else if (name === 'user_phone') {
+      setFormData(prev => ({ ...prev, phone: value }));
+    } else if (name === 'user_email') {
+      setFormData(prev => ({ ...prev, email: value }));
+    } else if (name === 'message') {
+      setFormData(prev => ({ ...prev, project: value }));
+    }
   };
 
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
-    setFormData({
-      ...formData,
-      services: {
-        ...formData.services,
-        [name]: checked
-      }
-    });
-  };
+ 
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission logic here
+    setSubmitStatus('loading');
+
+    try {
+      await emailjs.sendForm(
+        EMAIL_SERVICE_ID,
+        EMAIL_TEMPLATE_ID,
+        form.current!,
+        EMAIL_PUBLIC_KEY
+      );
+
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        project: ''
+      });
+      alert('Message sent successfully!');
+    } catch (error) {
+      console.error('Failed to send message:', error);
+      setSubmitStatus('error');
+      alert('Failed to send message. Please try again.');
+    }
   };
 
   const handleFocus = (fieldName: string) => {
@@ -90,10 +109,7 @@ function App() {
     }
   };
 
-  const checkboxVariants = {
-    unchecked: { scale: 1 },
-    checked: { scale: [1, 1.2, 1], transition: { duration: 0.2 } }
-  };
+  
 
   // Background gradient animation
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -111,51 +127,51 @@ function App() {
   }, []);
 
   // Team members data
-  const teamMembers = [
-    {
-      name: "Sarah Johnson",
-      role: "Creative Director",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
-    },
-    {
-      name: "Michael Chen",
-      role: "Lead Designer",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
-    },
-    {
-      name: "Aisha Patel",
-      role: "UX Specialist",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
-    },
-    {
-      name: "David Rodriguez",
-      role: "Project Manager",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
-    }
-  ];
+  // const teamMembers = [
+  //   {
+  //     name: "Sarah Johnson",
+  //     role: "Creative Director",
+  //     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+  //   },
+  //   {
+  //     name: "Michael Chen",
+  //     role: "Lead Designer",
+  //     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+  //   },
+  //   {
+  //     name: "Aisha Patel",
+  //     role: "UX Specialist",
+  //     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+  //   },
+  //   {
+  //     name: "David Rodriguez",
+  //     role: "Project Manager",
+  //     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+  //   }
+  // ];
 
   // FAQ data
-  const faqs = [
-    {
-      question: "What services do you offer?",
-      answer: "We offer a comprehensive range of design services including website design, UX/UI design, user research, content creation, and strategic consulting. Our team works closely with clients to deliver tailored solutions that meet their specific needs and objectives."
-    },
-    {
-      question: "How long does a typical project take?",
-      answer: "Project timelines vary depending on scope and complexity. A simple website redesign might take 4-6 weeks, while a comprehensive UX overhaul could take 2-3 months. During our initial consultation, we'll provide a detailed timeline based on your specific requirements."
-    },
-    {
-      question: "What is your design process?",
-      answer: "Our design process includes discovery (understanding your needs), research (analyzing your audience and competitors), conceptualization (creating initial designs), iteration (refining based on feedback), and implementation (delivering the final product). We maintain open communication throughout to ensure your vision is realized."
-    },
-    {
-      question: "Do you offer ongoing support after project completion?",
-      answer: "Yes, we offer various support packages to ensure your digital products continue to perform optimally. These include maintenance, updates, performance monitoring, and continuous improvement based on user feedback and analytics."
-    }
-  ];
+  // const faqs = [
+  //   {
+  //     question: "What services do you offer?",
+  //     answer: "We offer a comprehensive range of design services including website design, UX/UI design, user research, content creation, and strategic consulting. Our team works closely with clients to deliver tailored solutions that meet their specific needs and objectives."
+  //   },
+  //   {
+  //     question: "How long does a typical project take?",
+  //     answer: "Project timelines vary depending on scope and complexity. A simple website redesign might take 4-6 weeks, while a comprehensive UX overhaul could take 2-3 months. During our initial consultation, we'll provide a detailed timeline based on your specific requirements."
+  //   },
+  //   {
+  //     question: "What is your design process?",
+  //     answer: "Our design process includes discovery (understanding your needs), research (analyzing your audience and competitors), conceptualization (creating initial designs), iteration (refining based on feedback), and implementation (delivering the final product). We maintain open communication throughout to ensure your vision is realized."
+  //   },
+  //   {
+  //     question: "Do you offer ongoing support after project completion?",
+  //     answer: "Yes, we offer various support packages to ensure your digital products continue to perform optimally. These include maintenance, updates, performance monitoring, and continuous improvement based on user feedback and analytics."
+  //   }
+  // ];
 
   return (
-    <div className="min-h-screen bg-[#d9c2d4] flex flex-col items-center justify-center overflow-hidden relative">
+    <div className="min-h-screen bg-[#ede2db]  flex flex-col items-center justify-center overflow-hidden relative">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
@@ -178,52 +194,7 @@ function App() {
         />
       </div>
 
-      {/* Header Section */}
-      {/* <motion.header 
-        className="w-full bg-slate-900/50 backdrop-blur-md border-b border-white/10 py-6 px-8 fixed top-0 z-50"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-      >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <motion.div 
-            className="flex items-center space-x-2"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400 }}
-          >
-            <Zap className="w-8 h-8 text-[#e6ab65]" />
-            <span className="text-2xl font-bold text-white">Monarch Painters</span>
-          </motion.div>
-          
-          <motion.nav className="hidden md:flex space-x-8">
-            {[
-              { name: "About", href: "#about" },
-              { name: "Services", href: "#services" },
-              { name: "Team", href: "#team" },
-              { name: "FAQ", href: "#faq" },
-              { name: "Contact", href: "#contact" }
-            ].map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="text-blue-100/80 hover:text-[#e6ab65] transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item.name}
-              </motion.a>
-            ))}
-          </motion.nav>
-          
-          <motion.button
-            className="bg-gradient-to-r from-[#711f50] to-[#e6ab65] text-white px-6 py-2 rounded-lg hover:opacity-90 transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get a Quote
-          </motion.button>
-        </div>
-      </motion.header> */}
+      
 
       {/* Main Contact Section */}
       <section id="contact" className="w-full max-w-7xl pt-32 pb-16 px-4">
@@ -343,6 +314,7 @@ function App() {
               </motion.div>
 
               <motion.form 
+                ref={form}
                 onSubmit={handleSubmit}
                 variants={containerVariants}
                 initial="hidden"
@@ -353,7 +325,7 @@ function App() {
                   <div className="relative group">
                     <motion.input
                       type="text"
-                      name="name"
+                      name="user_name"
                       value={formData.name}
                       onChange={handleInputChange}
                       onFocus={() => handleFocus('name')}
@@ -369,8 +341,26 @@ function App() {
                 <motion.div variants={formItemVariants}>
                   <div className="relative group">
                     <motion.input
+                      type="tel"
+                      name="user_phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      onFocus={() => handleFocus('phone')}
+                      onBlur={handleBlur}
+                      placeholder="Your mobile number"
+                      className="w-full bg-[#ede2db]/30 border-2 border-[#711f50]/20 rounded-xl px-6 py-4 text-[#711f50] placeholder:text-[#711f50]/50 focus:outline-none focus:border-[#e6ab65]/70 transition-all duration-300"
+                      required
+                      pattern="[0-9]{10}"
+                      animate={activeField === 'phone' ? { scale: 1.02 } : { scale: 1 }}
+                    />
+                  </div>
+                </motion.div>
+
+                <motion.div variants={formItemVariants}>
+                  <div className="relative group">
+                    <motion.input
                       type="email"
-                      name="email"
+                      name="user_email"
                       value={formData.email}
                       onChange={handleInputChange}
                       onFocus={() => handleFocus('email')}
@@ -386,7 +376,7 @@ function App() {
                 <motion.div variants={formItemVariants}>
                   <div className="relative group">
                     <motion.textarea
-                      name="project"
+                      name="message"
                       value={formData.project}
                       onChange={handleInputChange}
                       onFocus={() => handleFocus('project')}
@@ -429,40 +419,40 @@ function App() {
           className="mb-12 text-center"
         >
           <h2 className="text-4xl font-bold text-[#711f50] mb-4">Find Us</h2>
-          <p className="text-black text-xl max-w-3xl mx-auto">
+          <p className="text-[#711f50] text-xl max-w-3xl mx-auto">
             Visit our studio to see our work in person and discuss your project with our team.
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 h-[500px] relative"
-        >
-          {/* Map iframe */}
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304605!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1659012963606!5m2!1sen!2s" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Monarch Painters Location"
-            className="filter grayscale"
-          ></iframe>
+        <div className="relative flex flex-col md:block">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 h-[500px] relative w-full"
+          >
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4831.570775786432!2d-1.866163!3d52.736065!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a09bd531b5225%3A0xe9de4b094fdcfe16!2sMonarch%20Painters!5e0!3m2!1sen!2sin!4v1741616168798!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Monarch Painters Location"
+              className="filter grayscale"
+            ></iframe>
+          </motion.div>
 
-          {/* Map overlay with location details */}
           <motion.div 
-            className="absolute top-8 left-8 bg-slate-900/90 backdrop-blur-md p-8 rounded-xl border border-white/10 max-w-md"
+            className="md:absolute relative top-8 lg:left-8 bg-slate-900/90 backdrop-blur-md p-8 rounded-xl border border-white/10 max-w-md mt-4 md:mt-0"
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-[white] mb-4">Our Studio</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Our Studio</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-4">
                 <MapPin className="w-6 h-6 text-[#e6ab65] mt-1" />
@@ -497,7 +487,7 @@ function App() {
               <ArrowRight className="w-5 h-5" />
             </motion.button>
           </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       {/* About Us Section */}

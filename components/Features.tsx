@@ -1,6 +1,6 @@
 export default function Features() {
     return (
-      <section className="py-20 bg-gradient-to-t from-[#f7d5c5] to-[#ede2db]">
+      <section className="py-2 bg-gradient-to-t from-[#f7d5c5] to-[#ede2db] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* <img
             src="./images/16.png"
@@ -9,16 +9,16 @@ export default function Features() {
           /> */}
           
           <div className="text-center mb-16">
-            <h2 className=" md:text-5xl font-bold mb-4 text-[#711f50] sm:text-4xl ">
-              Transforming Spaces Across Staffordshire
+            <h2 className="text-5xl font-bold mb-4 text-[#711f50] ">
+              Staffordshire's Premier Painters
             </h2>
             <p className="text-lg text-gray-600">
               Serving Rugeley, Lichfield, Tamworth, Sutton Coldfield, Birmingham, and beyond
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="relative aspect-square">
+          <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0">
+            <div className="relative aspect-square flex-shrink-0 w-[85vw] md:w-auto snap-center">
               <img
                 src="./images/1.png"
                 alt="Office painting"
@@ -29,7 +29,7 @@ export default function Features() {
                 <p className="text-xs text-white/90">Boosting productivity & brand image</p>
               </div>
             </div>
-            <div className="relative aspect-square">
+            <div className="relative aspect-square flex-shrink-0 w-[85vw] md:w-auto snap-center">
               <img
                 src="./images/11.2.png"
                 alt="Residential painting"
@@ -40,7 +40,7 @@ export default function Features() {
                 <p className="text-xs text-white/90">Bringing your vision to life</p>
               </div>
             </div>
-            <div className="relative aspect-square">
+            <div className="relative aspect-square flex-shrink-0 w-[85vw] md:w-auto snap-center">
               <img
                 src="./images/17.png"
                 alt="Exterior painting"
@@ -54,9 +54,9 @@ export default function Features() {
           </div>
 
           <div className="mt-16">
-            <h2 className="text-3xl font-bold mb-8 text-[#711f50] text-center">Premium Paint Products</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <h2 className="text-5xl font-bold mb-4 text-[#711f50]  text-center">Premium Paint Products</h2>
+            <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0">
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-[85vw] md:w-auto snap-center">
                 <div className="relative h-48 mb-4 rounded-xl overflow-hidden">
                   <img
                     src="/images/tech1.jpg"
@@ -73,7 +73,7 @@ export default function Features() {
                 </ul>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-[85vw] md:w-auto snap-center">
                 <div className="relative h-48 mb-4 rounded-xl overflow-hidden">
                   <img
                     src="/images/tech2.webp"
@@ -90,7 +90,7 @@ export default function Features() {
                 </ul>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-[85vw] md:w-auto snap-center">
                 <div className="relative h-48 mb-4 rounded-xl overflow-hidden">
                   <img
                     src="/images/tech3.webp"
