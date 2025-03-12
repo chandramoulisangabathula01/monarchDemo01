@@ -95,8 +95,8 @@ export default function Navbar() {
                 alt="Monarch Painters Logo" 
                 className="w-8 sm:w-10 md:w-12" 
               />
-              <span className=" font-['navlogo'] text-xs sm:text-xs md:text-sm " style={{ color: '#e6ab65' }}>
-                Monarch Painters
+              <span className=" font-['navlogo'] text-xl sm:text-xs md:text-md leading-loose" style={{ color: '#e6ab65' }}>
+                MONARCH PAINTERS
               </span>
             </Link>
           </motion.div>
