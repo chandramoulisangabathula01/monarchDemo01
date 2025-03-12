@@ -86,7 +86,7 @@ export default function Services() {
         'Premium quality paints and materials',
         'Wallpapering services'
       ],
-      image: '/images/4.png'
+      image: '/images/gallery/interior '
     },
     {
       title: 'Commercial & Residential',
@@ -116,22 +116,22 @@ export default function Services() {
     {
       name: 'Mirka 1230M',
       description: 'Dustless extraction system for faster finish and dust-free sanding',
-      image: '/images/16.png'
+      image: '/images/tools/mirka.webp'
     },
     {
       name: 'Q-Tech 5 Stage HVLP',
       description: 'High volume low pressure spray system for a flawless finish',
-      image: '/images/15.png'
+      image: '/images/tools/q-tech-q5-hvlp.jpg'
     },
     {
       name: 'TriTech T5',
       description: 'Airless spray system for faster completion on large projects',
-      image: '/images/13.png'
+      image: '/images/tools/TriTech_T5_hopper.webp'
     }
   ];
 
   return (
-    <main className="min-h-screen bg-[#ede2db]">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <motion.div 
         initial={{ opacity: 0 }}
@@ -192,7 +192,7 @@ export default function Services() {
       </div>
 
       {/* Professional Tools Section */}
-      <div className="bg-[#ede2db] py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
+      <div className="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -433,7 +433,7 @@ export default function Services() {
 
           
       {/* Premium Materials Section */}
-      <div className="py-20 px-4 md:px-8 bg-[#ede2db]">
+      <div className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-purple-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

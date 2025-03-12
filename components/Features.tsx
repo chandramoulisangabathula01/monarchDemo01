@@ -20,7 +20,7 @@ export default function Features() {
           <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0">
             <div className="relative aspect-square flex-shrink-0 w-[85vw] md:w-auto snap-center">
               <img
-                src="./images/1.png"
+                src="/images/gallery/steps 4.jpg"
                 alt="Office painting"
                 className="w-full h-full object-cover rounded-2xl"
               />
@@ -31,7 +31,7 @@ export default function Features() {
             </div>
             <div className="relative aspect-square flex-shrink-0 w-[85vw] md:w-auto snap-center">
               <img
-                src="./images/11.2.png"
+                src="/images/gallery/outdoor 3.jpg"
                 alt="Residential painting"
                 className="w-full h-full object-cover rounded-2xl"
               />
@@ -42,8 +42,8 @@ export default function Features() {
             </div>
             <div className="relative aspect-square flex-shrink-0 w-[85vw] md:w-auto snap-center">
               <img
-                src="./images/17.png"
-                alt="Exterior painting"
+                src="/images/gallery/outdoor 1.jpg"
+                alt="Commercial painting"
                 className="w-full h-full object-cover rounded-2xl"
               />
               <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm p-4 rounded-full">

@@ -15,8 +15,8 @@ export default function Features2() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-[#5a1a3f] p-4 md:p-6 rounded-2xl">
             <img
-              src="./images/7.png"
-              alt="Property Insurance"
+              src="/images/gallery/interior 2.jpg"
+              alt="Premium Quality Work"
               className="w-full rounded-xl mb-4"
             />
             <h3 className="text-xl text-[#e6ab65] md:text-2xl font-bold mb-2">Premium Quality</h3>

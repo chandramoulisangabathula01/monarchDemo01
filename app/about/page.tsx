@@ -24,7 +24,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden group ">
             <Image
-              src="./images/14.png"
+              src="/images/gallery/interior-1.jpg"
               alt="Our team"
               fill
               style={{ objectFit: 'cover' }}
@@ -73,7 +73,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden group transform hover:scale-[1.02] transition-all duration-500 shadow-2xl order-1 lg:order-2">
             <Image
-              src="/images/15.png"
+              src="/images/gallery/interior-7.jpg"
               alt="Team working"
               fill
               style={{ objectFit: 'cover' }}
@@ -148,7 +148,7 @@ export default function About() {
           className="absolute inset-0"
         >
           <Image
-            src="/images/15.png"
+            src="/images/gallery/interior-2.jpg"
             alt="Professional painting work"
             fill
             style={{ objectFit: 'cover' }}

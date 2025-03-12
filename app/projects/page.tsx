@@ -14,63 +14,67 @@ type Project = {
   description: string;
 };
 
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Modern Living Room Transformation',
+const ITEMS_PER_PAGE = 9;
+
+const galleryImages = [
+  // Interior category
+  ...[
+    'interior 1.jpg', 'interior 2.jpg', 'interior 3.jpg', 'interior 4.jpg',
+    'interior 5.jpg', 'interior 6.jpg', 'interior 7.jpg', 'interior 8.jpg',
+    'interior 9.jpg', 'interior 10.jpg', 'livingroom 1.jpg', 'livingroom 2.jpg',
+    'livingroom 3.jpg', 'livingroom 4.jpg', 'livingroom 5.jpg', 'livingroom 6.jpg',
+    'livingroom 7.jpg', 'livingroom 8.jpg', 'livingroom 9.jpg', 'livingroom 10.jpg',
+    'livingroom 11.jpg', 'living room 12.jpg', 'living room 13.jpg', 'living room 14.jpg',
+    'kitchen 1.jpg', 'kitchen 2.jpg', 'kitchen 3.jpg', 'kitchen 4.jpg',
+    'room 1.jpg', 'room 2.jpg', 'room 3.jpg'
+  ].map(filename => ({
     category: 'interior',
-    image: '/images/1.png',
-    description: 'Complete interior renovation with premium finishes'
-  },
-  {
-    id: 2,
-    title: 'Commercial Office Space',
-    category: 'commercial',
-    image: '/images/4.png',
-    description: 'Professional painting for corporate environment'
-  },
-  {
-    id: 3,
-    title: 'Exterior Home Makeover',
+    image: `/images/gallery/${filename}`,
+    title: filename.split('.')[0].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+    description: 'Interior painting and decoration project'
+  })),
+
+  // Exterior category
+  ...[
+    'outdoor 1.jpg', 'outdoor 2.jpg', 'outdoor 3.jpg', 'outdoor 4.jpg',
+    'outdoor 5.jpg', 'outdoor 6.jpg', 'outdoor 7.jpg', 'outdoor 8.jpg',
+    'outdoor 9.jpg', 'steps 1.jpg', 'steps 2.jpg', 'steps 3.jpg',
+    'steps 4.jpg', 'steps 5.jpg', 'steps 6.jpg', 'steps 7.jpg',
+    'steps 8.jpg', 'steps 9.jpg', 'steps 10.jpg', 'steps 11.jpg',
+    'steps before.jpg', 'steps after.jpg'
+  ].map(filename => ({
     category: 'exterior',
-    image: '/images/17.png',
-    description: 'Weather-resistant exterior painting'
-  },
-  {
-    id: 4,
-    title: 'Luxury Apartment Complex',
+    image: `/images/gallery/${filename}`,
+    title: filename.split('.')[0].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+    description: 'Exterior painting and renovation project'
+  })),
+
+  // Commercial category
+  ...[
+    'floor 1.jpg', 'floor 2.jpg', 'floor 3.jpg', 'floor 4.jpg',
+    'floor 5.png', 'hall before.jpg', 'hall after.jpg',
+    'hall 2 before.jpg', 'hall 2 after.jpg'
+  ].map(filename => ({
     category: 'commercial',
-    image: '/images/8.png',
-    description: 'High-end residential complex renovation'
-  },
-  {
-    id: 5,
-    title: 'Victorian Home Restoration',
-    category: 'exterior',
-    image: '/images/11.2.png',
-    description: 'Historical property restoration'
-  },
-  {
-    id: 6,
-    title: 'Modern Kitchen Redesign',
-    category: 'interior',
-    image: '/images/5.2.png',
-    description: 'Contemporary kitchen transformation'
-  },
-  // Add more projects as needed
-];
+    image: `/images/gallery/${filename}`,
+    title: filename.split('.')[0].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+    description: 'Commercial space renovation'
+  }))
+].map((item, index) => ({ ...item, id: index + 1 }));
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
+  const [filteredProjects, setFilteredProjects] = useState(galleryImages);
 
   useEffect(() => {
     setFilteredProjects(
       selectedCategory === 'all'
-        ? projects
-        : projects.filter(project => project.category === selectedCategory)
+        ? galleryImages
+        : galleryImages.filter(project => project.category === selectedCategory)
     );
+    setVisibleItems(ITEMS_PER_PAGE); // Reset visible items when category changes
   }, [selectedCategory]);
 
   const categories = [
@@ -79,6 +83,12 @@ export default function Projects() {
     { id: 'exterior', label: 'Exterior' },
     { id: 'commercial', label: 'Commercial' }
   ];
+
+  const loadMore = () => {
+    setVisibleItems(prev => prev + ITEMS_PER_PAGE);
+  };
+
+  const hasMore = visibleItems < filteredProjects.length;
 
   return (
     <main className="min-h-screen bg-[#ede2db]">
@@ -91,7 +101,7 @@ export default function Projects() {
       >
         <div className="absolute inset-0 bg-black/40 z-10" />
         <Image
-          src="/images/4.png"
+          src="/images/gallery/interior 2.jpg"
           alt="Projects Hero"
           fill
           className="object-cover transform scale-105 hover:scale-100 transition-transform duration-700"
@@ -128,7 +138,7 @@ export default function Projects() {
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-4 md:px-6 lg:px-8"
         >
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.slice(0, visibleItems).map((project, index) => (
             <motion.div
               key={project.id}
               layout
@@ -158,6 +168,20 @@ export default function Projects() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Load More Button */}
+        {hasMore && (
+          <div className="flex justify-center mt-8">
+            <motion.button
+              onClick={loadMore}
+              className="bg-[#711f50] text-white px-6 py-3 rounded-full font-medium hover:bg-[#8a2761] transition-colors duration-300 shadow-lg hover:shadow-xl"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Load More Projects
+            </motion.button>
+          </div>
+        )}
       </div>
 
       {/* Lightbox Dialog */}

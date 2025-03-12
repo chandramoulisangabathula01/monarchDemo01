@@ -8,6 +8,13 @@
   font-weight: bold;
   font-style:normal;
 }
+@font-face {
+  font-family: 'navlogo';
+  src: url('../fonts/diplomata.ttf') format('truetype');
+  font-weight: bold;
+  font-style:normal;
+}
+
 
 :root {
   --color-royal-blue: #003366;

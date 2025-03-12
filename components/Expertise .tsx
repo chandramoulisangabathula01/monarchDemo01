@@ -25,22 +25,22 @@ export default function Expertise() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
         {[
           {
-            image: "./images/4.png",
+            image: "/images/gallery/interior 2.jpg",
             title: "Residential",
             description: "Expert interior & exterior home painting with meticulous attention to detail",
           },
           {
-            image: "./images/6.png",
+            image: "/images/gallery/outdoor 4.jpg",
             title: "Commercial",
             description: "Transforming workplaces with minimal downtime and maximum impact",
           },
           {
-            image: "./images/7.png",
+            image: "/images/gallery/livingroom 3.jpg",
             title: "Premium Quality",
             description: "Using top-tier products like Emperor Masonry Paint and Benjamin Moore",
           },
           {
-            image: "./images/8.png",
+            image: "/images/gallery/interior 4.jpg",
             title: "Advanced Tech",
             description: "Utilizing Mirka 1230M & TriTech T5 spray systems for flawless finish",
           },

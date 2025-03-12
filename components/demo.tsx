@@ -25,12 +25,12 @@ export function CompareDemo() {
       <motion.div
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 300 }}
-        className="p-1 md:p-2 border rounded-3xl dark:bg-neutral-900 bg-neutral-100/80 border-neutral-200 dark:border-neutral-800 mx-auto w-full h-full backdrop-blur-sm shadow-lg hover:shadow-xl"
+        className="p-1 md:p-2 border rounded-3xl dark:bg-neutral-900 bg-neutral-100/80 border-neutral-200 dark:border-neutral-800 mx-auto w-full h-full backdrop-blur-sm "
       >
         {isMobile ? (
           <div className="relative w-full h-full rounded-[22px] md:rounded-lg overflow-hidden">
             <img 
-              src="/images/4.png" 
+              src="/images/gallery/hall before.jpg" 
               alt="Before" 
               className="absolute inset-0 w-full h-full object-cover object-left-top rounded-[22px] md:rounded-lg"
             />
@@ -43,8 +43,8 @@ export function CompareDemo() {
           </div>
         ) : (
           <Compare
-            firstImage="/images/4.png"
-            secondImage="/images/4.2.png"
+            firstImage="/images/gallery/hall 2 before.jpg"
+            secondImage="/images/gallery/hall 2 after.jpg"
             firstImageClassName="object-cover object-left-top w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]"
             secondImageClassname="object-cover object-left-top w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]"
             className="w-full h-full rounded-[22px] md:rounded-lg"
