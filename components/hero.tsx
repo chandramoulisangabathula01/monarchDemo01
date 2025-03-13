@@ -10,6 +10,7 @@ export function Hero() {
   const [isInView, setIsInView] = useState(false);
   const containerRef = useRef(null);
   const isMobile = useIsMobile();
+  const isTablet = useRef(typeof window !== 'undefined' && (window.innerWidth >= 768 && window.innerWidth <= 1180)).current;
 
   const tags = [
     "Home Decorators",
@@ -89,31 +90,17 @@ export function Hero() {
       variants={staggerContainer.variants}
       className="flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8 py-6 mt-9 sm:py-8 lg:py-16 bg-[#ede2db] dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 relative overflow-hidden"
     >
-      {/* Background Effects */}
-      {/* <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.1)_0%,transparent_50%)]" />
-        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_bottom_right,rgba(99,102,241,0.15)_0%,transparent_50%)]" />
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
-      </div> */}
-      {/* Text Section */}
       <motion.div 
         variants={staggerContainer.variants}
-        className="flex-1 flex flex-col justify-center  items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-6 lg:space-y-8 order-2 lg:order-1 mt-8 lg:mt-0 z-10"
+        className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-6 lg:space-y-8 order-2 lg:order-1 mt-8 lg:mt-0 z-10 md:px-4"
       >
         <div className="space-y-2 sm:space-y-3 lg:space-y-4 max-w-3xl mx-auto lg:mx-0">
           <motion.h1 
             variants={fadeInUp}
-            className="font-['CustomFont'] leading-tight text-6xl sm:text-5xl lg:text-6xl text-[#711f50] dark:text-gray-100"
+            className="font-['CustomFont'] leading-tight text-4xl md:text-5xl lg:text-6xl text-[#711f50] dark:text-gray-100"
           >
             Bringing Colors to Life
           </motion.h1>
-          <motion.h2 
-            variants={fadeInUp}
-            className="font-['CustomFont'] leading-tight text-4xl sm:text-6xl lg:text-6xl text-[#711f50] dark:text-gray-100"
-          >
-            
-          </motion.h2>
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTag}
@@ -121,7 +108,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="min-h-[70px] sm:min-h-[80px] lg:min-h-[100px] flex items-center justify-center font-['CustomFont'] leading-tight text-5xl sm:text-6xl lg:text-6xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent"
+              className="min-h-[50px] md:min-h-[70px] lg:min-h-[100px] flex items-center justify-center font-['CustomFont'] leading-tight text-3xl md:text-4xl lg:text-6xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent"
             >
               {tags[currentTag]}
             </motion.div>
@@ -129,27 +116,27 @@ export function Hero() {
         </div>
         <motion.p 
           variants={fadeInUp}
-          className="text-gray-600 dark:text-gray-400 text-base sm:text-lg lg:text-xl max-w-xl"
+          className="text-gray-600 dark:text-gray-400 text-sm md:text-base lg:text-xl max-w-xl px-4 md:px-0"
         >
           Staffordshire's premier painting and decorating service with 35+ years of expertise.
         </motion.p>
         <motion.div 
           variants={fadeInUp}
-          className="flex flex-row gap-4 sm:gap-6 lg:gap-8 w-full justify-center lg:justify-start"
+          className="flex flex-row gap-3 md:gap-4 lg:gap-8 w-full justify-center lg:justify-start px-2 md:px-4"
         >
           <motion.div 
             whileHover={statsHover}
             whileTap={buttonTap}
-            className="transition-all duration-300 backdrop-blur-sm p-6 rounded-2xl bg-gradient-to-br from-blue-50/80 to-blue-100/50 hover:shadow-xl hover:shadow-blue-100/20 border border-blue-100/20"
+            className="transition-all duration-300 backdrop-blur-sm p-3 md:p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-blue-50/80 to-blue-100/50 hover:shadow-xl hover:shadow-blue-100/20 border border-blue-100/20"
           >
             <motion.h3 
-              className="text-xl sm:text-2xl lg:text-4xl font-bold text-blue-500"
+              className="text-lg md:text-2xl lg:text-4xl font-bold text-blue-500"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
               35+
             </motion.h3>
-            <p className="text-sm sm:text-base text-gray-600">Years Experience</p>
+            <p className="text-xs md:text-sm lg:text-base text-gray-600">Years Experience</p>
           </motion.div>
           <motion.div 
             whileHover={statsHover}
@@ -184,29 +171,28 @@ export function Hero() {
         {/* Call-to-action buttons */}
         <motion.div 
           variants={fadeInUp}
-          className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start mt-4"
+          className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start mt-4 px-4 md:px-0"
         >
           <motion.button
             whileHover={buttonHover}
             whileTap={buttonTap}
-            className="group relative px-8 py-4 bg-[#711f50] text-white font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#711f50]/20 transition-all duration-300 overflow-hidden"
+            className="group relative px-6 md:px-8 py-3 md:py-4 bg-[#711f50] text-white font-semibold text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#711f50]/20 transition-all duration-300 overflow-hidden"
           >
             Get a Free Quote
           </motion.button>
           <motion.button
             whileHover={buttonHover}
             whileTap={buttonTap}
-            className="group relative px-8 py-4 bg-transparent border-2 border-[#711f50] text-[#711f50] dark:text-white dark:border-white font-semibold text-lg rounded-xl hover:shadow-xl hover:shadow-[#711f50]/10 transition-all duration-300 overflow-hidden"
+            className="group relative px-6 md:px-8 py-3 md:py-4 bg-transparent border-2 border-[#711f50] text-[#711f50] dark:text-white dark:border-white font-semibold text-base md:text-lg rounded-xl hover:shadow-xl hover:shadow-[#711f50]/10 transition-all duration-300 overflow-hidden"
           >
             View Our Work
           </motion.button>
         </motion.div>
       </motion.div>
 
-      {/* Image/Compare Section */}
-      <div className="flex-1 order-1 mt-6 lg:order-2 h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center">
-        <div className="relative rounded-3xl h-full w-full overflow-hidden flex justify-center items-center  ">
-          {isMobile ? (
+      <div className="flex-1 order-1 mt-6 lg:order-2 h-[250px] md:h-[400px] lg:h-[500px] flex items-center justify-center">
+        <div className="relative rounded-3xl h-full w-full overflow-hidden flex justify-center items-center">
+          {(isMobile || isTablet) ? (
             <video
               autoPlay
               loop

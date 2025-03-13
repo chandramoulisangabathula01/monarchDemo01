@@ -98,42 +98,46 @@ export default function Footer() {
     //     </div>
     //   </div>
     // </footer>
-    <footer className="w-full bg-[#711f50] backdrop-blur-md border-t border-white/10 py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div className="space-y-6">
-              <div className="flex items-center space-x-2">
+    <footer className="w-full bg-[#711f50] backdrop-blur-md border-t border-white/10 py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* <div className="flex justify-center items-center mb-8">
+            <Link href="/" className="flex items-center gap-2">
               <img 
-                src="/images/logo2.png" 
+                src="/images/logo/logo.png" 
                 alt="Monarch Painters Logo" 
                 className="w-8 sm:w-10 md:w-12" 
               />
-                <span className="text-2xl font-bold text-white">Monarch Painters</span>
-              </div>
-              <p className="text-blue-100/70">
+              <span className="font-['navlogo'] text-xl sm:text-2xl md:text-3xl leading-loose" style={{ color: '#e6ab65' }}>
+                MONARCH PAINTERS
+              </span>
+            </Link>
+          </div> */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            <div className="col-span-2 md:col-span-1 space-y-4 md:space-y-6">
+              <p className="text-sm md:text-base text-blue-100/70">
                 Transforming spaces with creativity and precision since 2010.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-3 md:space-x-4">
                 {[Facebook, Twitter, Linkedin, Youtube, Globe].map((Icon, index) => (
                   <motion.a 
                     key={index}
                     href="#" 
                     className="text-blue-100/60 hover:text-[#e6ab65] transition-all duration-300"
-                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-4 h-4 md:w-5 md:h-5" />
                   </motion.a>
                 ))}
               </div>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-white mb-6">Services</h3>
-              <ul className="space-y-4">
+              <h3 className="text-lg md:text-xl font-bold text-white">Services</h3>
+              <ul className="space-y-3 md:space-y-4">
                 {["Interior Painting", "Exterior Painting", "Commercial Painting", "Decorative Finishes", "Color Consultation", "Cabinet Refinishing"].map((service, index) => (
                   <li key={index}>
-                    <a href="#services" className="text-blue-100/70 hover:text-[#e6ab65] transition-colors">
+                    <a href="#services" className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors">
                       {service}
                     </a>
                   </li>
@@ -142,37 +146,37 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-white mb-6">Company</h3>
-              <ul className="space-y-4">
-                {["About Us","Services","Projects","Contact"].map((item, index) => (
+              <h3 className="text-lg md:text-xl font-bold text-white">Company</h3>
+              <ul className="space-y-3 md:space-y-4">
+                {[{name: "About Us", path: "/about"}, {name: "Services", path: "/services"}, {name: "Projects", path: "/projects"}, {name: "Contact", path: "/contact"}].map((item, index) => (
                   <li key={index}>
-                    <a href="#" className="text-blue-100/70 hover:text-[#e6ab65] transition-colors">
-                      {item}
-                    </a>
+                    <Link href={item.path} className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors">
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-white mb-6">Contact</h3>
-              <ul className="space-y-4">
+              <h3 className="text-lg md:text-xl font-bold text-white">Contact</h3>
+              <ul className="space-y-3 md:space-y-4">
                 <li className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-[#e6ab65] mt-1" />
-                  <span className="text-blue-100/70">
+                  <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#e6ab65] mt-1" />
+                  <span className="text-sm md:text-base text-blue-100/70">
                     123 Creative Avenue<br />
                     Design District, NY 10001
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-[#e6ab65]" />
-                  <a href="tel:+1234567890" className="text-blue-100/70 hover:text-[#e6ab65] transition-colors">
+                  <Phone className="w-4 h-4 md:w-5 md:h-5 text-[#e6ab65]" />
+                  <a href="tel:+1234567890" className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors">
                     +1 (234) 567-890
                   </a>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-[#e6ab65]" />
-                  <a href="mailto:contact@monarchpainters.com" className="text-blue-100/70 hover:text-[#e6ab65] transition-colors">
+                  <Mail className="w-4 h-4 md:w-5 md:h-5 text-[#e6ab65]" />
+                  <a href="mailto:contact@monarchpainters.com" className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors break-all">
                     contact@monarchpainters.com
                   </a>
                 </li>
@@ -180,20 +184,32 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-blue-100/60 text-sm">
-              © {new Date().getFullYear()} Monarch Painters. All rights reserved.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-blue-100/60 hover:text-[#e6ab65] transition-colors text-sm">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-blue-100/60 hover:text-[#e6ab65] transition-colors text-sm">
-                Terms of Service
-              </a>
-              <a href="#" className="text-blue-100/60 hover:text-[#e6ab65] transition-colors text-sm">
-                Sitemap
-              </a>
+          <div className="border-t border-white/10 mt-8 md:mt-12 pt-6 md:pt-8 flex flex-col items-center">
+            <Link href="/" className="flex items-center gap-2 mb-6">
+              <img 
+                src="/images/logo/logo.png" 
+                alt="Monarch Painters Logo" 
+                className="w-8 sm:w-10 md:w-12" 
+              />
+              <span className="font-['navlogo'] text-xl sm:text-xs md:text-md leading-loose" style={{ color: '#e6ab65' }}>
+                MONARCH PAINTERS
+              </span>
+            </Link>
+            <div className="w-full flex flex-col md:flex-row justify-between items-center">
+              <p className="text-xs md:text-sm text-blue-100/60">
+                © {new Date().getFullYear()} Monarch Painters. All rights reserved.
+              </p>
+              <div className="flex space-x-4 md:space-x-6 mt-4 md:mt-0">
+                <a href="#" className="text-xs md:text-sm text-blue-100/60 hover:text-[#e6ab65] transition-colors">
+                  Privacy Policy
+                </a>
+                <a href="#" className="text-xs md:text-sm text-blue-100/60 hover:text-[#e6ab65] transition-colors">
+                  Terms of Service
+                </a>
+                <a href="#" className="text-xs md:text-sm text-blue-100/60 hover:text-[#e6ab65] transition-colors">
+                  Sitemap
+                </a>
+              </div>
             </div>
           </div>
         </div>

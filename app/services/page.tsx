@@ -157,7 +157,7 @@ export default function Services() {
 
       {/* Services Section */}
       <div className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -206,7 +206,7 @@ export default function Services() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 overflow-x-auto snap-x snap-mandatory flex flex-nowrap sm:grid sm:flex-wrap sm:overflow-visible sm:snap-none">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 overflow-x-auto snap-x snap-mandatory flex flex-nowrap sm:grid sm:flex-wrap sm:overflow-visible sm:snap-none">
             {tools.map((tool, index) => (
               <motion.div
                 key={index}
@@ -214,7 +214,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.3, duration: 0.7 }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden min-w-[85vw] sm:min-w-0 snap-center sm:snap-align-none"
+                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden min-w-[85vw] sm:min-w-0 snap-center sm:snap-align-none flex-shrink-0 w-[85vw] md:w-auto"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#711f50]/5 to-[#e6ab65]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative h-36 sm:h-40 md:h-48 mb-4 sm:mb-5 md:mb-6 rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-300">
@@ -449,7 +449,7 @@ export default function Services() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 overflow-x-auto snap-x snap-mandatory flex flex-nowrap sm:grid sm:flex-wrap sm:overflow-visible sm:snap-none">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 overflow-x-auto snap-x snap-mandatory flex flex-nowrap sm:grid sm:flex-wrap sm:overflow-visible sm:snap-none">
             {[
               {
                 name: 'Emperor Masonry Paint',
