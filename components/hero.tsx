@@ -1,6 +1,8 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import { CompareDemo } from "./demo";
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -112,7 +114,7 @@ export function Hero() {
           <div className="relative rounded-3xl h-full w-full max-w-[90%] overflow-hidden flex justify-center items-center">
             {!isClient ? (
               <div className="w-full h-full bg-neutral-100 rounded-3xl flex items-center justify-center">
-                <div className="animate-pulse">Loading...</div>
+                <Skeleton height="100%" baseColor="#ede2db" highlightColor="#f5f5f5" />
               </div>
             ) : (
               <CompareDemo />
@@ -130,7 +132,7 @@ export function Hero() {
               variants={fadeInUp}
               className="font-['CustomFont'] leading-tight text-4xl md:text-5xl text-[#711f50] dark:text-gray-100"
             >
-              {heroContent.mainHeading}
+              {!isClient ? <Skeleton baseColor="#ede2db" highlightColor="#f5f5f5" /> : heroContent.mainHeading}
             </motion.h1>
             <AnimatePresence mode="wait">
               <motion.div
@@ -141,7 +143,7 @@ export function Hero() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="min-h-[70px] flex items-center justify-center font-['CustomFont'] leading-tight text-3xl md:text-4xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent"
               >
-                {tags[currentTag]}
+                {!isClient ? <Skeleton baseColor="#ede2db" highlightColor="#f5f5f5" /> : tags[currentTag]}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -149,7 +151,7 @@ export function Hero() {
             variants={fadeInUp}
             className="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-xl"
           >
-            {heroContent.description}
+            {!isClient ? <Skeleton count={2} baseColor="#ede2db" highlightColor="#f5f5f5" /> : heroContent.description}
           </motion.p>
 
           {/* Stats Section */}
@@ -167,7 +169,7 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
-                {heroContent.stats[0].value}
+                {!isClient ? <Skeleton baseColor="#ede2db" highlightColor="#f5f5f5" /> : heroContent.stats[0].value}
               </motion.h3>
               <p className="text-sm md:text-base text-gray-600">{heroContent.stats[0].label}</p>
             </motion.div>

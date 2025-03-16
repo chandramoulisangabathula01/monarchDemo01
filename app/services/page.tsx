@@ -1,5 +1,7 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+
 import FAQ from '@/components/faq';
 import Features from '@/components/Features';
 import Footer from '@/components/footer';
@@ -7,10 +9,18 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Feather } from 'lucide-react';
 import Image from 'next/image';
 import { services, professionalTools, serviceAreas } from '@/data/services';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const { tools } = professionalTools;
 
 export default function Services() {
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#ede2db]">
@@ -49,12 +59,16 @@ export default function Services() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <div className="relative h-36 sm:h-40 md:h-48">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                />
+                {!isClient ? (
+                  <Skeleton height="100%" baseColor="#ede2db" highlightColor="#f5f5f5" />
+                ) : (
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                )}
               </div>
               <div className="p-4 sm:p-5 md:p-6">
                 <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">{service.title}</h3>
@@ -188,14 +202,20 @@ export default function Services() {
                 <div className="absolute top-0 left-0 w-full h-2  transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
                 
                 <div className="relative h-52 w-full mb-6 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                  <Image
-                    src={material.image}
-                    alt={material.name}
-                    fill
-                    className="object-contain w-full rounded-2xl h-full"
-                    sizes="(max-width: 768px) 85vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {!isClient ? (
+                    <Skeleton height="100%" baseColor="#ede2db" highlightColor="#f5f5f5" />
+                  ) : (
+                    <>
+                      <Image
+                        src={material.image}
+                        alt={material.name}
+                        fill
+                        className="object-contain w-full rounded-2xl h-full"
+                        sizes="(max-width: 768px) 85vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </>
+                  )}
                 </div>
 
                 <h3 className="text-2xl font-bold text-[#711f50] mb-3 group-hover:text-[#e6ab65] transition-colors duration-300">
