@@ -1,3 +1,5 @@
+import { Link } from "lucide-react";
+
 // Landing page content configuration
 export const heroContent = {
     mainHeading: "Bringing Colors to Life",
@@ -38,7 +40,7 @@ export const heroContent = {
     cta: {
       primary: {
         text: "Get a Free Quote",
-        href: "/contact"
+        link: "/contact"
       },
       secondary: {
         text: "View Our Work",

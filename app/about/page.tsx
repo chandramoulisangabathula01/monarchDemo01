@@ -5,6 +5,7 @@ import Testimonials from "@/components/testimonials";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { aboutPageData } from "@/data/about";
+import Link from "next/link";
 
 export default function About() {
   const { teamSection, whatWeDoSection, ctaSection } = aboutPageData;
@@ -116,14 +117,13 @@ export default function About() {
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 px-2">
               {ctaSection.subtitle}
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <Link
+              href={ctaSection.buttonLink}
               className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-[#711f50] text-white rounded-lg sm:rounded-xl hover:bg-[#8b2762] transform transition-all duration-300 shadow-lg hover:shadow-[#711f50]/30 text-base sm:text-lg md:text-xl font-semibold group relative overflow-hidden"
             >
               <span className="relative z-10">{ctaSection.buttonText}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#e6ab65] to-[#711f50] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>

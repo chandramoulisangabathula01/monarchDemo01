@@ -377,7 +377,7 @@ function App() {
           className="mb-12 text-center"
         >
           <h2 className="text-4xl font-bold text-[#711f50] mb-4">Find Us</h2>
-          <p className="text-blue-100/80 text-xl max-w-3xl mx-auto">
+          <p className="text-black text-xl max-w-3xl mx-auto">
             Visit our studio to see our work in person and discuss your project with our team.
           </p>
         </motion.div>

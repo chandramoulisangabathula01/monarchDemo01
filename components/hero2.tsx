@@ -82,17 +82,22 @@ export default function Hero2() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
             className="w-full md:w-auto"
           >
             <Button 
               size="lg" 
-              className="w-full md:w-auto text-base md:text-lg bg-[#711f50] rounded-xl text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
+              className="w-full md:w-auto px-8 py-4 text-base md:text-lg bg-gradient-to-r from-[#711f50] to-[#8a2761] text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden group backdrop-blur-sm border border-white/10"
               onClick={() => window.location.href = '/contact'}
             >
-              <span className="relative z-10">Get Started</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#FFFFFF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-              <span className="absolute -inset-2 bg-[#FFFFFF]/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+              <span className="relative z-10 flex items-center gap-2">
+                Get Started
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:translate-x-full"></span>
+              <span className="absolute -inset-1 bg-gradient-to-r from-[#711f50]/20 to-[#8a2761]/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-all duration-500 scale-110"></span>
             </Button>
           </motion.div>
         </div>

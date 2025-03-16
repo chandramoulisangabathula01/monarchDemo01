@@ -7,6 +7,8 @@ import { CompareDemo } from "./demo";
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { heroContent } from "@/data/landingpage";
+import Link from "next/link";
+// import { Link } from "lucide-react";
 
 export function Hero() {
   const [currentTag, setCurrentTag] = useState(0);
@@ -208,20 +210,25 @@ export function Hero() {
             variants={fadeInUp}
             className="flex flex-row gap-4 w-full justify-center max-w-md mx-auto mt-4"
           >
-            <motion.button
-              whileHover={buttonHover}
-              whileTap={buttonTap}
-              className="flex-1 group relative px-6 py-3 md:py-4 bg-[#711f50] text-white font-semibold text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#711f50]/20 transition-all duration-300 overflow-hidden"
-            >
-              Get a Free Quote
-            </motion.button>
-            <motion.button
-              whileHover={buttonHover}
-              whileTap={buttonTap}
-              className="flex-1 group relative px-6 py-3 md:py-4 bg-transparent border-2 border-[#711f50] text-[#711f50] dark:text-white dark:border-white font-semibold text-base md:text-lg rounded-xl hover:shadow-xl hover:shadow-[#711f50]/10 transition-all duration-300 overflow-hidden"
-            >
-              View Our Work
-            </motion.button>
+            <Link href={heroContent.cta.primary.link}>
+              <motion.button
+                whileHover={buttonHover}
+                whileTap={buttonTap}
+                className="flex-1 group relative px-6 py-3 md:py-4 bg-[#711f50] text-white font-semibold text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#711f50]/20 transition-all duration-300 overflow-hidden"
+              >
+                {heroContent.cta.primary.text}
+              </motion.button>
+            </Link>
+            <Link href={heroContent.cta.secondary.href}>
+              <motion.button
+                whileHover={buttonHover}
+                whileTap={buttonTap}
+                className="flex-1 group relative px-6 py-3 md:py-4 bg-transparent border-2 border-[#711f50] text-[#711f50] dark:text-white dark:border-white font-semibold text-base md:text-lg rounded-xl hover:shadow-xl hover:shadow-[#711f50]/10 transition-all duration-300 overflow-hidden"
+              >
+                {heroContent.cta.secondary.text}
+              </motion.button>
+            </Link>
+            
           </motion.div>
         </motion.div>
       </motion.div>
@@ -306,20 +313,25 @@ export function Hero() {
             variants={fadeInUp}
             className="w-full flex flex-col gap-4 max-w-sm"
           >
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-3 bg-[#711f50] text-white rounded-lg font-semibold shadow-md"
-            >
-              Get Free Quote
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-3 bg-transparent border-2 border-[#711f50] text-[#711f50] rounded-lg font-semibold"
-            >
-              View Projects
-            </motion.button>
+            <Link href={heroContent.cta.primary.link} className="w-full">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full py-3 bg-[#711f50] text-white rounded-lg font-semibold shadow-md"
+              >
+                {heroContent.cta.primary.text}
+              </motion.button>
+            </Link>
+            <Link href={heroContent.cta.secondary.href} className="w-full">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full py-3 bg-transparent border-2 border-[#711f50] text-[#711f50] rounded-lg font-semibold"
+              >
+                {heroContent.cta.secondary.text}
+              </motion.button>
+            </Link>
+            
           </motion.div>
         </motion.div>
       </motion.div>
@@ -333,14 +345,14 @@ export function Hero() {
       initial="initial"
       animate="animate"
       variants={staggerContainer.variants}
-      className="flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8   sm:py-8 lg:py-16 bg-[#ede2db] dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 relative overflow-hidden"
+      className="flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8 ml-9 mt-9  sm:py-8 lg:py-16 bg-[#ede2db] dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 relative overflow-hidden"
     >
       {/* Left Content Section */}
       <motion.div 
         variants={staggerContainer.variants}
         className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-6 lg:space-y-8 order-2 lg:order-1  lg:mt-0 z-10 md:px-4 xl:px-0"
       >
-        <div className="space-y-2 sm:space-y-3 lg:space-y-4 max-w-3xl mx-auto lg:mx-0">
+        <div className="space-y-2 sm:space-y-3 lg:space-y-4 max-w-3xl  lg:mx-0">
           <motion.h1 
             variants={fadeInUp}
             className="font-['CustomFont'] leading-tight text-4xl md:text-5xl lg:text-6xl text-[#711f50] dark:text-gray-100 px-4 md:px-6 lg:px-0"
@@ -421,25 +433,30 @@ export function Hero() {
           variants={fadeInUp}
           className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start mt-4 px-6 md:px-8 lg:px-0"
         >
-          <motion.button
-            whileHover={buttonHover}
-            whileTap={buttonTap}
-            className="group relative px-6 md:px-8 py-3 md:py-4 bg-[#711f50] text-white font-semibold text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#711f50]/20 transition-all duration-300 overflow-hidden w-full sm:w-auto"
-          >
-            Get a Free Quote
-          </motion.button>
-          <motion.button
-            whileHover={buttonHover}
-            whileTap={buttonTap}
-            className="group relative px-6 md:px-8 py-3 md:py-4 bg-transparent border-2 border-[#711f50] text-[#711f50] dark:text-white dark:border-white font-semibold text-base md:text-lg rounded-xl hover:shadow-xl hover:shadow-[#711f50]/10 transition-all duration-300 overflow-hidden w-full sm:w-auto"
-          >
-            View Our Work
-          </motion.button>
+          <Link href={heroContent.cta.primary.link}>
+            <motion.button
+              whileHover={buttonHover}
+              whileTap={buttonTap}
+              className="group relative px-6 md:px-8 py-3 md:py-4 bg-[#711f50] text-white font-semibold text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#711f50]/20 transition-all duration-300 overflow-hidden w-full sm:w-auto"
+            >
+              {heroContent.cta.primary.text}
+            </motion.button>
+          </Link>
+          <Link href={heroContent.cta.secondary.href}>
+            <motion.button
+              whileHover={buttonHover}
+              whileTap={buttonTap}
+              className="group relative px-6 md:px-8 py-3 md:py-4 bg-transparent border-2 border-[#711f50] text-[#711f50] dark:text-white dark:border-white font-semibold text-base md:text-lg rounded-xl hover:shadow-xl hover:shadow-[#711f50]/10 transition-all duration-300 overflow-hidden w-full sm:w-auto"
+            >
+              {heroContent.cta.secondary.text}
+            </motion.button>
+          </Link>
+          
         </motion.div>
       </motion.div>
 
       {/* Right Video/Demo Section */}
-      <div className="flex-1 order-1 lg:order-2 h-[250px] md:h-[400px] lg:h-[500px] flex items-center justify-center px-4 md:px-6 lg:px-8">
+      <div className="flex-1 order-1 lg:order-2 h-[250px] md:h-[400px] lg:h-[500px] flex items-center justify-center px-4 md:px-6 mt-9 lg:px-8">
         <div className="relative rounded-3xl h-full w-full overflow-hidden flex justify-center items-center">
           {!isClient ? (
             <div className="w-full h-full bg-neutral-100 rounded-3xl flex items-center justify-center">

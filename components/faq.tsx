@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { faqContent } from "@/data/landingpage";
+import Link from "next/link";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -50,10 +51,10 @@ export default function FAQ() {
           ))}
         </div>
 
-        <button className="mt-12 mx-auto block bg-gradient-to-r from-[#711f50] to-[#e6ab65] text-white px-8 py-4 rounded-full font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-md text-lg relative overflow-hidden group">
+        <Link href={cta.link} className="mt-12 mx-auto block bg-gradient-to-r from-[#711f50] to-[#e6ab65] text-white px-8 py-4 rounded-full font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-md text-lg relative overflow-hidden group">
           <span className="relative z-10">{cta.text}</span>
           <div className="absolute inset-0 bg-gradient-to-r from-[#e6ab65] to-[#711f50] opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-        </button>
+        </Link>
       </div>
     </section>
   );
