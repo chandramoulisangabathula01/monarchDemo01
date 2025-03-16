@@ -41,7 +41,8 @@ function App() {
     }
   };
 
- 
+  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitStatus('loading');
@@ -126,7 +127,7 @@ function App() {
     }
   };
 
-  
+
   // Background gradient animation
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
@@ -143,6 +144,7 @@ function App() {
   }, []);
 
   
+
   return (
     <div className="min-h-screen bg-[#d9c2d4] flex flex-col items-center justify-center overflow-hidden relative">
       {/* Animated background elements */}
@@ -167,19 +169,18 @@ function App() {
         />
       </div>
 
-      
-
+     
       {/* Main Contact Section */}
-      <section id="contact" className="w-full max-w-7xl pt-24 md:pt-32 pb-12 md:pb-16 px-4">
+      <section id="contact" className="w-full max-w-7xl pt-32 pb-16 px-4">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-full flex flex-col lg:flex-row rounded-[2rem] shadow-2xl overflow-hidden border border-[#711f50]/20 backdrop-blur-md bg-white/90 relative z-10"
+          className="w-full flex flex-col md:flex-row rounded-[2rem] shadow-2xl overflow-hidden border border-[#711f50]/20 backdrop-blur-md bg-white/90 relative z-10"
         >
           {/* Left Column - Contact Information */}
           <motion.div 
-            className="w-full lg:w-2/5 bg-[#711f50] text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden"
+            className="w-full md:w-2/5 bg-[#711f50] text-white p-12 flex flex-col justify-between relative overflow-hidden"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -188,13 +189,13 @@ function App() {
             <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-white/20 to-transparent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#e6ab65]/30 to-transparent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
             
-            <div className="relative z-10 space-y-12 md:space-y-16">
+            <div className="relative z-10 space-y-16">
               <motion.div variants={itemVariants} initial="hidden" animate="visible">
-                <h2 className="text-xl md:text-2xl font-bold flex items-center mb-2">
-                  <Zap className="w-6 md:w-8 h-6 md:h-8 mr-2 text-[#e6ab65]" />
+                <h2 className="text-2xl font-bold flex items-center mb-2">
+                  <Zap className="w-8 h-8 mr-2 text-[#e6ab65]" />
                   <span className="inline-block bg-gradient-to-r from-[#e6ab65] to-[#ede2db] text-transparent bg-clip-text font-display">Monarch Painters</span>
                 </h2>
-                <p className="text-[#ede2db]/90 text-base md:text-lg">Transform your space with our expert touch</p>
+                <p className="text-[#ede2db]/90 text-lg">Transform your space with our expert touch</p>
               </motion.div>
 
               <motion.div className="space-y-12" variants={containerVariants} initial="hidden" animate="visible">
@@ -256,7 +257,7 @@ function App() {
 
           {/* Right Column - Contact Form */}
           <motion.div 
-            className="w-full lg:w-3/5 p-8 md:p-12 lg:p-16 relative overflow-hidden"
+            className="w-full md:w-3/5 p-12  lg:p-16 relative overflow-hidden"
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -266,10 +267,10 @@ function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="mb-8 md:mb-12"
+                className="mb-12"
               >
                 <motion.h2 
-                  className="text-3xl md:text-5xl font-bold mb-4 text-[#711f50] font-display"
+                  className="text-5xl font-bold mb-4 text-[#711f50] font-display"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
@@ -277,7 +278,7 @@ function App() {
                   Let's create something <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e6ab65] to-[#711f50]">extraordinary</span>
                 </motion.h2>
                 <motion.p 
-                  className="text-[#711f50]/80 text-lg md:text-xl"
+                  className="text-[#711f50]/80 text-xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
@@ -365,16 +366,16 @@ function App() {
       </section>
 
       {/* Map Section */}
-      <section id="map" className="w-full max-w-7xl py-12 md:py-16 px-4">
+      <section id="map" className="w-full max-w-7xl py-16 px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mb-8 md:mb-12 text-center"
+          className="mb-12 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#711f50] mb-3 md:mb-4">Find Us</h2>
-          <p className="text-blue-100/80 text-lg md:text-xl max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-[#711f50] mb-4">Find Us</h2>
+          <p className="text-blue-100/80 text-xl max-w-3xl mx-auto">
             Visit our studio to see our work in person and discuss your project with our team.
           </p>
         </motion.div>
@@ -385,7 +386,7 @@ function App() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 h-[400px] md:h-[500px] relative w-full"
+            className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 h-[500px] relative w-full"
           >
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304605!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1659012963606!5m2!1sen!2s" 
@@ -401,16 +402,16 @@ function App() {
           </motion.div>
 
           <motion.div 
-            className="md:absolute relative top-8 left-8 bg-slate-900/90 backdrop-blur-md p-6 md:p-8 rounded-xl border border-white/10 max-w-md mt-4 md:mt-0 w-full md:w-auto"
+            className="md:absolute relative top-8 left-8 bg-slate-900/90 backdrop-blur-md p-8 rounded-xl border border-white/10 max-w-md mt-4 md:mt-0"
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Our Studio</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Our Studio</h3>
             <div className="space-y-4">
-              <div className="flex items-start space-x-3 md:space-x-4">
-                <MapPin className="w-5 md:w-6 h-5 md:h-6 text-[#e6ab65] mt-1" />
+              <div className="flex items-start space-x-4">
+                <MapPin className="w-6 h-6 text-[#e6ab65] mt-1" />
                 <div>
                   <p className="text-white">123 Creative Avenue</p>
                   <p className="text-white">Design District, NY 10001</p>
@@ -447,9 +448,73 @@ function App() {
 
       
       {/* Testimonials Section */}
-      /
+      <section id="testimonials" className="w-full max-w-7xl py-16 px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mb-12 text-center"
+        >
+          <h2 className="text-4xl font-bold text-[#711f50] mb-4">What Our Clients Say</h2>
+          <p className="text-black text-xl max-w-3xl mx-auto">
+            Don't just take our word for it - hear from our satisfied clients.
+          </p>
+        </motion.div>
 
-      
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              name: "Emily Johnson",
+              role: "Homeowner",
+              image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+              quote: "Monarch Painters transformed our living room beyond our expectations. Their attention to detail and color expertise made all the difference. Highly recommend!"
+            },
+            {
+              name: "Marcus Chen",
+              role: "Restaurant Owner",
+              image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+              quote: "Working with Monarch Painters for our restaurant renovation was a fantastic experience. They understood our vision and executed it flawlessly, all while staying on schedule."
+            },
+            {
+              name: "Sarah Williams",
+              role: "Interior Designer",
+              image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
+              quote: "As an interior designer, I have high standards for the contractors I work with. Monarch Painters consistently exceeds my expectations with their craftsmanship and professionalism."
+            }
+          ].map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-[#711f50]/60 backdrop-blur-sm rounded-2xl p-8 border border-white/10 relative"
+            >
+              <div className="absolute -top-6 left-8">
+                <svg className="w-12 h-12 text-[#e6ab65]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+                </svg>
+              </div>
+              <div className="pt-6">
+                <p className="text-blue-100/80 mb-6 italic">{testimonial.quote}</p>
+                <div className="flex items-center">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name} 
+                    className="w-12 h-12 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h4 className="text-white font-bold">{testimonial.name}</h4>
+                    <p className="text-blue-100/60 text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       <Footer/>
       
     </div>
