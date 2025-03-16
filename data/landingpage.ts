@@ -49,8 +49,8 @@ export const heroContent = {
     // Media content
     media: {
       compareDemo: {
-        firstImage: "/images/4.png",
-        secondImage: "/images/4.2.png"
+        firstImage: "/images/studio/4.png",
+        secondImage: "/images/studio/4.2.png"
       },
       video: {
         src: "/bgvideo.mp4",
@@ -120,7 +120,7 @@ export const hero2Content: Hero2Content = {
   },
   images: {
     teamImage: "./images/tech3.webp",
-    finishImage: "./images/studio/20230728_132854.jpg"
+    finishImage: "./images/studio/20230728_132854.webp"
   }
 };
 
@@ -147,7 +147,7 @@ export const weekendExperienceContent: WeekendExperienceContent = {
   title: "Professional Services You Can",
   titleSpan: "Trust",
   description: "We take pride in our top-tier craftsmanship and attention to detail, ensuring every project reflects your unique style and vision. From cosy spaces to expansive properties, we approach every job with professionalism and dedication.",
-  backgroundImage: "./images/studio/14.png",
+  backgroundImage: "./images/studio/14.webp",
   cta: {
     text: "Explore Our Work",
     link: "/projects"
@@ -207,22 +207,22 @@ export const expertiseContent: ExpertiseContent = {
     title: "Our Expertise",
     items: [
       {
-        image: "/images/studio/20240709_133850 (Large).jpg",
+        image: "/images/studio/20240709_133850 (Large).webp",
         title: "Residential",
         description: "Expert interior & exterior home painting with meticulous attention to detail"
       },
       {
-        image: "/images/gallery/outdoor 4.jpg",
+        image: "/images/studio/20240613_142118 (Large).webp",
         title: "Commercial",
         description: "Transforming workplaces with minimal downtime and maximum impact"
       },
       {
-        image: "/images/studio/20230814_110116.jpg",
+        image: "/images/studio/20230814_110116.webp",
         title: "Premium Quality",
         description: "Using top-tier products like Emperor Masonry Paint and Benjamin Moore"
       },
       {
-        image: "/images/studio/20250120_133516_Edited.jpg",
+        image: "/images/studio/20250120_133516_Edited.webp",
         title: "Advanced Tech",
         description: "Utilizing Mirka 1230M & TriTech T5 spray systems for flawless finish"
       }
@@ -251,7 +251,7 @@ export const features2Content: Features2Content = {
   title: "Why Choose Monarch Painters?",
   subtitle: "Professional painting services you can trust",
   premiumQuality: {
-    image: "/images/studio/20250120_141855_Edited.jpg",
+    image: "/images/studio/20250120_141855_Edited.webp",
     title: "Premium Quality",
     description: "We use only the highest quality paints and materials for lasting results."
   },
@@ -303,17 +303,17 @@ export const featuresContent: FeaturesContent = {
   subtitle: "Serving Rugeley, Lichfield, Tamworth, Sutton Coldfield, Birmingham, and beyond",
   services: [
     {
-      image: "/images/gallery/steps 4.jpg",
+      image: "/images/studio/20240613_142118 (Large).webp",
       title: "Commercial Painting",
       description: "Boosting productivity & brand image"
     },
     {
-      image: "/images/studio/20230630_172504.jpg",
+      image: "/images/studio/20230630_172504.webp",
       title: "Residential Decorating",
       description: "Bringing your vision to life"
     },
     {
-      image: "/images/studio/20230728_133414.jpg",
+      image: "/images/studio/20230728_133414.webp",
       title: "Exterior Solutions",
       description: "Durable & weather-resistant finishes"
     }

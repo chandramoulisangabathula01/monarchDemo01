@@ -115,7 +115,7 @@ export default function Hero2() {
               className="rounded-[2rem] md:rounded-[2.5rem] w-full h-auto"
             />
             <Image
-              src="./images/studio/20230728_132854.jpg"
+              src="./images/studio/20230728_132854.webp"
               alt="High-quality painting finish example"
               width={300}
               height={400}

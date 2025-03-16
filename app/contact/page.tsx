@@ -41,7 +41,7 @@ function App() {
     }
   };
 
-  
+ 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -127,6 +127,7 @@ function App() {
     }
   };
 
+ 
 
   // Background gradient animation
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -143,8 +144,10 @@ function App() {
     };
   }, []);
 
+  // Team members data
   
 
+ 
   return (
     <div className="min-h-screen bg-[#d9c2d4] flex flex-col items-center justify-center overflow-hidden relative">
       {/* Animated background elements */}
@@ -169,7 +172,6 @@ function App() {
         />
       </div>
 
-     
       {/* Main Contact Section */}
       <section id="contact" className="w-full max-w-7xl pt-32 pb-16 px-4">
         <motion.div 
@@ -446,75 +448,8 @@ function App() {
         </div>
       </section>
 
-      
-      {/* Testimonials Section */}
-      <section id="testimonials" className="w-full max-w-7xl py-16 px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
-        >
-          <h2 className="text-4xl font-bold text-[#711f50] mb-4">What Our Clients Say</h2>
-          <p className="text-black text-xl max-w-3xl mx-auto">
-            Don't just take our word for it - hear from our satisfied clients.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              name: "Emily Johnson",
-              role: "Homeowner",
-              image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
-              quote: "Monarch Painters transformed our living room beyond our expectations. Their attention to detail and color expertise made all the difference. Highly recommend!"
-            },
-            {
-              name: "Marcus Chen",
-              role: "Restaurant Owner",
-              image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
-              quote: "Working with Monarch Painters for our restaurant renovation was a fantastic experience. They understood our vision and executed it flawlessly, all while staying on schedule."
-            },
-            {
-              name: "Sarah Williams",
-              role: "Interior Designer",
-              image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
-              quote: "As an interior designer, I have high standards for the contractors I work with. Monarch Painters consistently exceeds my expectations with their craftsmanship and professionalism."
-            }
-          ].map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-[#711f50]/60 backdrop-blur-sm rounded-2xl p-8 border border-white/10 relative"
-            >
-              <div className="absolute -top-6 left-8">
-                <svg className="w-12 h-12 text-[#e6ab65]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
-                </svg>
-              </div>
-              <div className="pt-6">
-                <p className="text-blue-100/80 mb-6 italic">{testimonial.quote}</p>
-                <div className="flex items-center">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name} 
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <h4 className="text-white font-bold">{testimonial.name}</h4>
-                    <p className="text-blue-100/60 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
+    
+     
       <Footer/>
       
     </div>

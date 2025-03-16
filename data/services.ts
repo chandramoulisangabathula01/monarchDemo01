@@ -10,7 +10,7 @@ export const services = [
       'Premium quality paints and materials',
       'Wallpapering services'
     ],
-    image: '/images/studio/20250120_141844_Edited.jpg'
+    image: '/images/studio/20250120_141844_Edited.webp'
   },
   {
     title: 'Commercial & Residential',
@@ -21,7 +21,7 @@ export const services = [
       'Minimal business disruption',
       'Health & safety compliant'
     ],
-    image: '/images/8.png'
+    image: '/images/studio/20240613_142118 (Large).webp'
   },
   {
     title: 'Exterior Painting',
@@ -32,7 +32,7 @@ export const services = [
       'Professional equipment',
       'Long-lasting finish'
     ],
-    image: '/images/studio/20230821_163054.jpg'
+    image: '/images/studio/20230821_163054.webp'
   }
 ];
 
@@ -61,7 +61,7 @@ export const professionalTools = {
 export const serviceAreas = {
   title: "Areas We Serve",
   subtitle: "Delivering exceptional painting services across the West Midlands with precision and passion",
-  backgroundImage: "/images/studio/17.png",
+  backgroundImage: "/images/studio/17.webp",
   areas: [
     'Stafford',
     'Rugeley',
@@ -78,4 +78,29 @@ export const serviceAreas = {
     url: "/contact"
   },
   ctaDescription: "to discuss your project"
+};
+
+export const premiumMaterials = {
+  title: "Premium Materials",
+  subtitle: "Experience excellence with our carefully selected premium paints",
+  materials: [
+    {
+      name: 'Emperor Masonry Paint',
+      description: 'Superior exterior protection with enhanced durability',
+      image: '/images/paints/24.jpg',
+      features: ['Weather-resistant', '10-year lifespan', 'UV protection']
+    },
+    {
+      name: 'Wethertex AP77',
+      description: 'Advanced weather-resistant coating for lasting finish',
+      image: '/images/paints/25.jpg',
+      features: ['Self-cleaning', 'Breathable coating', 'Anti-crack']
+    },
+    {
+      name: 'Dulux Weathershield',
+      description: 'Premium all-weather protection for exterior surfaces',
+      image: '/images/paints/26.jpg',
+      features: ['All-season protection', 'Color-lock technology', 'Mold resistant']
+    }
+  ]
 };

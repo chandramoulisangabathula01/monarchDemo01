@@ -34,7 +34,7 @@ export interface AboutPageData {
 export const aboutPageData: AboutPageData = {
   teamSection: {
     title: "More Than Just Painters.\nWe're Your Decoration Partners.",
-    teamImage: "/images/studio/20250120_141855_Edited.jpg",
+    teamImage: "/images/studio/20250120_141855_Edited.webp",
     whoWeAre: {
       title: "Who We Are",
       description: [
@@ -48,13 +48,13 @@ export const aboutPageData: AboutPageData = {
     description: "We provide top-quality painting solutions tailored to meet your specific needs, regardless of the project's scope or scale. Our services cater to both residential and commercial clients, offering fresh painting for new constructions or repainting for renovations, covering both interior and exterior applications.",
     buttonText: "View Our Services",
     buttonLink: "/services",
-    image: "/images/studio/20230630_172504.jpg"
+    image: "/images/studio/20230630_172504.webp"
   },
   ctaSection: {
     title: "Transform Your Space with Monarch Painters",
     subtitle: "Serving Rugeley, Lichfield, Tamworth, Sutton Coldfield, Birmingham, and beyond.",
     buttonText: "Get a Free Quote",
     buttonLink: "/contact",
-    backgroundImage: "/images/studio/outdoor 1.jpg"
+    backgroundImage: "/images/studio/outdoor 1.webp"
   }
 };

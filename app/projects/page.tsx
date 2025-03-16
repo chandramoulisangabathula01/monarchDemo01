@@ -55,7 +55,7 @@ export default function Projects() {
       >
         <div className="absolute inset-0 bg-black/40 z-10" />
         <Image
-          src="/images/studio/20250120_133706_Edited.jpg"
+          src="/images/studio/20250120_133706_Edited.webp"
           alt="Projects Hero"
           fill
           className="object-cover transform scale-105 hover:scale-100 transition-transform duration-700"
