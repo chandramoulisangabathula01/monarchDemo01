@@ -228,19 +228,117 @@ export function Hero() {
     );
   }
 
-  // Original layout for all other screen sizes
+  // Mobile-first layout
+  if (isClient && isMobile) {
+    return (
+      <motion.div 
+        ref={containerRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col min-h-[calc(100vh-4rem)] w-full px-4 py-8 bg-[#ede2db] relative overflow-hidden"
+      >
+        <div className="w-full h-[300px] flex items-center justify-center mb-8">
+          <div className="relative rounded-2xl h-full w-full overflow-hidden">
+            {isClient ? (
+              <video
+                autoPlay
+                muted
+                playsInline
+                className="w-full h-full object-cover rounded-2xl"
+              >
+                <source src={heroContent.media.video.src} type={heroContent.media.video.type} />
+              </video>
+            ) : (
+              <div className="w-full h-full bg-neutral-100 rounded-2xl" />
+            )}
+          </div>
+        </div>
+
+        <motion.div 
+          className="flex-1 flex flex-col justify-center items-center text-center space-y-6 px-4"
+          variants={staggerContainer.variants}
+        >
+          <div className="space-y-4">
+            <motion.h1 
+              variants={fadeInUp}
+              className="font-['CustomFont'] text-3xl leading-tight text-[#711f50]"
+            >
+              {heroContent.mainHeading}
+            </motion.h1>
+            
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentTag}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
+                className="text-2xl font-['CustomFont'] bg-gradient-to-r from-[#e6ab65] to-[#711f50] bg-clip-text text-transparent"
+              >
+                {tags[currentTag]}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <motion.p 
+            variants={fadeInUp}
+            className="text-gray-600 text-base max-w-md"
+          >
+            {heroContent.description}
+          </motion.p>
+
+          <motion.div 
+            variants={fadeInUp}
+            className="w-full grid grid-cols-3 gap-3 max-w-xs"
+          >
+            {heroContent.stats.map((stat, index) => (
+              <div 
+                key={index}
+                className="p-3 rounded-xl bg-white/50 backdrop-blur-sm border border-[#711f50]/20"
+              >
+                <h3 className="text-lg font-bold text-[#711f50]">{stat.value}</h3>
+                <p className="text-xs text-gray-600">{stat.label}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div 
+            variants={fadeInUp}
+            className="w-full flex flex-col gap-4 max-w-sm"
+          >
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full py-3 bg-[#711f50] text-white rounded-lg font-semibold shadow-md"
+            >
+              Get Free Quote
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full py-3 bg-transparent border-2 border-[#711f50] text-[#711f50] rounded-lg font-semibold"
+            >
+              View Projects
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    );
+  }
+
+  // iPad Pro layout
   return (
     <motion.div 
       ref={containerRef}
       initial="initial"
       animate="animate"
       variants={staggerContainer.variants}
-      className="flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8 py-6 mt-9 sm:py-8 lg:py-16 bg-[#ede2db] dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 relative overflow-hidden"
+      className="flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8   sm:py-8 lg:py-16 bg-[#ede2db] dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 relative overflow-hidden"
     >
       {/* Left Content Section */}
       <motion.div 
         variants={staggerContainer.variants}
-        className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-6 lg:space-y-8 order-2 lg:order-1 mt-8 lg:mt-0 z-10 md:px-4 xl:px-0"
+        className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-6 lg:space-y-8 order-2 lg:order-1  lg:mt-0 z-10 md:px-4 xl:px-0"
       >
         <div className="space-y-2 sm:space-y-3 lg:space-y-4 max-w-3xl mx-auto lg:mx-0">
           <motion.h1 
