@@ -14,53 +14,7 @@ type Project = {
   description: string;
 };
 
-const ITEMS_PER_PAGE = 9;
-
-const galleryImages = [
-  // Interior category
-  ...[
-    'interior 1.jpg', 'interior 2.jpg', 'interior 3.jpg', 'interior 4.jpg',
-    'interior 5.jpg', 'interior 6.jpg', 'interior 7.jpg', 'interior 8.jpg',
-    'interior 9.jpg', 'interior 10.jpg', 'livingroom 1.jpg', 'livingroom 2.jpg',
-    'livingroom 3.jpg', 'livingroom 4.jpg', 'livingroom 5.jpg', 'livingroom 6.jpg',
-    'livingroom 7.jpg', 'livingroom 8.jpg', 'livingroom 9.jpg', 'livingroom 10.jpg',
-    'livingroom 11.jpg', 'living room 12.jpg', 'living room 13.jpg', 'living room 14.jpg',
-    'kitchen 1.jpg', 'kitchen 2.jpg', 'kitchen 3.jpg', 'kitchen 4.jpg',
-    'room 1.jpg', 'room 2.jpg', 'room 3.jpg'
-  ].map(filename => ({
-    category: 'interior',
-    image: `/images/gallery/${filename}`,
-    title: filename.split('.')[0].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-    description: 'Interior painting and decoration project'
-  })),
-
-  // Exterior category
-  ...[
-    'outdoor 1.jpg', 'outdoor 2.jpg', 'outdoor 3.jpg', 'outdoor 4.jpg',
-    'outdoor 5.jpg', 'outdoor 6.jpg', 'outdoor 7.jpg', 'outdoor 8.jpg',
-    'outdoor 9.jpg', 'steps 1.jpg', 'steps 2.jpg', 'steps 3.jpg',
-    'steps 4.jpg', 'steps 5.jpg', 'steps 6.jpg', 'steps 7.jpg',
-    'steps 8.jpg', 'steps 9.jpg', 'steps 10.jpg', 'steps 11.jpg',
-    'steps before.jpg', 'steps after.jpg'
-  ].map(filename => ({
-    category: 'exterior',
-    image: `/images/gallery/${filename}`,
-    title: filename.split('.')[0].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-    description: 'Exterior painting and renovation project'
-  })),
-
-  // Commercial category
-  ...[
-    'floor 1.jpg', 'floor 2.jpg', 'floor 3.jpg', 'floor 4.jpg',
-    'floor 5.png', 'hall before.jpg', 'hall after.jpg',
-    'hall 2 before.jpg', 'hall 2 after.jpg'
-  ].map(filename => ({
-    category: 'commercial',
-    image: `/images/gallery/${filename}`,
-    title: filename.split('.')[0].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-    description: 'Commercial space renovation'
-  }))
-].map((item, index) => ({ ...item, id: index + 1 }));
+import { galleryImages, categories, heroContent, ITEMS_PER_PAGE } from '@/data/projects';
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -97,11 +51,11 @@ export default function Projects() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] bg-[#711f50] text-white flex items-center justify-center overflow-hidden"
+        className="relative  h-[40vh] sm:h-[50vh] md:h-[60vh] bg-[#711f50] text-white flex items-center justify-center overflow-hidden"
       >
         <div className="absolute inset-0 bg-black/40 z-10" />
         <Image
-          src="/images/gallery/interior 2.jpg"
+          src="/images/studio/20250120_133706_Edited.jpg"
           alt="Projects Hero"
           fill
           className="object-cover transform scale-105 hover:scale-100 transition-transform duration-700"
@@ -142,8 +96,8 @@ export default function Projects() {
             <motion.div
               key={project.id}
               layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0,  }}
+              animate={{ opacity: 1,  }}
               transition={{ 
                 duration: 0.5,
                 delay: index * 0.1,

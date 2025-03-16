@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { Facebook, Globe, Linkedin, Mail, MapPin, Phone, Twitter, Youtube, Zap } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ConsentRevocationLink } from './ConsentRevocationLink';
+import { footerContent } from '@/data/landingpage';
+import React from 'react';
 
 export default function Footer() {
   return (
@@ -12,7 +15,7 @@ export default function Footer() {
     //         <Link href="/" className="flex items-center gap-2">
     //           <Image 
     //             src="/images/logo2.png" 
-    //             alt="Monarch Painters Logo" 
+    //             alt={footerContent.logo.alt} 
     //             width={40} 
     //             height={40} 
     //             className="w-8"
@@ -83,7 +86,7 @@ export default function Footer() {
     //           {/* <Link href="/" className="flex items-center gap-4">
     //             <Image 
     //               src="/images/logo2.png" 
-    //               alt="Monarch Painters Logo" 
+    //               alt={footerContent.logo.alt} 
     //               width={60} 
     //               height={60} 
     //               className="w-12"
@@ -103,8 +106,8 @@ export default function Footer() {
           {/* <div className="flex justify-center items-center mb-8">
             <Link href="/" className="flex items-center gap-2">
               <img 
-                src="/images/logo/logo.png" 
-                alt="Monarch Painters Logo" 
+                src={footerContent.logo.src} 
+                alt={footerContent.logo.alt} 
                 className="w-8 sm:w-10 md:w-12" 
               />
               <span className="font-['navlogo'] text-xl sm:text-2xl md:text-3xl leading-loose" style={{ color: '#e6ab65' }}>
@@ -115,13 +118,19 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             <div className="col-span-2 md:col-span-1 space-y-4 md:space-y-6">
               <p className="text-sm md:text-base text-blue-100/70">
-                Transforming spaces with creativity and precision since 2010.
+                {footerContent.companyDescription}
               </p>
               <div className="flex space-x-3 md:space-x-4">
-                {[Facebook, Twitter, Linkedin, Youtube, Globe].map((Icon, index) => (
+                {[
+                  { Icon: Facebook, link: footerContent.socialLinks.facebook },
+                  { Icon: Twitter, link: footerContent.socialLinks.twitter },
+                  { Icon: Linkedin, link: footerContent.socialLinks.linkedin },
+                  { Icon: Youtube, link: footerContent.socialLinks.youtube },
+                  { Icon: Globe, link: footerContent.socialLinks.website }
+                ].map(({ Icon, link }, index) => (
                   <motion.a 
                     key={index}
-                    href="#" 
+                    href={link} 
                     className="text-blue-100/60 hover:text-[#e6ab65] transition-all duration-300"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
@@ -135,7 +144,7 @@ export default function Footer() {
             <div>
               <h3 className="text-lg md:text-xl font-bold text-white">Services</h3>
               <ul className="space-y-3 md:space-y-4">
-                {["Interior Painting", "Exterior Painting", "Commercial Painting", "Decorative Finishes", "Color Consultation", "Cabinet Refinishing"].map((service, index) => (
+                {footerContent.services.map((service, index) => (
                   <li key={index}>
                     <a href="#services" className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors">
                       {service}
@@ -148,7 +157,7 @@ export default function Footer() {
             <div>
               <h3 className="text-lg md:text-xl font-bold text-white">Company</h3>
               <ul className="space-y-3 md:space-y-4">
-                {[{name: "About Us", path: "/about"}, {name: "Services", path: "/services"}, {name: "Projects", path: "/projects"}, {name: "Contact", path: "/contact"}].map((item, index) => (
+                {footerContent.companyLinks.map((item, index) => (
                   <li key={index}>
                     <Link href={item.path} className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors">
                       {item.name}
@@ -164,20 +173,24 @@ export default function Footer() {
                 <li className="flex items-start space-x-3">
                   <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#e6ab65] mt-1" />
                   <span className="text-sm md:text-base text-blue-100/70">
-                    123 Creative Avenue<br />
-                    Design District, NY 10001
+                    {footerContent.contact.address.map((line, index) => (
+                      <React.Fragment key={index}>
+                        {line}
+                        {index < footerContent.contact.address.length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 md:w-5 md:h-5 text-[#e6ab65]" />
                   <a href="tel:+1234567890" className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors">
-                    +1 (234) 567-890
+                    {footerContent.contact.phone}
                   </a>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 md:w-5 md:h-5 text-[#e6ab65]" />
-                  <a href="mailto:contact@monarchpainters.com" className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors break-all">
-                    contact@monarchpainters.com
+                  <a href="mailto:{footerContent.contact.email}" className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors break-all">
+                    {footerContent.contact.email}
                   </a>
                 </li>
               </ul>
@@ -187,8 +200,8 @@ export default function Footer() {
           <div className="border-t border-white/10 mt-8 md:mt-12 pt-6 md:pt-8 flex flex-col items-center">
             <Link href="/" className="flex items-center gap-2 mb-6">
               <img 
-                src="/images/logo/logo.png" 
-                alt="Monarch Painters Logo" 
+                src={footerContent.logo.src} 
+                alt={footerContent.logo.alt} 
                 className="w-8 sm:w-10 md:w-12" 
               />
               <span className="font-['navlogo'] text-xl sm:text-xs md:text-md leading-loose" style={{ color: '#e6ab65' }}>
@@ -200,15 +213,16 @@ export default function Footer() {
                 © {new Date().getFullYear()} Monarch Painters. All rights reserved.
               </p>
               <div className="flex space-x-4 md:space-x-6 mt-4 md:mt-0">
-                <a href="#" className="text-xs md:text-sm text-blue-100/60 hover:text-[#e6ab65] transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="#" className="text-xs md:text-sm text-blue-100/60 hover:text-[#e6ab65] transition-colors">
-                  Terms of Service
-                </a>
-                <a href="#" className="text-xs md:text-sm text-blue-100/60 hover:text-[#e6ab65] transition-colors">
-                  Sitemap
-                </a>
+                {footerContent.legalLinks.map((link, index) => (
+                  <a 
+                    key={index}
+                    href={link.path} 
+                    className="text-xs md:text-sm text-blue-100/60 hover:text-[#e6ab65] transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+                <ConsentRevocationLink className="text-xs md:text-sm text-blue-100/60 hover:text-[#e6ab65] transition-colors" />
               </div>
             </div>
           </div>

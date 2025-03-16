@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { faqContent } from "@/data/landingpage";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -8,32 +9,7 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const faqs = [
-    {
-      question: "Why choose Monarch Painters Limited?",
-      answer: "We take pride in our top-tier craftsmanship and attention to detail, ensuring every project reflects your unique style and vision. With over 35 years of combined experience, we deliver superior paint jobs for every project, regardless of size.",
-    },
-    {
-      question: "What areas do you serve?",
-      answer: "We serve Rugeley, Lichfield, Tamworth, Sutton Coldfield, Birmingham, Cannock, Stafford, Penkridge, Derby, Wolverhampton and many more areas in Staffordshire.",
-    },
-    {
-      question: "What types of projects do you handle?",
-      answer: "We specialize in both residential and commercial projects, including interior/exterior painting, industrial painting, and high-end developments. We use top-quality materials and the latest techniques for durable, beautiful results.",
-    },
-    {
-      question: "What makes your service different?",
-      answer: "We're a family business with a 5-star Google rating, committed to sustainability and professionalism. We use advanced equipment like the Mirka 1230M dustless extraction system and TriTech T5 airless spray system for flawless finishes.",
-    },
-    {
-      question: "What materials do you use?",
-      answer: "We use premium products like Emperor Masonry Paint, Isomat Premium Colour, Benjamin Moore Scuff-X, and Zinsser AllCoat for exterior woodwork, ensuring long-lasting, high-quality results.",
-    },
-    {
-      question: "How do you ensure quality?",
-      answer: "We never cut corners, maintain clear communication, and deliver on every promise. Our team is fully equipped with top-tier tools and follows strict health and safety guidelines for every project.",
-    },
-  ];
+  const { title, subtitle, faqs, cta } = faqContent;
 
   return (
     <section className="py-20 bg-[#ede2db]">
@@ -44,8 +20,8 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="md:text-5xl font-bold mb-4 text-[#711f50] sm:text-4xl text-4xl ">Frequently Asked Questions</h2>
-          <p className="text-lg text-gray-600">Your trusted partner for exceptional painting services - where quality meets craftsmanship</p>
+          <h2 className="md:text-5xl font-bold mb-4 text-[#711f50] sm:text-4xl text-4xl ">{title}</h2>
+          <p className="text-lg text-gray-600">{subtitle}</p>
         </motion.div>
         <div className="space-y-8">
           {faqs.map((faq, index) => (
@@ -74,8 +50,9 @@ export default function FAQ() {
           ))}
         </div>
 
-        <button className="mt-12 mx-auto block bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-black/90 transition-colors">
-          Get a Quote
+        <button className="mt-12 mx-auto block bg-gradient-to-r from-[#711f50] to-[#e6ab65] text-white px-8 py-4 rounded-full font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-md text-lg relative overflow-hidden group">
+          <span className="relative z-10">{cta.text}</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#e6ab65] to-[#711f50] opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
         </button>
       </div>
     </section>

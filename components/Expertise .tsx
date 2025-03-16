@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { expertiseContent } from "@/data/landingpage";
 
 export default function Expertise() {
   return (
@@ -13,7 +14,7 @@ export default function Expertise() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 text-[#e6ab65]">
-          Our Expertise
+          {expertiseContent.title}
         </motion.h2>
         <motion.div
           animate={{ y: [0, -8, 0] }}
@@ -23,28 +24,7 @@ export default function Expertise() {
         </motion.div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-        {[
-          {
-            image: "/images/gallery/interior 2.jpg",
-            title: "Residential",
-            description: "Expert interior & exterior home painting with meticulous attention to detail",
-          },
-          {
-            image: "/images/gallery/outdoor 4.jpg",
-            title: "Commercial",
-            description: "Transforming workplaces with minimal downtime and maximum impact",
-          },
-          {
-            image: "/images/gallery/livingroom 3.jpg",
-            title: "Premium Quality",
-            description: "Using top-tier products like Emperor Masonry Paint and Benjamin Moore",
-          },
-          {
-            image: "/images/gallery/interior 4.jpg",
-            title: "Advanced Tech",
-            description: "Utilizing Mirka 1230M & TriTech T5 spray systems for flawless finish",
-          },
-        ].map((item, index) => (
+        {expertiseContent.items.map((item, index) => (
           <motion.div 
             key={index}
             initial={{ opacity: 0, y: 30 }}

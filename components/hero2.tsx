@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { hero2Content } from '@/data/landingpage';
 // import { Button } from '@/components/ui/button';
 // import './globals.css';
 // import "./globals.css";
@@ -72,12 +73,12 @@ export default function Hero2() {
         className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
       >
         <div className="px-4 md:px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-[#711f50]">What We Do</h1>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 handwritten text-primary">Monarch Painters Limited</h2>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-[#711f50]">{hero2Content.heading}</h1>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 handwritten text-primary">{hero2Content.subheading}</h2>
           <ul className="text-lg md:text-xl space-y-3 md:space-y-4 mb-6 md:mb-8 text-gray-600">
-            <li>✅ 35+ years combined experience in professional painting</li>
-            <li>✅ Superior quality finishes for projects of any size</li>
-            <li>✅ Fair pricing with no corners cut on any job</li>
+            {hero2Content.features.map((feature, index) => (
+              <li key={index}>✅ {feature}</li>
+            ))}          
           </ul>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -89,7 +90,7 @@ export default function Hero2() {
               size="lg" 
               className="w-full md:w-auto text-base md:text-lg bg-[#711f50] rounded-xl text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
             >
-              <span className="relative z-10">Get Started</span>
+              <span className="relative z-10">{hero2Content.cta.text}</span>
               <span className="absolute inset-0 bg-gradient-to-r from-[#FFFFFF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
               <span className="absolute -inset-2 bg-[#FFFFFF]/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
             </Button>
@@ -107,17 +108,18 @@ export default function Hero2() {
             className="grid grid-cols-2 gap-3 md:gap-4 px-4 md:px-0"
           >
             <Image
-              src="./images/tech3.webp"
+              src={hero2Content.images.teamImage}
               alt="Professional painting team at work"
               width={300}
               height={400}
               className="rounded-[2rem] md:rounded-[2.5rem] w-full h-auto"
             />
             <Image
-              src="./images/5.2.png"
+              src={hero2Content.images.finishImage}
               alt="High-quality painting finish example"
               width={300}
               height={400}
+              priority
               className="rounded-[2rem] md:rounded-[2.5rem] mt-8 md:mt-12 w-full h-auto"
             />
           </motion.div>

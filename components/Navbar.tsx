@@ -200,7 +200,21 @@ export default function Navbar() {
                   </motion.li>
                 ))}
               </ul>
-             
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                transition={{ duration: 0.2, delay: 0.2 }}
+                className="px-4 pb-4"
+              >
+                <Link
+                  href="/contact"
+                  className="block w-full text-center px-4 py-2 bg-[#e6ab65] text-[#711f50] rounded-full hover:bg-white transition-colors duration-300 text-base sm:text-lg font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

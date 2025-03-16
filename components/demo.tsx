@@ -43,8 +43,8 @@ export function CompareDemo() {
           </div>
         ) : (
           <Compare
-            firstImage="/images/gallery/hall 2 before.jpg"
-            secondImage="/images/gallery/hall 2 after.jpg"
+            firstImage="/images/4.png"
+            secondImage="/images/4.2.png"
             firstImageClassName="object-cover object-left-top w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]"
             secondImageClassname="object-cover object-left-top w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]"
             className="w-full h-full rounded-[22px] md:rounded-lg"
