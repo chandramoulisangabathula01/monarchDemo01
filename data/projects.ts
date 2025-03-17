@@ -15,7 +15,7 @@ export const galleryImages = [
     '20250120_133631_Edited.webp', '20250120_133650_Edited.webp',
     '20250120_133807_Edited.webp', '20250120_141812_Edited.webp',
     '20250120_141844_Edited.webp', '20250120_141855_Edited.webp',
-    '20240814_140522 (Large).webp', '20240820_145144 (Large).webp',
+     '20240820_145144 (Large).webp',
     '20240731_135609 (Large).webp', '20240714_154905 (Large).webp',
     '20240714_154929 (Large).webp', '20240709_130739 (Large).webp',
     '20240709_131229 (Large).webp', '20240709_133412 (Large).webp',
@@ -46,7 +46,7 @@ export const galleryImages = [
   })),
 
   // Exterior category
-  ...[    '20230529_094642.webp', '20230529_133656.webp', '20230529_173156.webp',
+  ...[    '20240814_140522 (Large).webp', '20230529_094642.webp', '20230529_133656.webp', '20230529_173156.webp',
     '20230728_133414.webp',
   ].map(filename => ({
     category: 'exterior',

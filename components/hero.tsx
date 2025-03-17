@@ -50,13 +50,11 @@ export function Hero() {
   }, []);
 
   const fadeInUp = {
-    initial: { y: 40, opacity: 0 },
+    initial: { opacity: 1 },
     animate: { 
-      y: 0, 
       opacity: 1,
       transition: { 
-        duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99]
+        duration: 0
       }
     }
   };
@@ -69,8 +67,8 @@ export function Hero() {
       animate: {
         opacity: 1,
         transition: {
-          staggerChildren: 0.1,
-          delayChildren: 0.3
+          staggerChildren: 0.05,
+          delayChildren: 0.1
         }
       }
     },
@@ -132,7 +130,7 @@ export function Hero() {
           <div className="space-y-2 sm:space-y-3 max-w-3xl mx-auto">
             <motion.h1 
               variants={fadeInUp}
-              className="font-['CustomFont'] leading-tight text-4xl md:text-5xl text-[#711f50] dark:text-gray-100"
+              className=" font-['CustomFont']  leading-tight text-4xl md:text-5xl text-[#711f50] dark:text-gray-100"
             >
               {!isClient ? <Skeleton baseColor="#ede2db" highlightColor="#f5f5f5" /> : heroContent.mainHeading}
             </motion.h1>

@@ -60,12 +60,16 @@ export default function About() {
             <p className="text-base sm:text-lg leading-relaxed text-gray-600">
               {whatWeDoSection.description}
             </p>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-[#711f50] text-white rounded-xl hover:bg-[#8b2762] transform transition-all duration-300 shadow-lg hover:shadow-[#711f50]/30">
-              {whatWeDoSection.buttonText}
-            </motion.button>
+            <div className="flex items-center pt-4">
+              <Link href={whatWeDoSection.buttonLink} className="inline-block">
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-[#711f50] text-white rounded-xl hover:bg-[#8b2762] transform transition-all duration-300 shadow-lg hover:shadow-[#711f50]/30">
+                  {whatWeDoSection.buttonText}
+                </motion.button>
+              </Link>
+            </div>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
@@ -109,17 +113,17 @@ export default function About() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center space-y-4 sm:space-y-6 md:space-y-8 max-w-4xl mx-auto backdrop-blur-sm bg-white/5 p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl sm:rounded-3xl border border-white/10"
+            className="text-center space-y-6 sm:space-y-8 md:space-y-10 max-w-4xl mx-auto backdrop-blur-sm bg-white/5 p-8 sm:p-10 md:p-12 lg:p-14 rounded-2xl sm:rounded-3xl border border-white/10 flex flex-col items-center"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#8b2762] to-[#e6ab65] bg-clip-text text-transparent leading-tight">
               {ctaSection.title}
             </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 px-2">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl">
               {ctaSection.subtitle}
             </p>
             <Link
               href={ctaSection.buttonLink}
-              className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-[#711f50] text-white rounded-lg sm:rounded-xl hover:bg-[#8b2762] transform transition-all duration-300 shadow-lg hover:shadow-[#711f50]/30 text-base sm:text-lg md:text-xl font-semibold group relative overflow-hidden"
+              className="inline-flex items-center justify-center mt-4 sm:mt-6 px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 bg-[#711f50] text-white rounded-lg sm:rounded-xl hover:bg-[#8b2762] transform transition-all duration-300 shadow-lg hover:shadow-[#711f50]/30 text-base sm:text-lg md:text-xl font-semibold group relative overflow-hidden w-auto"
             >
               <span className="relative z-10">{ctaSection.buttonText}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#e6ab65] to-[#711f50] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

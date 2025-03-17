@@ -7,6 +7,8 @@ import { ArrowUpRight } from 'lucide-react';
 
 import Image from 'next/image';
 import { services, professionalTools, serviceAreas as serviceAreasData, premiumMaterials } from '@/data/services';
+import Features from '@/components/Features';
+import Tools from '@/components/tools';
 
 export default function Services() {
   // Service tiers with pricing information
@@ -79,7 +81,7 @@ export default function Services() {
       </div>
 
       {/* Professional Tools Section */}
-      <div className="bg-[#ede2db] py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
+      {/* <div className="bg-[#ede2db] py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -118,8 +120,8 @@ export default function Services() {
             ))}
           </div>
         </div>
-      </div>
-
+      </div> */}
+<Features/>
       
       
       {/* CTA Section */}
@@ -142,9 +144,9 @@ export default function Services() {
         </div>
       </motion.div>
     
-          
+          <Tools/>
       {/* Premium Materials Section */}
-      <div className="py-20 px-4 md:px-8 bg-gradient-to-t from-[#f7d5c5]">
+      {/* <div className="py-20 px-4 md:px-8 bg-gradient-to-t from-[#f7d5c5]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -210,15 +212,18 @@ export default function Services() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
+
+
       {/* Service Areas Section */}
-      <div className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
+      <div className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/studio/17.webp" 
             alt="Map background"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-10 scale-105 transform hover:scale-110 transition-transform duration-1000"
+            priority
           />
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
@@ -228,43 +233,70 @@ export default function Services() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center mb-12 sm:mb-16 md:mb-20"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#711f50] via-[#9a2d6a] to-[#e6ab65] bg-clip-text text-transparent">
-              Areas We Serve
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-xl font-light">
+            <motion.div
+              initial={{ scale: 0.95 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-block"
+            >
+              <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#711f50] via-[#9a2d6a] to-[#e6ab65] bg-clip-text text-transparent drop-shadow-sm">
+                Areas We Serve
+              </h2>
+            </motion.div>
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="text-gray-600 max-w-2xl mx-auto text-xl font-light"
+            >
               Delivering exceptional painting services across the West Midlands with precision and passion
-            </p>
+            </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {serviceAreas.map((area, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: '0 25px 30px -12px rgba(113, 31, 80, 0.15)'
+                  boxShadow: '0 25px 30px -12px rgba(113, 31, 80, 0.2)'
                 }}
-                className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform cursor-pointer group relative overflow-hidden border border-gray-100"
+                className="bg-white/95 backdrop-blur-lg rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform cursor-pointer group relative overflow-hidden border border-gray-100/50"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#711f50]/10 to-[#e6ab65]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#711f50]/5 via-[#9a2d6a]/5 to-[#e6ab65]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#711f50] via-[#9a2d6a] to-[#e6ab65] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <motion.div 
+                    className="w-12 h-12 mb-4 bg-[#711f50]/10 rounded-full flex items-center justify-center group-hover:bg-[#711f50]/20 transition-colors duration-300"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <svg className="w-6 h-6 text-[#711f50]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                  </motion.div>
+                  
                   <motion.p 
-                    className="text-[#711f50] font-bold text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3 group-hover:text-[#9a2d6a] transition-colors duration-300"
+                    className="text-[#711f50] font-bold text-lg sm:text-xl md:text-2xl group-hover:text-[#9a2d6a] transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                   >
                     {area}
                   </motion.p>
-                  <p className="text-gray-500 text-xs sm:text-sm font-medium tracking-wide">Premium Service Area</p>
+                  
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                    className="h-0.5 bg-gradient-to-r from-[#711f50] via-[#9a2d6a] to-[#e6ab65] mt-2"
+                  />
                 </div>
-                <motion.div
-                  className="absolute bottom-0 left-0 h-1.5 bg-gradient-to-r from-[#711f50] via-[#9a2d6a] to-[#e6ab65] w-0 group-hover:w-full transition-all duration-500 ease-out"
-                  initial={{ width: "0%" }}
-                  whileHover={{ width: "100%" }}
-                />
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#711f50]/5 to-transparent rounded-bl-full transform translate-x-full translate-y-[-100%] group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700" />
+
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#711f50]/5 via-[#9a2d6a]/5 to-transparent rounded-tl-full transform translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700" />
               </motion.div>
             ))}
           </div>
@@ -273,10 +305,19 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
-            className="mt-20 text-center"
+            className="mt-16 text-center"
           >
-            <p className="text-gray-600 text-xl mb-8 font-light">
-              Not in our service area? <span className="text-[#711f50] font-semibold hover:text-[#9a2d6a] transition-colors duration-300 cursor-pointer">Contact us</span> to discuss your project
+            <p className="text-gray-600 text-xl mb-8 font-light inline-flex items-center gap-2 bg-white/50 backdrop-blur-sm px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-300">
+              Not in our service area? 
+              <motion.span 
+                className="text-[#711f50] font-semibold hover:text-[#9a2d6a] transition-colors duration-300 cursor-pointer inline-flex items-center gap-1"
+                whileHover={{ x: 5 }}
+              >
+                Contact us
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </motion.span>
             </p>
           </motion.div>
         </div>

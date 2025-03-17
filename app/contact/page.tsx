@@ -192,13 +192,19 @@ function App() {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#e6ab65]/30 to-transparent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
             
             <div className="relative z-10 space-y-16">
-              <motion.div variants={itemVariants} initial="hidden" animate="visible">
-                <h2 className="text-2xl font-bold flex items-center mb-2">
-                  <Zap className="w-8 h-8 mr-2 text-[#e6ab65]" />
-                  <span className="inline-block bg-gradient-to-r from-[#e6ab65] to-[#ede2db] text-transparent bg-clip-text font-display">Monarch Painters</span>
-                </h2>
-                <p className="text-[#ede2db]/90 text-lg">Transform your space with our expert touch</p>
+              <motion.div variants={itemVariants} initial="hidden" animate="visible" className="flex items-center gap-4">
+                <img 
+                  src="/images/logo/logo.png" 
+                  alt="Monarch Painters Logo" 
+                  className="w-8 sm:w-10 md:w-12" 
+                />
+                <div>
+                  <h2 className="text-2xl font-bold flex items-center mb-2">
+                    <span className="inline-block  font-['navlogo'] text-xs bg-gradient-to-r from-[#e6ab65] to-[#ede2db] text-transparent bg-clip-text font-display">MONARCH PAINTERS</span>
+                  </h2>
+                </div>
               </motion.div>
+                  {/* <p className="text-[#ede2db]/90 text-lg">Transform your space with our expert touch</p> */}
 
               <motion.div className="space-y-12" variants={containerVariants} initial="hidden" animate="visible">
                 <motion.div className="flex items-start space-x-6" variants={itemVariants}>
@@ -219,8 +225,8 @@ function App() {
                   <div>
                     <h3 className="font-semibold text-xl mb-2">Visit Our Studio</h3>
                     <p className="text-[#ede2db]/90 mb-2 text-lg">Experience our work firsthand.</p>
-                    <p className="text-white/90 text-lg">123 Creative Avenue</p>
-                    <p className="text-white/90 text-lg">Design District, NY 10001</p>
+                    <p className="text-white/90 text-lg">6 Hill Top View, Handsacre, </p>                
+                    <p className="text-white/90 text-lg">Rugeley WS15 4DG, United Kingdom</p>
                   </div>
                 </motion.div>
 
@@ -230,8 +236,8 @@ function App() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-xl mb-2">Call Us</h3>
-                    <p className="text-[#ede2db]/90 mb-2 text-lg">Available 7 days a week</p>
-                    <a href="tel:+1234567890" className="text-[#e6ab65] hover:text-[#ede2db] transition-colors text-lg font-medium">+1 (234) 567-890</a>
+                    <p className="text-[#ede2db]/90 mb-2 text-lg">Monday – Saturday: 7 AM- 9 PM</p>
+                    <a href="tel:+1234567890" className="text-[#e6ab65] hover:text-[#ede2db] transition-colors text-lg font-medium">07437531733</a>
                   </div>
                 </motion.div>
               </motion.div>

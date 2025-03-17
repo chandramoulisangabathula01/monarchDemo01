@@ -20,7 +20,7 @@ export default function Expertise() {
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
+          {/* <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" /> */}
         </motion.div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">

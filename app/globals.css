@@ -6,7 +6,8 @@
   font-family: 'CustomFont';
   src: url('../fonts/LTMuseum-Bold.ttf') format('truetype');
   font-weight: bold;
-  font-style:normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'navlogo';

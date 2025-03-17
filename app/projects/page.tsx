@@ -205,7 +205,7 @@ export default function Projects() {
                   </motion.div>
                 </div>
                 
-                <motion.div 
+                {/* <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.2 }}
@@ -225,7 +225,7 @@ export default function Projects() {
                       Request Similar Project
                     </button>
                   </div>
-                </motion.div>
+                </motion.div> */}
               </div>
             </motion.div>
           )}

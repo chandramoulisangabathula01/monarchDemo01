@@ -87,19 +87,19 @@ export const premiumMaterials = {
     {
       name: 'Emperor Masonry Paint',
       description: 'Superior exterior protection with enhanced durability',
-      image: '/images/paints/24.jpg',
+      image: '/images/paints/24.webp',
       features: ['Weather-resistant', '10-year lifespan', 'UV protection']
     },
     {
       name: 'Wethertex AP77',
       description: 'Advanced weather-resistant coating for lasting finish',
-      image: '/images/paints/25.jpg',
+      image: '/images/paints/25.webp',
       features: ['Self-cleaning', 'Breathable coating', 'Anti-crack']
     },
     {
       name: 'Dulux Weathershield',
       description: 'Premium all-weather protection for exterior surfaces',
-      image: '/images/paints/26.jpg',
+      image: '/images/paints/26.webp',
       features: ['All-season protection', 'Color-lock technology', 'Mold resistant']
     }
   ]

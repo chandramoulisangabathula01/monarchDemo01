@@ -51,8 +51,8 @@ export const heroContent = {
     // Media content
     media: {
       compareDemo: {
-        firstImage: "/images/studio/4.png",
-        secondImage: "/images/studio/4.2.png"
+        firstImage: "/images/studio/4.webp",
+        secondImage: "/images/studio/4.2.webp"
       },
       video: {
         src: "/bgvideo.mp4",
@@ -323,9 +323,9 @@ export const featuresContent: FeaturesContent = {
   paintProducts: [
     {
       images: [
-        { src: '/images/paints/24.jpg', alt: 'Emperor Masonry Paint' },
-        { src: '/images/paints/25.jpg', alt: 'Wethertex AP77' },
-        { src: '/images/paints/26.jpg', alt: 'Dulux Weathershield' }
+        { src: '/images/paints/24.webp', alt: 'Emperor Masonry Paint' },
+        { src: '/images/paints/25.webp', alt: 'Wethertex AP77' },
+        { src: '/images/paints/26.webp', alt: 'Dulux Weathershield' }
       ],
       title: 'Exterior Masonry',
       description: 'Premium choices:',
@@ -333,9 +333,9 @@ export const featuresContent: FeaturesContent = {
     },
     {
       images: [
-        { src: '/images/paints/27.jpg', alt: 'Isomat Premium Colour' },
-        { src: '/images/paints/28.jpg', alt: 'Crown Trade Clean Extreme' },
-        { src: '/images/paints/29.jpg', alt: 'Benjamin Moore Scuff-X' }
+        { src: '/images/paints/27.webp', alt: 'Isomat Premium Colour' },
+        { src: '/images/paints/28.webp', alt: 'Crown Trade Clean Extreme' },
+        { src: '/images/paints/29.webp', alt: 'Benjamin Moore Scuff-X' }
       ],
       title: 'Interior Walls',
       description: 'Recommended products:',
@@ -343,9 +343,9 @@ export const featuresContent: FeaturesContent = {
     },
     {
       images: [
-        { src: '/images/paints/30.jpg', alt: 'Zinsser AllCoat' },
-        { src: '/images/paints/31.jpg', alt: 'Caparol PU System' },
-        { src: '/images/paints/32.jpg', alt: 'Sikkens HLS Plus' }
+        { src: '/images/paints/30.webp', alt: 'Zinsser AllCoat' },
+        { src: '/images/paints/31.webp', alt: 'Caparol PU System' },
+        { src: '/images/paints/32.webp', alt: 'Sikkens HLS Plus' }
       ],
       title: 'Woodwork',
       description: 'Professional finishes:',
@@ -374,11 +374,12 @@ export interface FooterContent {
     socialLinks: {
       facebook: string;
       twitter: string;
-      linkedin: string;
+      instagram: string;
       youtube: string;
-      website: string;
+      tiktok: string;
+      
     };
-    services: string[];
+    
     companyLinks: Array<{
       name: string;
       path: string;
@@ -386,7 +387,7 @@ export interface FooterContent {
     contact: {
       address: string[];
       phone: string;
-      email: string;
+      // email: string;
     };
     logo: {
       src: string;
@@ -401,20 +402,14 @@ export interface FooterContent {
   export const footerContent: FooterContent = {
     companyDescription: "Transforming spaces with creativity and precision since 2010.",
     socialLinks: {
-      facebook: "#",
-      twitter: "#",
-      linkedin: "#",
-      youtube: "#",
-      website: "#"
+      facebook: "https://www.facebook.com/monarchpainterslimited",
+      twitter: "https://x.com/MonarchPainters",
+      instagram: "https://instagram.com/monarchpainters",
+      youtube: "https://youtube.com/@monarchpainters",
+      tiktok: "https://tiktok.com/@monarchpainters",
+      
     },
-    services: [
-      "Interior Painting",
-      "Exterior Painting",
-      "Commercial Painting",
-      "Decorative Finishes",
-      "Color Consultation",
-      "Cabinet Refinishing"
-    ],
+    
     companyLinks: [
       { name: "About Us", path: "/about" },
       { name: "Services", path: "/services" },
@@ -423,11 +418,11 @@ export interface FooterContent {
     ],
     contact: {
       address: [
-        "123 Creative Avenue",
-        "Design District, NY 10001"
+        "6 Hill Top View, Handsacre,",
+        " Rugeley WS15 4DG, UK"
       ],
-      phone: "+1 (234) 567-890",
-      email: "contact@monarchpainters.com"
+      phone: "07437531733",
+      // email: "contact@monarchpainters.com"
     },
     logo: {
       src: "/images/logo/logo.png",
@@ -436,7 +431,7 @@ export interface FooterContent {
     legalLinks: [
       { name: "Privacy Policy", path: "#" },
       { name: "Terms of Service", path: "#" },
-      { name: "Sitemap", path: "#" }
+      
     ]
   };
   
