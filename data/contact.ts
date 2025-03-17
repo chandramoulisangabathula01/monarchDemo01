@@ -7,7 +7,7 @@ export const contactContent = {
   },
   
   contactInfo: {
-    phone: "+44 7723 511025",
+    phone: "+44 7437531733",
     email: "info@monarchpainters.co.uk",
     address: "Rugeley, Staffordshire, UK",
     workingHours: "Monday - Saturday: 8:00 AM - 6:00 PM"

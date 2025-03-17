@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageSquare, User, Phone, Facebook, Twitter, Linkedin, Youtube, Globe, Zap, Clock, Award, Users, CheckCircle, MapPin, Mail, ArrowRight } from 'lucide-react';
+import { MessageSquare, User, Phone, Facebook, Instagram, Twitter, Youtube, Globe, Zap, Clock, Award, Users, CheckCircle, MapPin, Mail, ArrowRight } from 'lucide-react';
+import { FaTiktok } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import Footer from '@/components/footer';
 import emailjs from '@emailjs/browser';
@@ -237,7 +238,7 @@ function App() {
                   <div>
                     <h3 className="font-semibold text-xl mb-2">Call Us</h3>
                     <p className="text-[#ede2db]/90 mb-2 text-lg">Monday – Saturday: 7 AM- 9 PM</p>
-                    <a href="tel:+1234567890" className="text-[#e6ab65] hover:text-[#ede2db] transition-colors text-lg font-medium">07437531733</a>
+                    <a href="tel:+44 7437 531733" className="text-[#e6ab65] hover:text-[#ede2db] transition-colors text-lg font-medium">+44 7437 531733</a>
                   </div>
                 </motion.div>
               </motion.div>
@@ -249,10 +250,18 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
             >
-              {[Facebook, Twitter, Linkedin, Youtube, Globe].map((Icon, index) => (
+              {[
+                { Icon: Facebook, url: "https://facebook.com/monarchpainters" },
+                { Icon: Twitter, url: "https://twitter.com/monarchpainters" },
+                { Icon: Instagram, url: "https://instagram.com/monarchpainters" },
+                { Icon: Youtube, url: "https://youtube.com/@monarchpainters" },
+                { Icon: FaTiktok, url: "https://tiktok.com/@monarchpainters" }
+              ].map(({ Icon, url }, index) => (
                 <motion.a 
                   key={index}
-                  href="#" 
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#ede2db]/60 hover:text-[#e6ab65] transition-all duration-300"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
@@ -397,7 +406,7 @@ function App() {
             className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 h-[500px] relative w-full"
           >
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304605!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1659012963606!5m2!1sen!2s" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2413.0329420407513!2d-1.9346844839674437!3d52.76330079986076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a0e7f63258b6f%3A0x7f8bd83d6ac2888c!2s6%20Hill%20Top%20View%2C%20Handsacre%2C%20Rugeley%20WS15%204DG%2C%20UK!5e0!3m2!1sen!2s!4v1659012963606!5m2!1sen!2s" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
@@ -421,13 +430,13 @@ function App() {
               <div className="flex items-start space-x-4">
                 <MapPin className="w-6 h-6 text-[#e6ab65] mt-1" />
                 <div>
-                  <p className="text-white">123 Creative Avenue</p>
-                  <p className="text-white">Design District, NY 10001</p>
+                  <p className="text-white">6 Hill Top View, Handsacre</p>
+                  <p className="text-white">Rugeley WS15 4DG, United Kingdom</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <Phone className="w-6 h-6 text-[#e6ab65] mt-1" />
-                <p className="text-white">+1 (234) 567-890</p>
+                <a href='+44 7437 531733' className="text-white">+44 7437 531733</a>
               </div>
               <div className="flex items-start space-x-4">
                 <Mail className="w-6 h-6 text-[#e6ab65] mt-1" />
@@ -436,20 +445,23 @@ function App() {
               <div className="flex items-start space-x-4">
                 <Clock className="w-6 h-6 text-[#e6ab65] mt-1" />
                 <div>
-                  <p className="text-white">Monday - Friday: 9am - 6pm</p>
-                  <p className="text-white">Saturday: 10am - 4pm</p>
-                  <p className="text-white">Sunday: Closed</p>
+                  <p className="text-white">Monday – Saturday: 7 AM- 9 PM</p>
+                  {/* <p className="text-white">Saturday: 10am - 4pm</p> */}
+                  {/* <p className="text-white">Sunday: Closed</p> */}
                 </div>
               </div>
             </div>
-            <motion.button
+            <motion.a
+              href="https://www.google.com/maps/place/6+Hill+Top+View,+Handsacre,+Rugeley+WS15+4DG,+UK"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 bg-gradient-to-r from-[#711f50] to-[#e6ab65] text-white px-6 py-3 rounded-full flex items-center space-x-2 hover:opacity-90 transition-all w-full justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <span>Get Directions</span>
               <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>

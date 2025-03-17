@@ -387,6 +387,7 @@ export interface FooterContent {
     contact: {
       address: string[];
       phone: string;
+      href: string;
       // email: string;
     };
     logo: {
@@ -421,7 +422,8 @@ export interface FooterContent {
         "6 Hill Top View, Handsacre,",
         " Rugeley WS15 4DG, UK"
       ],
-      phone: "07437531733",
+      href: "tel:+44 7437 531733",
+      phone: "+44 7437 531733",
       // email: "contact@monarchpainters.com"
     },
     logo: {

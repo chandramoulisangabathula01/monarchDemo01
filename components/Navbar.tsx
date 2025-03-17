@@ -38,7 +38,7 @@ export default function Navbar() {
         }}
       >
         <a
-          href="https://wa.me/+919999999999?text=Hi,%20I'm%20interested%20in%20your%20painting%20services"
+          href="https://wa.me/+447437531733?text=Hi,%20I'm%20interested%20in%20your%20painting%20services"
           target="_blank"
           rel="noopener noreferrer"
           className="block"
