@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'CustomFont';
+  font-family: 'LTMuseum';
   src: url('../fonts/LTMuseum-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
@@ -16,6 +16,20 @@
   font-style:normal;
 }
 
+@font-face {
+  font-family: 'heroText';
+  src: url('../fonts/DiplomataSC-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style:normal;
+}
+
+
+@font-face {
+  font-family: 'QTGaromand';
+  src: url('../fonts/QTGaromand-Bold.otf') format('truetype');
+  font-weight: bold;
+  font-style:normal;
+}
 
 :root {
   --color-royal-blue: #003366;

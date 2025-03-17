@@ -208,7 +208,7 @@ function App() {
                   {/* <p className="text-[#ede2db]/90 text-lg">Transform your space with our expert touch</p> */}
 
               <motion.div className="space-y-12" variants={containerVariants} initial="hidden" animate="visible">
-                <motion.div className="flex items-start space-x-6" variants={itemVariants}>
+                <motion.div className="flex items-start space-x-2 md:space-x-6 lg:space-x-6 xlg:space-x-6" variants={itemVariants}>
                   <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
                     <MessageSquare className="w-7 h-7 text-[#e6ab65]" />
                   </div>
@@ -219,7 +219,7 @@ function App() {
                   </div>
                 </motion.div>
 
-                <motion.div className="flex items-start space-x-6" variants={itemVariants}>
+                <motion.div className="flex items-start space-x-2 md:space-x-6 lg:space-x-6 xlg:space-x-6" variants={itemVariants}>
                   <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
                     <User className="w-7 h-7 text-[#e6ab65]" />
                   </div>
@@ -231,7 +231,7 @@ function App() {
                   </div>
                 </motion.div>
 
-                <motion.div className="flex items-start space-x-6" variants={itemVariants}>
+                <motion.div className="flex items-start space-x-2 md:space-x-6 lg:space-x-6 xlg:space-x-6" variants={itemVariants}>
                   <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
                     <Phone className="w-7 h-7 text-[#e6ab65]" />
                   </div>

@@ -130,7 +130,7 @@ export function Hero() {
           <div className="space-y-2 sm:space-y-3 max-w-3xl mx-auto">
             <motion.h1 
               variants={fadeInUp}
-              className=" font-['CustomFont']  leading-tight text-4xl md:text-5xl text-[#711f50] dark:text-gray-100"
+              className="font-['QTGaromand'] leading-tight text-4xl md:text-5xl text-[#711f50] dark:text-gray-100"
             >
               {!isClient ? <Skeleton baseColor="#ede2db" highlightColor="#f5f5f5" /> : heroContent.mainHeading}
             </motion.h1>
@@ -141,7 +141,7 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -20, scale: 0.95 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="min-h-[70px] flex items-center justify-center font-['CustomFont'] leading-tight text-3xl md:text-4xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent"
+                className="min-h-[70px] flex items-center justify-center font-['QTGaromand'] leading-tight text-3xl md:text-4xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent"
               >
                 {!isClient ? <Skeleton baseColor="#ede2db" highlightColor="#f5f5f5" /> : tags[currentTag]}
               </motion.div>
@@ -266,7 +266,7 @@ export function Hero() {
           <div className="space-y-4">
             <motion.h1 
               variants={fadeInUp}
-              className="font-['CustomFont'] text-3xl leading-tight text-[#711f50]"
+              className="font-['QTGaromand'] text-3xl leading-tight text-[#711f50]"
             >
               {heroContent.mainHeading}
             </motion.h1>
@@ -278,7 +278,7 @@ export function Hero() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="text-2xl font-['CustomFont'] bg-gradient-to-r from-[#e6ab65] to-[#711f50] bg-clip-text text-transparent"
+                className="text-2xl font-['QTGaromand'] bg-gradient-to-r from-[#e6ab65] to-[#711f50] bg-clip-text text-transparent"
               >
                 {tags[currentTag]}
               </motion.div>
@@ -315,7 +315,7 @@ export function Hero() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-3 bg-[#711f50] text-white rounded-lg font-semibold shadow-md"
+                className="w-full py-3 bg-[#711f50] rounded-full text-white  font-semibold shadow-md"
               >
                 {heroContent.cta.primary.text}
               </motion.button>
@@ -324,7 +324,7 @@ export function Hero() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-3 bg-transparent border-2 border-[#711f50] text-[#711f50] rounded-lg font-semibold"
+                className="w-full py-3 bg-transparent rounded-full border-2 border-[#711f50] text-[#711f50]  font-semibold"
               >
                 {heroContent.cta.secondary.text}
               </motion.button>
@@ -353,7 +353,7 @@ export function Hero() {
         <div className="space-y-2 sm:space-y-3 lg:space-y-4 max-w-3xl  lg:mx-0">
           <motion.h1 
             variants={fadeInUp}
-            className="font-['CustomFont'] leading-tight text-4xl md:text-5xl lg:text-6xl text-[#711f50] dark:text-gray-100 px-4 md:px-6 lg:px-0"
+            className="font-['QTGaromand'] leading-tight text-4xl md:text-5xl lg:text-6xl text-[#711f50] dark:text-gray-100 px-4 md:px-6 lg:px-0"
           >
             Bringing Colors to Life
           </motion.h1>
@@ -364,7 +364,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="min-h-[50px] md:min-h-[70px] lg:min-h-[100px] flex items-center justify-center lg:justify-start font-['CustomFont'] leading-tight text-3xl md:text-4xl lg:text-6xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent px-4 md:px-6 lg:px-0"
+              className="min-h-[50px] md:min-h-[70px] lg:min-h-[100px] flex items-center justify-center lg:justify-start font-['QTGaromand'] leading-tight text-3xl md:text-4xl lg:text-6xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent px-4 md:px-6 lg:px-0"
             >
               {tags[currentTag]}
             </motion.div>
