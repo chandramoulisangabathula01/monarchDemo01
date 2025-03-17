@@ -13,22 +13,24 @@
   font-family: 'navlogo';
   src: url('../fonts/diplomata.ttf') format('truetype');
   font-weight: bold;
-  font-style:normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'heroText';
   src: url('../fonts/DiplomataSC-Regular.ttf') format('truetype');
   font-weight: bold;
-  font-style:normal;
+  font-style: normal;
+  font-display: swap;
 }
-
 
 @font-face {
   font-family: 'QTGaromand';
-  src: url('../fonts/QTGaromand-Bold.otf') format('truetype');
+  src: url('../fonts/QTGaromand-Bold.otf') format('opentype');
   font-weight: bold;
-  font-style:normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {

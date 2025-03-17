@@ -92,7 +92,7 @@ export default function Navbar() {
           >
             <Link href="/" className="flex items-center gap-2">
               <img 
-                src="/images/logo/logo.png" 
+                src="/images/logo/logo.webp" 
                 alt="Monarch Painters Logo" 
                 className="w-8 sm:w-10 md:w-12" 
               />

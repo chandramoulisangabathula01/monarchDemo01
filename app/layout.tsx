@@ -67,13 +67,23 @@ export default function RootLayout({
           as="font"
           type="font/ttf"
           crossOrigin="anonymous"
+
         />
         <link
           rel="preload"
-          href="/fonts/QTGaromand.otf"
+          href="/fonts/diplomata.ttf"
           as="font"
-          type="font/otf"
+          type="font/ttf"
           crossOrigin="anonymous"
+
+        />
+        <link
+          rel="preload"
+          href="/fonts/DiplomataSC-Regular.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+
         />
         <link
           rel="preload"
@@ -81,13 +91,7 @@ export default function RootLayout({
           as="font"
           type="font/otf"
           crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Floane-Regular.otf"
-          as="font"
-          type="font/otf"
-          crossOrigin="anonymous"
+
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#711f50" />

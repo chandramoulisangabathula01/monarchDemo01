@@ -427,7 +427,7 @@ export interface FooterContent {
       // email: "contact@monarchpainters.com"
     },
     logo: {
-      src: "/images/logo/logo.png",
+      src: "/images/logo/logo.webp",
       alt: "Monarch Painters Logo"
     },
     legalLinks: [

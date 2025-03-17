@@ -30,7 +30,7 @@ export default function Services() {
       >
         <div className="absolute inset-0 bg-black/40 z-10" />
         <Image
-          src="/images/4.png"
+          src="/images/studio/4.webp"
           alt="Services Hero"
           fill
           className="object-cover"

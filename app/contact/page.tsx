@@ -22,13 +22,14 @@ function App() {
     }
   });
 
-  const [isLoaded, setIsLoaded] = useState(false);
   const [activeField, setActiveField] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState('about');
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   useEffect(() => {
-    setIsLoaded(true);
+    document.fonts.ready.then(() => {
+      document.documentElement.classList.add('fonts-loaded');
+    });
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -198,7 +199,7 @@ function App() {
             <div className="relative z-10 space-y-16">
               <motion.div variants={itemVariants} initial="hidden" animate="visible" className="flex items-center gap-4">
                 <img 
-                  src="/images/logo/logo.png" 
+                  src="/images/logo/logo.webp" 
                   alt="Monarch Painters Logo" 
                   className="w-8 sm:w-10 md:w-12" 
                 />
