@@ -34,9 +34,16 @@ import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
-import Navbar from '../components/Navbar'
-import { ConsentManager } from '../components/ConsentManager'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
+
+const Navbar = dynamic(() => import('../components/Navbar'), {
+  ssr: true
+})
+
+const ConsentManager = dynamic(() => import('../components/ConsentManager').then(mod => mod.ConsentManager), {
+  ssr: false
+})
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
@@ -61,6 +68,29 @@ export default function RootLayout({
           type="font/ttf"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href="/fonts/QTGaromand.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/QTGaromand-Bold.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Floane-Regular.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#711f50" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans bg-off-white text-royal-blue`}>
         <ConsentManager privacyPolicyUrl="/privacy">

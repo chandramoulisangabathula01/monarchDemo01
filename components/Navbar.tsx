@@ -29,12 +29,13 @@ export default function Navbar() {
     <>
       <motion.div
         className="fixed bottom-6 right-6 z-50"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
         transition={{
           type: "spring",
-          stiffness: 260,
-          damping: 20
+          stiffness: 400,
+          damping: 30,
+          duration: 0.2
         }}
       >
         <a
@@ -77,9 +78,9 @@ export default function Navbar() {
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-[#711f50] backdrop-blur-md" : "bg-[#711f50]"
       }`}
-      initial={{ y: -100, opacity: 0 }}
+      initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
     >
       
       <div className="container mx-auto px-4 lg:px-8">
@@ -106,9 +107,9 @@ export default function Navbar() {
             {navItems.map((item, index) => (
               <motion.li
                 key={item.name}
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 + 0.5 }}
+                transition={{ delay: index * 0.05 + 0.2 }}
                 className="relative group"
               >
                 <Link

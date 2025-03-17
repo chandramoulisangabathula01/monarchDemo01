@@ -51,30 +51,33 @@ function App() {
     if (!form.current) return;
 
     try {
-      await emailjs.sendForm(
+      const result = await emailjs.sendForm(
         'service_o6is7uj',
         'template_g4wyoks',
         form.current,
         'mmRjUSitj7ijVe0N8'
       );
 
-      console.log('SUCCESS!');
-      setSubmitStatus('success');
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        project: '',
-        services: {
-          websiteDesign: false,
-          uxDesign: false,
-          userResearch: false,
-          contentCreation: false,
-          strategyConsulting: false,
-          other: false
-        }
-      });
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        
+        // Reset form using a single state update
+        setFormData({
+          name: '',
+          email: '',
+          project: '',
+          services: {
+            websiteDesign: false,
+            uxDesign: false,
+            userResearch: false,
+            contentCreation: false,
+            strategyConsulting: false,
+            other: false
+          }
+        });
+      } else {
+        throw new Error('Failed to send email');
+      }
 
       // Clear form fields
       if (form.current) {

@@ -3,7 +3,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import { CompareDemo } from "./demo";
+import dynamic from 'next/dynamic';
+
+const CompareDemo = dynamic(() => import('./demo').then(mod => mod.CompareDemo), {
+  loading: () => <div className="w-full h-full bg-neutral-100 rounded-3xl flex items-center justify-center">
+    <div className="animate-pulse bg-gray-200 h-full w-full rounded-3xl" />
+  </div>,
+  ssr: false
+});
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { heroContent } from "@/data/landingpage";
@@ -50,11 +57,12 @@ export function Hero() {
   }, []);
 
   const fadeInUp = {
-    initial: { opacity: 1 },
+    initial: { opacity: 0, y: 10 },
     animate: { 
       opacity: 1,
+      y: 0,
       transition: { 
-        duration: 0
+        duration: 0.3
       }
     }
   };
@@ -67,8 +75,8 @@ export function Hero() {
       animate: {
         opacity: 1,
         transition: {
-          staggerChildren: 0.05,
-          delayChildren: 0.1
+          staggerChildren: 0.03,
+          delayChildren: 0.05
         }
       }
     },
