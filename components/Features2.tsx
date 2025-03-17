@@ -9,13 +9,13 @@ export default function Features2() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-[#711f50]">
             {features2Content.title}
           </h2>
-          <p className="text-gray-500 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             {features2Content.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
-          <div className="bg-[#5a1a3f] p-4 sm:p-6 md:p-8 rounded-2xl">
+          <div className="bg-[#711f50] p-4 sm:p-6 md:p-8 rounded-2xl">
             <div className="aspect-w-16 aspect-h-9 mb-4 sm:mb-5 md:mb-6">
               <img
                 src={features2Content.premiumQuality.image}
@@ -30,7 +30,7 @@ export default function Features2() {
           </div>
 
           <div className="grid grid-rows-1 gap-4 md:gap-6">
-            <div className="bg-[#5a1a3f] p-4 md:p-6 rounded-2xl block">
+            <div className="bg-[#711f50] p-4 md:p-6 rounded-2xl block">
               <h3 className="text-xl md:text-2xl text-[#e6ab65] font-bold mb-2 md:mb-3">{features2Content.experiencedTeam.title}</h3>
               {features2Content.experiencedTeam.points.map((point, index) => (
                 <p key={index} className="text-white flex items-center mb-3">

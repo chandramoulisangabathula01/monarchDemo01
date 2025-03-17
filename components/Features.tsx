@@ -39,8 +39,8 @@ const ProductCard = ({
         ))}
       </div>
       <h3 className="text-xl font-semibold mb-2 text-[#711f50]">{title}</h3>
-      <p className="text-gray-600 mb-2">{description}</p>
-      <ul className="text-gray-600 space-y-1">
+      <p className="text-gray-800 mb-2">{description}</p>
+      <ul className="text-gray-800 space-y-1">
         {products.map((product, index) => (
           <li key={index} className="flex items-center gap-1 group">
             • <a 
@@ -79,7 +79,7 @@ export default function Features() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-[#711f50]">
             {featuresContent.title}
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-800 max-w-3xl mx-auto">
             {featuresContent.subtitle}
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function Features() {
 
           <div className="mt-8 sm:mt-10 md:mt-12 bg-gray-50 p-6 sm:p-8 rounded-2xl">
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#711f50]">{featuresContent.approach.title}</h3>
-            <p className="text-sm sm:text-base text-gray-600 max-w-3xl ">
+            <p className="text-sm sm:text-base text-gray-800 max-w-3xl ">
               {featuresContent.approach.description}
             </p>
           </div>

@@ -19,7 +19,7 @@
 // }) {
 //   return (
 //     <html lang="en">
-//       <body className={`${inter.variable} ${playfair.variable} font-sans bg-off-white text-royal-blue`}>
+//       <body className={`${inter.variable} ${playfair.variable} font-sans bg-[#f8f8f8] text-[#003366]`}>
 //         {children}
 //       </body>
 //     </html>
@@ -92,7 +92,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#711f50" />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans bg-off-white text-royal-blue`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans bg-[#f8f8f8] text-[#003366]`}>
         <ConsentManager privacyPolicyUrl="/privacy">
           <Navbar />
           {children}

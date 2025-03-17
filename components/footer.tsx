@@ -26,7 +26,7 @@ export default function Footer() {
           </div> */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             <div className="col-span-2 md:col-span-1 space-y-4 md:space-y-6">
-              <p className="text-sm md:text-base text-blue-100/70">
+              <p className="text-sm md:text-base text-blue-100/90">
                 {footerContent.companyDescription}
               </p>
               <div className="flex space-x-3 md:space-x-4">
@@ -43,7 +43,7 @@ export default function Footer() {
                     href={link} 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-100/60 hover:text-[#e6ab65] transition-all duration-300"
+                    className="text-blue-100/90 hover:text-[#e6ab65] transition-all duration-300"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -58,7 +58,7 @@ export default function Footer() {
               <ul className="space-y-3 md:space-y-4">
                 {footerContent.services.map((service, index) => (
                   <li key={index}>
-                    <a href="#services" className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors">
+                    <a href="#services" className="text-sm md:text-base text-blue-100/90 hover:text-[#e6ab65] transition-colors">
                       {service}
                     </a>
                   </li>
@@ -71,7 +71,7 @@ export default function Footer() {
               <ul className="space-y-3 md:space-y-4">
                 {footerContent.companyLinks.map((item, index) => (
                   <li key={index}>
-                    <Link href={item.path} className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors">
+                    <Link href={item.path} className="text-sm md:text-base text-blue-100/90 hover:text-[#e6ab65] transition-colors">
                       {item.name}
                     </Link>
                   </li>
@@ -84,7 +84,7 @@ export default function Footer() {
               <ul className="space-y-3 md:space-y-4">
                 <li className="flex items-start space-x-3">
                   <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#e6ab65] mt-1" />
-                  <span className="text-sm md:text-base text-blue-100/70">
+                  <span className="text-sm md:text-base text-blue-100/90">
                     {footerContent.contact.address.map((line, index) => (
                       <React.Fragment key={index}>
                         {line}
@@ -95,13 +95,13 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 md:w-5 md:h-5 text-[#e6ab65]" />
-                  <a href={footerContent.contact.href} className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors">
+                  <a href={footerContent.contact.href} className="text-sm md:text-base text-blue-100/90 hover:text-[#e6ab65] transition-colors">
                     {footerContent.contact.phone}
                   </a>
                 </li>
                 {/* <li className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 md:w-5 md:h-5 text-[#e6ab65]" />
-                  <a href="mailto:{footerContent.contact.email}" className="text-sm md:text-base text-blue-100/70 hover:text-[#e6ab65] transition-colors break-all">
+                  <a href="mailto:{footerContent.contact.email}" className="text-sm md:text-base text-blue-100/90 hover:text-[#e6ab65] transition-colors break-all">
                     {footerContent.contact.email}
                   </a>
                 </li> */}
@@ -121,7 +121,7 @@ export default function Footer() {
               </span>
             </Link>
             <div className="w-full flex flex-col md:flex-row justify-between items-center">
-              <p className="text-xs md:text-sm text-blue-100/60">
+              <p className="text-xs md:text-sm text-blue-100/90">
                 © {new Date().getFullYear()} Monarch Painters. All rights reserved.
               </p>
               <div className="flex space-x-4 md:space-x-6 mt-4 md:mt-0">
@@ -129,12 +129,12 @@ export default function Footer() {
                   <a 
                     key={index}
                     href={link.path} 
-                    className="text-xs md:text-sm text-blue-100/60 hover:text-[#e6ab65] transition-colors"
+                    className="text-xs md:text-sm text-blue-100/90 hover:text-[#e6ab65] transition-colors"
                   >
                     {link.name}
                   </a>
                 ))}
-                <ConsentRevocationLink className="text-xs md:text-sm text-blue-100/60 hover:text-[#e6ab65] transition-colors" />
+                <ConsentRevocationLink className="text-xs md:text-sm text-blue-100/90 hover:text-[#e6ab65] transition-colors" />
               </div>
             </div>
           </div>

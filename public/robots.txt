@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and api routes
+Disallow: /admin/
+Disallow: /api/
+
+# Add sitemap
+Sitemap: https://monarchpainters.co.uk/sitemap.xml

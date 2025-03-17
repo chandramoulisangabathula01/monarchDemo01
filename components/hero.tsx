@@ -157,7 +157,7 @@ export function Hero() {
           </div>
           <motion.p 
             variants={fadeInUp}
-            className="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-xl"
+            className="text-gray-800 dark:text-gray-300 text-base md:text-lg max-w-xl"
           >
             {!isClient ? <Skeleton count={2} baseColor="#ede2db" highlightColor="#f5f5f5" /> : heroContent.description}
           </motion.p>
@@ -179,7 +179,7 @@ export function Hero() {
               >
                 {!isClient ? <Skeleton baseColor="#ede2db" highlightColor="#f5f5f5" /> : heroContent.stats[0].value}
               </motion.h3>
-              <p className="text-sm md:text-base text-gray-600">{heroContent.stats[0].label}</p>
+              <p className="text-sm md:text-base text-gray-800">{heroContent.stats[0].label}</p>
             </motion.div>
             <motion.div 
               whileHover={statsHover}
@@ -193,7 +193,7 @@ export function Hero() {
               >
                 {heroContent.stats[1].value}
               </motion.h3>
-              <p className="text-sm md:text-base text-gray-600">{heroContent.stats[1].label}</p>
+              <p className="text-sm md:text-base text-gray-800">{heroContent.stats[1].label}</p>
             </motion.div>
             <motion.div 
               whileHover={statsHover}
@@ -207,7 +207,7 @@ export function Hero() {
               >
                 {heroContent.stats[2].value}
               </motion.h3>
-              <p className="text-sm md:text-base text-gray-600">{heroContent.stats[2].label}</p>
+              <p className="text-sm md:text-base text-gray-800">{heroContent.stats[2].label}</p>
             </motion.div>
           </motion.div>
           
@@ -380,7 +380,7 @@ export function Hero() {
         </div>
         <motion.p 
           variants={fadeInUp}
-          className="text-gray-600 dark:text-gray-400 text-sm md:text-base lg:text-xl max-w-xl px-6 md:px-8 lg:px-0"
+          className="text-gray-800 dark:text-gray-300 text-sm md:text-base lg:text-xl max-w-xl px-6 md:px-8 lg:px-0"
         >
           Staffordshire's premier painting and decorating service with 35+ years of expertise.
         </motion.p>
@@ -402,7 +402,7 @@ export function Hero() {
             >
               35+
             </motion.h3>
-            <p className="text-xs md:text-sm lg:text-base text-gray-600">Years Experience</p>
+            <p className="text-xs md:text-sm lg:text-base text-gray-800">Years Experience</p>
           </motion.div>
           <motion.div 
             whileHover={statsHover}
@@ -416,7 +416,7 @@ export function Hero() {
             >
               1000+
             </motion.h3>
-            <p className="text-xs md:text-sm lg:text-base text-gray-600">Satisfied Clients</p>
+            <p className="text-xs md:text-sm lg:text-base text-gray-800">Satisfied Clients</p>
           </motion.div>
           <motion.div 
             whileHover={statsHover}
@@ -430,7 +430,7 @@ export function Hero() {
             >
               5 stars
             </motion.h3>
-            <p className="text-xs md:text-sm lg:text-base text-gray-600">On Google</p>
+            <p className="text-xs md:text-sm lg:text-base text-gray-800">On Google</p>
           </motion.div>
         </motion.div>
         
