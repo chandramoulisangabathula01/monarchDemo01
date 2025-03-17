@@ -404,10 +404,10 @@ export interface FooterContent {
     companyDescription: "Transforming spaces with creativity and precision since 2010.",
     socialLinks: {
       facebook: "https://www.facebook.com/monarchpainterslimited",
-      twitter: "https://x.com/MonarchPainters",
-      instagram: "https://instagram.com/monarchpainters",
-      youtube: "https://youtube.com/@monarchpainters",
-      tiktok: "https://tiktok.com/@monarchpainters",
+      twitter: "https://twitter.com/MonarchPainters",
+      instagram: "https://www.instagram.com/monarchpainter5/",
+      youtube: "https://www.youtube.com/channel/UCYNEaGq-om5mCIr5kglKMEQ",
+      tiktok: "http://www.tiktok.com/@monarchpainters",
       
     },
     

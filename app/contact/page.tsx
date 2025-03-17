@@ -251,11 +251,11 @@ function App() {
               transition={{ delay: 0.8 }}
             >
               {[
-                { Icon: Facebook, url: "https://facebook.com/monarchpainters" },
-                { Icon: Twitter, url: "https://twitter.com/monarchpainters" },
-                { Icon: Instagram, url: "https://instagram.com/monarchpainters" },
-                { Icon: Youtube, url: "https://youtube.com/@monarchpainters" },
-                { Icon: FaTiktok, url: "https://tiktok.com/@monarchpainters" }
+                { Icon: Facebook, url: "https://www.facebook.com/monarchpainterslimited" },
+                { Icon: Twitter, url: "https://twitter.com/MonarchPainters" },
+                { Icon: Instagram, url: "https://www.instagram.com/monarchpainter5/" },
+                { Icon: Youtube, url: "https://www.youtube.com/channel/UCYNEaGq-om5mCIr5kglKMEQ" },
+                { Icon: FaTiktok, url: "http://www.tiktok.com/@monarchpainters" }
               ].map(({ Icon, url }, index) => (
                 <motion.a 
                   key={index}
