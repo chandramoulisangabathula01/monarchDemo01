@@ -4,9 +4,7 @@ import { Button } from './ui/button';
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-// import { Button } from '@/components/ui/button';
-// import './globals.css';
-// import "./globals.css";
+
 
 export default function Hero2() {
   const containerRef = useRef(null);
@@ -110,14 +108,14 @@ export default function Hero2() {
             className="grid grid-cols-2 gap-3 md:gap-4 px-4 md:px-0"
           >
             <Image
-              src="./images/tech3.webp"
+              src="./images/studio/20240429_165826 (Large).webp"
               alt="Professional painting team at work"
               width={300}
               height={400}
               className="rounded-[2rem] md:rounded-[2.5rem] w-full h-auto"
             />
             <Image
-              src="./images/studio/20230728_132854.webp"
+              src="./images/studio/20240514_134755 (Large).webp"
               alt="High-quality painting finish example"
               width={300}
               height={400}

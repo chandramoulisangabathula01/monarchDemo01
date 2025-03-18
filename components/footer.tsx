@@ -99,24 +99,24 @@ export default function Footer() {
                     {footerContent.contact.phone}
                   </a>
                 </li>
-                {/* <li className="flex items-center space-x-3">
+                <li className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 md:w-5 md:h-5 text-[#e6ab65]" />
-                  <a href="mailto:{footerContent.contact.email}" className="text-sm md:text-base text-blue-100/90 hover:text-[#e6ab65] transition-colors break-all">
+                  <a href={`mailto:${footerContent.contact.email}`} className="text-sm md:text-base text-blue-100/90 hover:text-[#e6ab65] transition-colors break-all">
                     {footerContent.contact.email}
                   </a>
-                </li> */}
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-white/10 mt-8 md:mt-12 pt-6 md:pt-8 flex flex-col items-center">
-            <Link href="/" className="flex items-center gap-2 mb-6">
+            <Link href="/" className="flex items-center justify-center gap-1 sm:gap-2 mb-4 sm:mb-6">
               <img 
                 src={footerContent.logo.src} 
                 alt={footerContent.logo.alt} 
-                className="w-8 sm:w-10 md:w-12" 
+                className="w-6 sm:w-8 md:w-10" 
               />
-              <span className="font-['navlogo'] text-xl sm:text-xs md:text-md leading-loose" style={{ color: '#e6ab65' }}>
+              <span className="font-['navlogo'] text-[10px] sm:text-xs md:text-sm leading-relaxed" style={{ color: '#e6ab65' }}>
                 MONARCH PAINTERS
               </span>
             </Link>

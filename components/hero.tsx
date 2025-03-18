@@ -149,7 +149,7 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -20, scale: 0.95 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="min-h-[70px] flex items-center justify-center font-['QTGaromand'] leading-tight text-3xl md:text-4xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent"
+                className="min-h-[70px] flex items-center justify-center font-['QTGaromand'] leading-tight text-4xl md:text-4xl text-[#711f50]"
               >
                 {!isClient ? <Skeleton baseColor="#ede2db" highlightColor="#f5f5f5" /> : tags[currentTag]}
               </motion.div>
@@ -286,7 +286,7 @@ export function Hero() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="text-2xl font-['QTGaromand'] bg-gradient-to-r from-[#e6ab65] to-[#711f50] bg-clip-text text-transparent"
+                className="text-2xl font-['QTGaromand'] text-[#711f50]"
               >
                 {tags[currentTag]}
               </motion.div>
@@ -351,7 +351,7 @@ export function Hero() {
       initial="initial"
       animate="animate"
       variants={staggerContainer.variants}
-      className="flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8 ml-9 mt-9  sm:py-8 lg:py-16 bg-[#ede2db] dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 relative overflow-hidden"
+      className="flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8  mt-9  sm:py-8 lg:py-16 bg-[#ede2db] dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 relative overflow-hidden"
     >
       {/* Left Content Section */}
       <motion.div 
@@ -372,7 +372,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="min-h-[50px] md:min-h-[70px] lg:min-h-[100px] flex items-center justify-center lg:justify-start font-['QTGaromand'] leading-tight text-3xl md:text-4xl lg:text-6xl bg-gradient-to-r from-[#e6ab65] via-purple-600 to-pink-600 bg-clip-text text-transparent px-4 md:px-6 lg:px-0"
+              className="min-h-[50px] md:min-h-[70px] lg:min-h-[100px] flex items-center justify-center lg:justify-start font-['QTGaromand'] leading-tight text-4xl md:text-4xl lg:text-6xl text-[#711f50] px-4 md:px-6 lg:px-0"
             >
               {tags[currentTag]}
             </motion.div>

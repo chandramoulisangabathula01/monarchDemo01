@@ -7,8 +7,9 @@ import { ArrowUpRight } from 'lucide-react';
 
 import Image from 'next/image';
 import { services, professionalTools, serviceAreas as serviceAreasData, premiumMaterials } from '@/data/services';
-import Features from '@/components/Features';
 import Tools from '@/components/tools';
+import Features from './features';
+import Link from 'next/link';
 
 export default function Services() {
   // Service tiers with pricing information
@@ -313,10 +314,12 @@ export default function Services() {
                 className="text-[#711f50] font-semibold hover:text-[#9a2d6a] transition-colors duration-300 cursor-pointer inline-flex items-center gap-1"
                 whileHover={{ x: 5 }}
               >
-                Contact us
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                </svg>
+                <Link href="/contact" className="inline-flex items-center gap-1">
+                  Contact us
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </Link>
               </motion.span>
             </p>
           </motion.div>

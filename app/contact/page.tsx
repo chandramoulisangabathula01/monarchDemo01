@@ -219,7 +219,7 @@ function App() {
                   <div>
                     <h3 className="font-semibold text-xl mb-2">Let's Talk</h3>
                     <p className="text-[#ede2db]/90 mb-2 text-lg">Have a project in mind?</p>
-                    <a href="mailto:contact@monarchpainters.com" className="text-[#e6ab65] hover:text-[#ede2db] transition-colors text-lg font-medium">contact@monarchpainters.com</a>
+                    <a href="mailto:contact@monarchpainters.com" className="text-[#e6ab65] hover:text-[#ede2db] transition-colors text-lg font-medium"> info@monarchpainters.co.uk </a>
                   </div>
                 </motion.div>
 
@@ -228,7 +228,7 @@ function App() {
                     <User className="w-7 h-7 text-[#e6ab65]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-xl mb-2">Visit Our Studio</h3>
+                    <h3 className="font-semibold text-xl mb-2">Visit Us</h3>
                     <p className="text-[#ede2db]/90 mb-2 text-lg">Experience our work firsthand.</p>
                     <p className="text-white/90 text-lg">6 Hill Top View, Handsacre, </p>                
                     <p className="text-white/90 text-lg">Rugeley WS15 4DG, United Kingdom</p>
@@ -242,7 +242,7 @@ function App() {
                   <div>
                     <h3 className="font-semibold text-xl mb-2">Call Us</h3>
                     <p className="text-[#ede2db]/90 mb-2 text-lg">Monday – Saturday: 7 AM- 9 PM</p>
-                    <a href="tel:+44 7437 531733" className="text-[#e6ab65] hover:text-[#ede2db] transition-colors text-lg font-medium">+44 7437 531733</a>
+                    <a href="tel:07437531733" className="text-[#e6ab65] hover:text-[#ede2db] transition-colors text-lg font-medium">07437531733</a>
                   </div>
                 </motion.div>
               </motion.div>
@@ -429,7 +429,7 @@ function App() {
             transition={{ delay: 0.5, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Our Studio</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Find Us</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-4">
                 <MapPin className="w-6 h-6 text-[#e6ab65] mt-1" />
@@ -440,11 +440,11 @@ function App() {
               </div>
               <div className="flex items-start space-x-4">
                 <Phone className="w-6 h-6 text-[#e6ab65] mt-1" />
-                <a href='+44 7437 531733' className="text-white">+44 7437 531733</a>
+                <a href='07437531733' className="text-white">07437531733</a>
               </div>
               <div className="flex items-start space-x-4">
                 <Mail className="w-6 h-6 text-[#e6ab65] mt-1" />
-                <p className="text-white">contact@monarchpainters.com</p>
+                <p className="text-white"> info@monarchpainters.co.uk </p>
               </div>
               <div className="flex items-start space-x-4">
                 <Clock className="w-6 h-6 text-[#e6ab65] mt-1" />

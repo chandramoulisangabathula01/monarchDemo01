@@ -7,6 +7,7 @@ export const heroContent = {
   
     // Rotating tags for the animated text
     tags: [
+      "Wallpapering",
       "Home Decorators",
       "Industrial Painters",
       "Top-Quality Materials",
@@ -121,7 +122,7 @@ export const hero2Content: Hero2Content = {
     link: "/contact"
   },
   images: {
-    teamImage: "./images/tech3.webp",
+    teamImage: "./images/studio/20240429_165826 (Large).webp",
     finishImage: "./images/studio/20230728_132854.webp"
   }
 };
@@ -184,15 +185,15 @@ export const faqContent: FAQContent = {
     },
     {
       question: "What types of projects do you handle?",
-      answer: "We specialize in both residential and commercial projects, including interior/exterior painting, industrial painting, and high-end developments. We use top-quality materials and the latest techniques for durable, beautiful results."
+      answer: "We specialize in both residential and commercial projects, including interior/exterior painting, industrial painting, wallpapering, and high-end developments. We use top-quality materials and the latest techniques for durable, beautiful results."
     },
     {
       question: "What makes your service different?",
-      answer: "We're a family business with a 5-star Google rating, committed to sustainability and professionalism. We use advanced equipment like the Mirka 1230M dustless extraction system and TriTech T5 airless spray system for flawless finishes."
+      answer: "We're a family business with a 5-star Google rating, committed to sustainability and professionalism. We use advanced equipment like the Mirka 1230M dustless extraction system, QTech 5 HVLP spray system, and TriTech T5 airless spray system for flawless finishes."
     },
     {
       question: "What materials do you use?",
-      answer: "We use premium products like Emperor Masonry Paint, Isomat Premium Colour, Benjamin Moore Scuff-X, and Zinsser AllCoat for exterior woodwork, ensuring long-lasting, high-quality results."
+      answer: "We use premium products like Emperor Masonry Paint, Isomat Premium Colour, Benjamin Moore Scuff-X, Caparol Capacryl PU enamel paint, and Zinsser AllCoat for exterior woodwork, ensuring long-lasting, high-quality results."
     },
     {
       question: "How do you ensure quality?",
@@ -214,7 +215,7 @@ export const expertiseContent: ExpertiseContent = {
         description: "Expert interior & exterior home painting with meticulous attention to detail"
       },
       {
-        image: "/images/studio/20240613_142118 (Large).webp",
+        image: "/images/studio/20240608_175423 (Large).webp",
         title: "Commercial",
         description: "Transforming workplaces with minimal downtime and maximum impact"
       },
@@ -224,9 +225,9 @@ export const expertiseContent: ExpertiseContent = {
         description: "Using top-tier products like Emperor Masonry Paint and Benjamin Moore"
       },
       {
-        image: "/images/studio/20250120_133516_Edited.webp",
+        image: "/images/studio/techtools.webp",
         title: "Advanced Tech",
-        description: "Utilizing Mirka 1230M & TriTech T5 spray systems for flawless finish"
+        description: "Utilising Mirka 1230M, QTech 5 HVLP spray system and Tritech T5 spray system for a flawless finish"
       }
     ]
   };
@@ -305,7 +306,7 @@ export const featuresContent: FeaturesContent = {
   subtitle: "Serving Rugeley, Lichfield, Tamworth, Sutton Coldfield, Birmingham, and beyond",
   services: [
     {
-      image: "/images/studio/20240613_142118 (Large).webp",
+      image: "/images/studio/20250205_130818.webp",
       title: "Commercial Painting",
       description: "Boosting productivity & brand image"
     },
@@ -315,7 +316,7 @@ export const featuresContent: FeaturesContent = {
       description: "Bringing your vision to life"
     },
     {
-      image: "/images/studio/20230728_133414.webp",
+      image: "/images/studio/outdoor 1.webp",
       title: "Exterior Solutions",
       description: "Durable & weather-resistant finishes"
     }
@@ -365,7 +366,7 @@ export const featuresContent: FeaturesContent = {
   },
   approach: {
     title: "Our Approach",
-    description: "With over 30 years of experience, we deliver precise execution, on-time delivery, and strict adherence to health and safety guidelines."
+    description: "We take a meticulous and quality-driven approach to interior painting. Our team collaborates with you to craft a colour palette that enhances and complements your home’s unique character. By using Monarch Painters and only the finest paints, we ensure a finish that is not only visually stunning but also long-lasting and durable."
   }
 };
 
@@ -388,7 +389,7 @@ export interface FooterContent {
       address: string[];
       phone: string;
       href: string;
-      // email: string;
+      email: string;
     };
     logo: {
       src: string;
@@ -401,7 +402,7 @@ export interface FooterContent {
   }
   
   export const footerContent: FooterContent = {
-    companyDescription: "Transforming spaces with creativity and precision since 2010.",
+    companyDescription: "Transforming spaces with creativity and precision since 2022.",
     socialLinks: {
       facebook: "https://www.facebook.com/monarchpainterslimited",
       twitter: "https://twitter.com/MonarchPainters",
@@ -422,9 +423,9 @@ export interface FooterContent {
         "6 Hill Top View, Handsacre,",
         " Rugeley WS15 4DG, UK"
       ],
-      href: "tel:+44 7437 531733",
-      phone: "+44 7437 531733",
-      // email: "contact@monarchpainters.com"
+      href: "tel:07437531733",
+      phone: "07437 531733",
+      email: "info@monarchpainters.co.uk"
     },
     logo: {
       src: "/images/logo/logo.webp",

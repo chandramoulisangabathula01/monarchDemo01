@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { featuresContent } from '@/data/landingpage';
+import { featuresContent } from '@/data/services';
 
 const ProductCard = ({ 
   images, 
