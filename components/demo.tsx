@@ -29,8 +29,8 @@ export function CompareDemo() {
       >
         
           <Compare
-            firstImage="/images/studio/4.webp"
-            secondImage="/images/studio/4.2.webp"
+            firstImage="/images/studio/36.webp"
+            secondImage="/images/studio/35.5.webp"
             firstImageClassName="object-cover object-left-top w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]"
             secondImageClassname="object-cover object-left-top w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]"
             className="w-full h-full rounded-[22px] md:rounded-lg"
